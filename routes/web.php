@@ -19,8 +19,8 @@ Route::get('/', function () {
 });
 
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/add/user', function () {
+    return view('user.login');
 });
 
 Route::get('/dashboard', function () {
