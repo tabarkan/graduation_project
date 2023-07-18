@@ -20,7 +20,7 @@ Route::get('/', function () {
 
 
 Route::get('/add/user', function () {
-    return view('user.login');
+    return view('aaout');
 });
 
 Route::get('/dashboard', function () {
