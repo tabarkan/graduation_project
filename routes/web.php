@@ -19,8 +19,12 @@ Route::get('/', function () {
 });
 
 
-Route::get('/add/user', function () {
-    return view('aaout');
+Route::get('/admin/dashboard', function () {
+    return view('admin.doctors');
+});
+
+Route::get('/admin/add/doctor', function () {
+    return view('admin.add-doctors');
 });
 
 Route::get('/dashboard', function () {
