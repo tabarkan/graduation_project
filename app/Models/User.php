@@ -18,10 +18,21 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
+        'first_name',
+        'last_name',
         'email',
+        'phone',
         'password',
+        'gender',
+        'birth_date',
     ];
+    public function doctorComments(){
+        return $this->hasMany(DoctorComment::class);
+    }
+    public function hospitalComment(){
+        return $this->hasMany(hospitalComment::class);
+    }
+   
 
     /**
      * The attributes that should be hidden for serialization.
