@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DoctorsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,9 +24,9 @@ Route::get('/admin/dashboard', function () {
     return view('admin.doctors');
 });
 
-Route::get('/admin/add/doctor', function () {
-    return view('admin.add-doctors');
-});
+Route::get('/admin/add/doctor', [DoctorsController::class, 'index']);
+Route::post('/admin/add/doctor', [DoctorsController::class, 'create'])->name('add.doctor');
+
 Route::get('/admin/add/hospital', function () {
     return view('admin.add-hospital');
 });
