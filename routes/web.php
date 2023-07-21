@@ -26,6 +26,9 @@ Route::get('/admin/dashboard', function () {
 Route::get('/admin/add/doctor', function () {
     return view('admin.add-doctors');
 });
+Route::get('/admin/add/hospital', function () {
+    return view('admin.add-hospital');
+});
 
 Route::get('/dashboard', function () {
     return view('dashboard');
