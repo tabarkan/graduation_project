@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('contact_number');
             $table->string('website');
             $table->string('address');
+            $table->string('image_path');
             $table->rememberToken();
             $table->timestamps();
         });

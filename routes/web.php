@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DoctorsController;
 use App\Http\Controllers\HospitalsController;
+use App\Http\Controllers\DiseasesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,10 +31,10 @@ Route::post('/admin/add/doctor', [DoctorsController::class, 'create'])->name('ad
 
 Route::get('/admin/add/hospital',[HospitalsController::class, 'index']);
 Route::post('/admin/add/hospital', [HospitalsController::class, 'create'])->name('add.hospital');
-  
-Route::get('/admin/add/diseases', function () {
-    return view('admin.add-diseases');
-});
+
+Route::get('/admin/add/diseases',[DiseasesController::class, 'index']);
+Route::post('/admin/add/diseases', [DiseasesController::class, 'create'])->name('add.diseases');
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');

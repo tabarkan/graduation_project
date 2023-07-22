@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('specialization');
             $table->string('address');
             $table->string('hospital');
+            $table->string('image_path');
             $table->rememberToken();
             $table->timestamps();
         });

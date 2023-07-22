@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
+use App\Models\Diseases;
 
 class DiseasesController extends Controller
 {
@@ -18,14 +20,14 @@ class DiseasesController extends Controller
 
     public function create(Request $request){
         if(Auth::user()->role == 1){
+            
             $diseases = Diseases::create([
-                'first_name' => $request->first_name,
-                'last_name' => $request->last_name,
-                'email' => $request->email,
-                'phone' => $request->phone,
-                'specialization' => $request->specialization,
-                'address' => $request->address,
-                'hospital' => $request->hospital,
+                'disease_name' => $request->disease_name,
+                'disease_category' => $request->disease_category,
+                'treatment' => $request->treatment,
+                'protection' => $request->protection,
+                'symptoms' => $request->symptoms,
+              
                 
             ]);
         }
