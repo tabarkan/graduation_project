@@ -18,7 +18,8 @@ class HospitalsController extends Controller
     }
 
     public function create(Request $request){
-        if(Auth::user()->role == 1){
+        // dd($request);
+        // if(Auth::user()->role == 1){
             $hospital = Hospital::create([
                 'name' => $request->name,
                 'contact_email' => $request->contact_email,
@@ -26,6 +27,6 @@ class HospitalsController extends Controller
                 'website' => $request->website,
                 'address' => $request->address,
             ]);
-        }
+        // }
     }
 }
