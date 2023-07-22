@@ -22,6 +22,7 @@ return new class extends Migration
             $table->integer('role')->default('0');
             $table->string('gender');
             $table->date('birth_date');
+            $table->string('image_path');
             $table->rememberToken();
             $table->timestamps();
         });

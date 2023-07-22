@@ -37,6 +37,8 @@ class RegisteredUserController extends Controller
         //     'phone' => ['required', 'numeric','unique:'.User::class]
         // ]);
 
+        $imageName = time().'.'.$request->image->extension();
+        $request->image->move(public_path('images'), $imageName);
         $user = User::create([
             'first_name' => $request->first_name,
             'last_name' => $request->last_name,
@@ -45,7 +47,7 @@ class RegisteredUserController extends Controller
             'password' => Hash::make($request->password),
             'birth_date' => $request->birth_date,
             'gender' => $request->gender, 
-            
+            'image_path' => $imageName,
         ]);
 
         event(new Registered($user));

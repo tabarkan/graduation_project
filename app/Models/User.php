@@ -25,6 +25,7 @@ class User extends Authenticatable
         'password',
         'gender',
         'birth_date',
+        'image_path',
     ];
     public function doctorComments(){
         return $this->hasMany(DoctorComment::class);
