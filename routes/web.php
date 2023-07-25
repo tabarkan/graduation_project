@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DoctorsController;
 use App\Http\Controllers\HospitalsController;
 use App\Http\Controllers\DiseasesController;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,9 +23,10 @@ Route::get('/', function () {
 });
 
 
-Route::get('/admin/dashboard', function () {
-    return view('admin.doctors');
-});
+
+Route::get('/admin/doctors', [AdminController::class, 'doctors'])->name('doctors.list');
+Route::get('/admin/hospitals', [AdminController::class, 'hospitals'])->name('hospitals.list');
+
 
 Route::get('/admin/add/doctor', [DoctorsController::class, 'index']);
 Route::post('/admin/add/doctor', [DoctorsController::class, 'create'])->name('add.doctor');

@@ -22,8 +22,8 @@ class DoctorsController extends Controller
     public function create(Request $request){
         if(Auth::user()->role == 1){
 
-            $imageName = time().'.'.$request->image->extension();
-        $request->image->move(public_path('images'), $imageName);
+        $imageName = time().'.'.$request->image->extension();
+        $request->image->move(public_path('doctorsImages'), $imageName);
             $doctor = Doctor::create([
                 'first_name' => $request->first_name,
                 'last_name' => $request->last_name,

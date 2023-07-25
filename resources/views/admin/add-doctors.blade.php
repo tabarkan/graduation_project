@@ -80,7 +80,16 @@
                           <input type="text" name="phone" class="placeholder:text-gray-500 text-sm focus:shadow-primary-outline leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-blue-500 focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow" placeholder="Phone Number" aria-label="Phone" aria-describedby="password-addon" />
                         </div>
                         <div class="mb-4">
-                          <input type="text" name="specialization" class="placeholder:text-gray-500 text-sm focus:shadow-primary-outline leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-blue-500 focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow" placeholder="Specialization" aria-label="Specialization" aria-describedby="password-addon" />
+                          <div class="mb-4">
+                            <select name="specialization" id="specialization">
+                              <option value="Heart">Heart</option>
+                              <option value="Eyes">Eyes</option>
+                              <option value="Internist">Internist</option>
+                              <option value="Orthopedic">Orthopedic</option>
+                              <option value="Otorhinolaryngologist">Otorhinolaryngologist</option>
+                              <option value="neurologist">neurologist</option>
+                            </select>
+                          </div>
                         </div>
                         <div class="mb-4">
                           <input type="text" name="address"  class="placeholder:text-gray-500 text-sm focus:shadow-primary-outline leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-blue-500 focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow" placeholder="Address" aria-label="Address" aria-describedby="password-addon" />

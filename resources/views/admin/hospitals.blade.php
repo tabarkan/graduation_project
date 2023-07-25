@@ -64,7 +64,7 @@
           </li>
           
           <li class="mt-0.5 w-full">
-            <a class="py-2.7 bg-blue-500/13 dark:text-white dark:opacity-80 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap rounded-lg px-4 font-semibold text-slate-700 transition-colors " href="../pages/tables.html">
+            <a class="py-2.7 dark:text-white dark:opacity-80 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap rounded-lg px-4 font-semibold text-slate-700 transition-colors " href="{{route('doctors.list')}}">
               <div class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
                 <i class="relative top-0 text-sm leading-normal text-orange-500 ni ni-calendar-grid-58"></i>
               </div>
@@ -73,7 +73,7 @@
           </li>
 
           <li class="mt-0.5 w-full">
-            <a class="py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors dark:text-white dark:opacity-80" href="{{route('hospitals.list')}}">
+            <a class="py-2.7 bg-blue-500/13 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors dark:text-white dark:opacity-80" href="../pages/billing.html">
               <div class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center fill-current stroke-0 text-center xl:p-2.5">
                 <i class="relative top-0 text-sm leading-normal text-emerald-500 ni ni-credit-card"></i>
               </div>
@@ -287,7 +287,7 @@
           <div class="flex-none  w-full max-w-full px-3">
             <div class="relative flex flex-col min-w-0 mb-6 break-words bg-white h-[80vh] border-0 border-transparent border-solid shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border">
               <div class="p-6 pb-0 mb-0 border-b-0 border-b-solid rounded-t-2xl border-b-transparent">
-                <h6 class="dark:text-white">All Doctors</h6>
+                <h6 class="dark:text-white">All Hospitals</h6>
               </div>
               <div class="flex-auto px-0 pt-0 pb-2">
                 <div class="p-0 overflow-x-auto">
@@ -303,21 +303,21 @@
                     
                     </thead>
                     <tbody>
-                      @foreach ($doctors as $doctor)
+                      @foreach ($hospitals as $hospital)
                       <tr>
                         <td class="p-2 align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
                           <div class="flex px-2 py-1">
                             <div>
-                              <img src="{{asset('doctorsImages/'. $doctor->image_path)}}" class="inline-flex items-center justify-center mr-4 text-sm text-white transition-all duration-200 ease-in-out h-9 w-9 rounded-xl" alt="user1" />
+                              <img src="{{asset('hospitalImages/'. $hospital->image_path)}}" class="inline-flex items-center justify-center mr-4 text-sm text-white transition-all duration-200 ease-in-out h-9 w-9 rounded-xl" alt="user1" />
                             </div>
                             <div class="flex flex-col justify-center">
-                              <h6 class="mb-0 text-sm leading-normal dark:text-white">{{$doctor->first_name}} {{$doctor->last_name}}</h6>
-                              <p class="mb-0 text-xs leading-tight dark:text-white dark:opacity-80 text-slate-400">{{$doctor->email}}</p>
+                              <h6 class="mb-0 text-sm leading-normal dark:text-white">{{$hospital->name}}</h6>
+                              <p class="mb-0 text-xs leading-tight dark:text-white dark:opacity-80 text-slate-400">{{$hospital->contact_email}}</p>
                             </div>
                           </div>
                         </td>
                         <td class="p-2 align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
-                          <p class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-80">{{$doctor->specialization}}</p>
+                          <p class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-80">{{$hospital->address}}</p>
                         </td>
                         <td class="p-2 text-sm leading-normal text-center align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
                           <span class="bg-gradient-to-tl from-emerald-500 to-teal-400 px-2.5 text-xs rounded-1.8 py-1.4 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white">نعم</span>

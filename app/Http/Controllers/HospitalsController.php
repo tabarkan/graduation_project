@@ -20,8 +20,8 @@ class HospitalsController extends Controller
     public function create(Request $request){
         if(Auth::user()->role == 1)
 
-            $imageName = time().'.'.$request->image->extension();
-        $request->image->move(public_path('images'), $imageName);
+        $imageName = time().'.'.$request->image->extension();
+        $request->image->move(public_path('hospitalImages'), $imageName);
 
             $hospital = Hospital::create([
                 'name' => $request->name,
