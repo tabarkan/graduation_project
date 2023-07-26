@@ -15,34 +15,19 @@
 -->
 <!DOCTYPE html>
 <html lang="en">
-    <head lang="ar" dir="rtl">
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="apple-touch-icon" sizes="76x76" href="./assets/img/apple-icon.png" />
-        <link rel="icon" type="image/png" href="./assets/img/favicon.png" />
-        <title>Argon Dashboard 2 Tailwind by Creative Tim</title>
-        <!--     Fonts and icons     -->
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
-        <!-- Font Awesome Icons -->
-        <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
-        <!-- Nucleo Icons -->
-        <link href="{{asset('build/assets/css/nucleo-icons.css')}}" rel="stylesheet" />
-        <link href="{{asset('build/assets/css/nucleo-svg.css')}}" rel="stylesheet" />
-        <!-- Popper -->
-        <script src="https://unpkg.com/@popperjs/core@2"></script>
-        <!-- Main Styling -->
-        <link href={{asset('build/assets/css/argon-dashboard-tailwind.css')}} rel="stylesheet" />
-      </head>    
+     @include('admin.layout')
+    @yield('header')
 
       <body class="m-0 font-sans antialiased font-normal bg-white text-start text-base leading-default text-slate-500">
         <!-- Navbar -->
       
     
+        @yield('sidebar')
+    
         <main class="mt-0 transition-all duration-200 ease-in-out">
-          <section class="min-h-screen">
-            <div class="bg-top relative flex items-start pt-12 pb-56 m-4 overflow-hidden bg-cover min-h-50-screen rounded-xl bg-[url('https://images.unsplash.com/photo-1689709116173-00a9c7fe54cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80.jpg')]">
-              <span class="absolute top-0 left-0 w-full h-full bg-center bg-cover bg-gradient-to-tl from-zinc-800 to-zinc-700 opacity-60"></span>
+          <section class="max-h-[90vh]">
+            <div class="bg-top relative flex items-start overflow-hidden h-[35vh]">
+              <span class="absolute top-0 left-0 w-full h-full"></span>
               <div class="container z-10">
               </div>
             </div>
