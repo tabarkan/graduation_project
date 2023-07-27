@@ -37,6 +37,30 @@ class DoctorsController extends Controller
             ]);
         }
     }
+    public function editPage($id){
+        $doctor = Doctor::where('id',$id)->get()->first();
+        return view('admin.edit-doctors')->with('doctor', $doctor);
+    }
+
+    public function edit(Request $request, $id){
+        if(Auth::user()->role == 1){
+
+            // dd($id);
+        // $imageName = time().'.'.$request->image->extension();
+        // $request->image->move(public_path('doctorsImages'), $imageName);
+            $doctor = Doctor::where('id',$id)->update([
+                'first_name' => $request->first_name,
+                'last_name' => $request->last_name,
+                'email' => $request->email,
+                'phone' => $request->phone,
+                'specialization' => $request->specialization,
+                'address' => $request->address,
+                'hospital' => $request->hospital,
+                // 'image_path' => $imageName,
+                
+            ]);
+        }
+    }
 
 
 

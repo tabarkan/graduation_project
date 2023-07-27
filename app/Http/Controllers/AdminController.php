@@ -20,4 +20,6 @@ class AdminController extends Controller
 
         return view('admin.hospitals')->with(['hospitals' => $hospitals]);
     }
+
+   
 }

@@ -15,7 +15,7 @@
 -->
 <!DOCTYPE html>
  @include('admin.layout')
-  @yield('header')
+ @yield('header')
 
 
   <body class="m-0 font-sans text-base antialiased font-normal dark:bg-slate-900 leading-default bg-gray-50 text-slate-500">

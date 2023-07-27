@@ -192,7 +192,7 @@
                           <span class="text-xs font-semibold leading-tight dark:text-white dark:opacity-80 text-slate-400">7 مسائا</span>
                         </td>
                         <td class="p-2 align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
-                          <a href="javascript:;" class="text-xs font-semibold leading-tight dark:text-white dark:opacity-80 text-slate-400"> تعديل </a>
+                          <a href="{{route('edit.doctor.form', $doctor->id)}}" class="text-xs font-semibold leading-tight dark:text-white dark:opacity-80 text-slate-400"> تعديل</a>
                         </td>
                       </tr>
                       @endforeach
