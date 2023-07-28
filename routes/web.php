@@ -32,6 +32,7 @@ Route::get('/admin/add/doctor', [DoctorsController::class, 'index']);
 Route::get('/admin/edit/doctor/{id}', [DoctorsController::class, 'editPage'])->name('edit.doctor.form');
 Route::post('/admin/add/doctor', [DoctorsController::class, 'create'])->name('add.doctor');
 Route::put('/admin/edit/doctor/{id}', [DoctorsController::class, 'edit'])->name('edit.doctor');
+Route::delete('/admin/delete/doctor/{id}', [DoctorsController::class, 'delete'])->name('delete.doctor');
 
 Route::get('/admin/add/hospital',[HospitalsController::class, 'index']);
 Route::get('/admin/edit/hospital/{id}', [HospitalsController::class, 'editPage'])->name('edit.hospital.form');
