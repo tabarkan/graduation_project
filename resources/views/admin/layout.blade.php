@@ -39,7 +39,7 @@
 @endsection
 
   <body class="m-0 font-sans text-base antialiased font-normal dark:bg-slate-900 leading-default bg-gray-50 text-slate-500">
-    <div class="absolute w-full bg-blue-500 dark:hidden min-h-75"></div>
+    <div class="absolute w-full bg-blue-500  min-h-75"></div>
 
     <!-- sidenav  -->
     @section('sidebar')
@@ -63,7 +63,7 @@
                 {{-- icon --}}
 
               </div>
-              <span class="ml-1 duration-300 opacity-100 pointer-events-none ease"> القيادة</span>
+              <span class="ml-1 duration-300 opacity-100 pointer-events-none ease text-black"> القيادة</span>
             </a>
           </li>
 
@@ -78,7 +78,7 @@
                   C6.7239,1,6.5,1.2239,6.5,1.5S6.7239,2,7,2h0.5C7.7761,2,8,2.2239,8,2.5v2l0,0C8,5.8807,6.8807,7,5.5,7 M11.5,9
                   c-0.5523,0-1-0.4477-1-1s0.4477-1,1-1s1,0.4477,1,1S12.0523,9,11.5,9z"></path> </g></svg>
               </div>
-              <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">ألأطباء</span>
+              <span class="ml-1 duration-300 opacity-100 pointer-events-none ease text-black">ألأطباء</span>
             </a>
           </li>
 
@@ -87,7 +87,15 @@
               <div class="ml-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center fill-current stroke-0 text-center xl:p-2.5">
                 <i class="relative top-0 text-sm leading-normal text-emerald-500 ni ni-credit-card"></i>
               </div>
-              <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">المستشفيات</span>
+              <span class="ml-1 duration-300 opacity-100 pointer-events-none ease text-black">المستشفيات</span>
+            </a>
+          </li>
+          <li class="mt-0.5 w-full">
+            <a class="py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors dark:text-white dark:opacity-80" href="{{route('hospitals.list')}}">
+              <div class="ml-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center fill-current stroke-0 text-center xl:p-2.5">
+                <i class="relative top-0 text-sm leading-normal text-emerald-500 ni ni-credit-card"></i>
+              </div>
+              <span class="ml-1 duration-300 opacity-100 pointer-events-none ease text-black">الامراض</span>
             </a>
           </li>
 
@@ -96,7 +104,7 @@
               <div class="ml-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
                 <i class="relative top-0 text-sm leading-normal text-cyan-500 ni ni-app"></i>
               </div>
-              <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">أضافة طبيب</span>
+              <span class="ml-1 duration-300 opacity-100 pointer-events-none ease text-black">أضافة طبيب</span>
             </a>
           </li>
 
@@ -105,7 +113,7 @@
               <div class="ml-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
                 <i class="relative top-0 text-sm leading-normal text-cyan-500 ni ni-app"></i>
               </div>
-              <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">أضافة مستشفى</span>
+              <span class="ml-1 duration-300 opacity-100 pointer-events-none ease text-black">أضافة مستشفى</span>
             </a>
           </li>
           <li class="mt-0.5 w-full">
@@ -113,7 +121,7 @@
               <div class="ml-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
                 <i class="relative top-0 text-sm leading-normal text-cyan-500 ni ni-app"></i>
               </div>
-              <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">أضافة امراض</span>
+              <span class="ml-1 duration-300 opacity-100 pointer-events-none ease text-black">أضافة امراض</span>
             </a>
           </li>
         </ul>
