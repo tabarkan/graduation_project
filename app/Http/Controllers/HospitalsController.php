@@ -8,6 +8,7 @@ use App\Models\Hospital;
 
 class HospitalsController extends Controller
 {
+
     public function index(){
         if(Auth::user()->role == 1){
             return view('admin.add-hospitals');
@@ -17,31 +18,36 @@ class HospitalsController extends Controller
         }
     }
 
+
     public function create(Request $request){
-        if(Auth::user()->role == 1)
+        if(Auth::user()->role == 1){
 
         $imageName = time().'.'.$request->image->extension();
-        $request->image->move(public_path('hospitalImages'), $imageName);
-
+        $request->image->move(public_path('hospitalsImages'), $imageName);
             $hospital = Hospital::create([
                 'name' => $request->name,
                 'contact_email' => $request->contact_email,
                 'contact_number' => $request->contact_number,
                 'website' => $request->website,
                 'address' => $request->address,
-                // 'image_path' => $imageName,
+                'image_path' => $imageName,
             ]);
-        // }
+        }
+        return redirect()->back();
     }
     public function editPage($id){
         $hospital = Hospital::where('id',$id)->get()->first();
         return view('admin.edit-hospitals')->with('hospital', $hospital);
     }
     public function edit(Request $request ,$id){
-        if(Auth::user()->role == 1)
-
-        // $imageName = time().'.'.$request->image->extension();
-        // $request->image->move(public_path('hospitalImages'), $imageName);
+       
+        if($request->image){
+            $imageName = time().'.'.$request->image->extension();
+            $request->image->move(public_path('hospitalsImages'), $imageName);
+            $oldImage = Hospital::where('id', $id)->get()->first()->image_path; 
+            $deletedImage = unlink(public_path('hospitalsImages/' . $oldImage));
+    
+        if(Auth::user()->role == 1){
 
             $hospital = Hospital::where('id',$id)->update([
                 'name' => $request->name,
@@ -49,8 +55,26 @@ class HospitalsController extends Controller
                 'contact_number' => $request->contact_number,
                 'website' => $request->website,
                 'address' => $request->address,
-                // 'image_path' => $imageName,
+                'image_path' => $imageName,
             ]);
-        // }
+
+        }
+    }
+
+    $hospital = Hospital::where('id',$id)->update([
+        'name' => $request->name,
+        'contact_email' => $request->contact_email,
+        'contact_number' => $request->contact_number,
+        'website' => $request->website,
+        'address' => $request->address,
+    
+    ]);
+       return redirect()->back();
+    }
+    public function delete($id){
+        if(Auth::user()->role == 1){
+            hospital::where('id', $id)->delete();
+        }
+        return redirect()->back();
     }
 }
