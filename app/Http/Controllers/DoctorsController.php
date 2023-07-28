@@ -36,6 +36,7 @@ class DoctorsController extends Controller
                 
             ]);
         }
+        return redirect()->back();
     }
     public function editPage($id){
         $doctor = Doctor::where('id',$id)->get()->first();
@@ -43,26 +44,48 @@ class DoctorsController extends Controller
     }
 
     public function edit(Request $request, $id){
-        if(Auth::user()->role == 1){
+        
+        
+        if($request->image){
+        $imageName = time().'.'.$request->image->extension();
+        $request->image->move(public_path('doctorsImages'), $imageName);
+        $oldImage = Doctor::where('id', $id)->get()->first()->image_path; 
+        $deletedImage = unlink(public_path('doctorsImages/' . $oldImage));
 
-            // dd($id);
-        // $imageName = time().'.'.$request->image->extension();
-        // $request->image->move(public_path('doctorsImages'), $imageName);
-            $doctor = Doctor::where('id',$id)->update([
-                'first_name' => $request->first_name,
-                'last_name' => $request->last_name,
-                'email' => $request->email,
-                'phone' => $request->phone,
-                'specialization' => $request->specialization,
-                'address' => $request->address,
-                'hospital' => $request->hospital,
-                // 'image_path' => $imageName,
-                
-            ]);
+            if(Auth::user()->role == 1){
+
+            
+                    $doctor = Doctor::where('id',$id)->update([
+                        'first_name' => $request->first_name,
+                        'last_name' => $request->last_name,
+                        'email' => $request->email,
+                        'phone' => $request->phone,
+                        'specialization' => $request->specialization,
+                        'address' => $request->address,
+                        'hospital' => $request->hospital,
+                        'image_path' => $imageName,
+                        
+                    ]);
+                } 
         }
+
+        $doctor = Doctor::where('id',$id)->update([
+            'first_name' => $request->first_name,
+            'last_name' => $request->last_name,
+            'email' => $request->email,
+            'phone' => $request->phone,
+            'specialization' => $request->specialization,
+            'address' => $request->address,
+            'hospital' => $request->hospital,                
+        ]);
+
+        return redirect()->back();
     }
 
-
-
-
+    public function delete($id){
+        if(Auth::user()->role == 1){
+            Doctor::where('id', $id)->delete();
+        }
+        return redirect()->back();
+    }
 }
