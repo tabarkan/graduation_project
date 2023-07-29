@@ -192,6 +192,11 @@
                           <span class="text-xs font-semibold leading-tight dark:text-white dark:opacity-80 text-slate-400">7 مسائا</span>
                         </td>
                         <td class="p-2 align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
+                          <form class="h-full" action="{{route('delete.disease', $disease->id)}}" method="POST">
+                            @method('DELETE')
+                            @csrf
+                            <button type="submit" class="text-xs font-semibold leading-tight text-red-400">حذف</button>
+                          </form>
                           <a href="{{route('edit.diseases.form', $disease->id)}}" class="text-xs font-semibold leading-tight dark:text-white dark:opacity-80 text-slate-400"> تعديل</a>
                         </td>
                       </tr>

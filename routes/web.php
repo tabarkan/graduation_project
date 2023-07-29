@@ -46,6 +46,8 @@ Route::get('/admin/add/diseases',[DiseasesController::class, 'index']);
 Route::get('/admin/edit/diseases/{id}', [DiseasesController::class, 'editPage'])->name('edit.diseases.form');
 Route::post('/admin/add/diseases', [DiseasesController::class, 'create'])->name('add.diseases');
 Route::put('/admin/edit/diseases/{id}', [DiseasesController::class, 'edit'])->name('edit.diseases');
+Route::delete('/admin/delete/diseases/{id}', [DiseasesController::class, 'delete'])->name('delete.disease');
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');

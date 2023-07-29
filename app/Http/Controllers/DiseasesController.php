@@ -33,7 +33,7 @@ class DiseasesController extends Controller
         }
     }
         public function editPage($id){
-        $diseases = Diseases::where('id',$id)->get()->first();
+        $diseases = Disease::where('id',$id)->get()->first();
         return view('admin.edit-diseases')->with('diseases', $diseases);
     }
 
@@ -49,9 +49,15 @@ class DiseasesController extends Controller
                 
             ]);
         }
+        return redirect()->back();
     }
 
-
+    public function delete($id){
+        if(Auth::user()->role == 1){
+            Disease::where('id', $id)->delete();
+        }
+        return redirect()->back();
+    }
 
 
 }
