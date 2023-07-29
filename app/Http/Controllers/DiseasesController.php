@@ -46,7 +46,7 @@ class DiseasesController extends Controller
                 'treatment' => $request->treatment,
                 'protection' => $request->protection,
                 'symptoms' => $request->symptoms,
-                
+                'accepted' => 0,
             ]);
         }
         return redirect()->back();
@@ -58,6 +58,12 @@ class DiseasesController extends Controller
         }
         return redirect()->back();
     }
+    public function accept($id){
 
+        $disease =  Disease::where('id',$id)->update([
+            'accepted' => 1,           
+        ]);
+        return redirect()->back();
+    }
 
 }

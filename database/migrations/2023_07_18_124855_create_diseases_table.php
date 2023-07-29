@@ -18,6 +18,7 @@ return new class extends Migration
             $table->longText('treatment');
             $table->longText('protection');
             $table->longText('symptoms');
+            $table->boolean('accepted')->defualt(0);
             $table->rememberToken();
             $table->timestamps();
         });

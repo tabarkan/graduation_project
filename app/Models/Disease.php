@@ -14,5 +14,6 @@ class Disease extends Model
         'treatment',
         'protection',
         'symptoms',
+        'accepted',
     ];
 }
