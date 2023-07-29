@@ -31,6 +31,7 @@ class HospitalsController extends Controller
                 'website' => $request->website,
                 'address' => $request->address,
                 'image_path' => $imageName,
+                'accepted' => 0,
             ]);
         }
         return redirect()->back();
@@ -75,6 +76,13 @@ class HospitalsController extends Controller
         if(Auth::user()->role == 1){
             hospital::where('id', $id)->delete();
         }
+        return redirect()->back();
+    }
+    public function accept($id){
+
+        $hospital = Hospital::where('id',$id)->update([
+            'accepted' => 1,           
+        ]);
         return redirect()->back();
     }
 }

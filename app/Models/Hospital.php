@@ -15,5 +15,6 @@ class Hospital extends Model
         'website',
         'address',
         'image_path',
+        'accepted',
     ];
 }

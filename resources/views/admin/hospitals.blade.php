@@ -183,9 +183,21 @@
                         <td class="p-2 align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
                           <p class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-80">{{$hospital->address}}</p>
                         </td>
+                        @if ($hospital->accepted == 0)
                         <td class="p-2 text-sm leading-normal text-center align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
-                          <span class="bg-gradient-to-tl from-emerald-500 to-teal-400 px-2.5 text-xs rounded-1.8 py-1.4 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white">نعم</span>
+                          <span class="bg-gradient-to-tl from-orange-700 to-red-400 px-2.5 text-xs rounded-1.8 py-1.4 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white">
+                            <form class="h-full" action="{{route('accept.hospital', $hospital->id)}}" method="POST">
+                              @csrf
+                              <button type="submit" class="text-xs font-semibold leading-tight text-white">قبول</button>
+                            </form>
+                          </span>
                         </td>
+                        @elseif ($hospital->accepted == 1)
+                        <td class="p-2 text-sm leading-normal text-center align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
+                          <span class="bg-gradient-to-tl from-emerald-500 to-teal-400 px-2.5 text-xs rounded-1.8 py-1.4 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white">تم القبول</span>
+                        </td>
+                        @endif
+                        
                         <td class="p-2 text-center align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
                           <span class="text-xs font-semibold leading-tight dark:text-white dark:opacity-80 text-slate-400">7 مسائا</span>
                         </td>

@@ -24,6 +24,8 @@ Route::get('/', function () {
 });
 
 Route::get('/doctors', [PagesController::class, 'doctorsPage'])->name('user.doctors');
+Route::get('/hospitals', [PagesController::class, 'hospitalsPage'])->name('user.hospitals');
+
 
 
 
@@ -41,6 +43,7 @@ Route::delete('/admin/delete/doctor/{id}', [DoctorsController::class, 'delete'])
 Route::get('/admin/add/hospital',[HospitalsController::class, 'index']);
 Route::get('/admin/edit/hospital/{id}', [HospitalsController::class, 'editPage'])->name('edit.hospital.form');
 Route::post('/admin/add/hospital', [HospitalsController::class, 'create'])->name('add.hospital');
+Route::post('/admin/accept/hospital/{id}', [HospitalsController::class, 'accept'])->name('accept.hospital');
 Route::put('/admin/edit/hospital/{id}', [HospitalsController::class, 'edit'])->name('edit.hospital');
 Route::delete('/admin/delete/hospital/{id}', [HospitalsController::class, 'delete'])->name('delete.hospital');
 
