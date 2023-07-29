@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
-use App\Models\Diseases;
+use App\Models\Disease;
 
 class DiseasesController extends Controller
 {
@@ -21,7 +21,7 @@ class DiseasesController extends Controller
     public function create(Request $request){
         if(Auth::user()->role == 1){
             
-            $diseases = Diseases::create([
+            $diseases = Disease::create([
                 'disease_name' => $request->disease_name,
                 'disease_category' => $request->disease_category,
                 'treatment' => $request->treatment,
@@ -40,16 +40,12 @@ class DiseasesController extends Controller
     public function edit(Request $request, $id){
         if(Auth::user()->role == 1){
 
-            // dd($id);
-        // $imageName = time().'.'.$request->image->extension();
-        // $request->image->move(public_path('doctorsImages'), $imageName);
-            $doctor = Doctor::where('id',$id)->update([
+            $diseases = Disease::where('id',$id)->update([
                 'disease_name' => $request->disease_name,
                 'disease_category' => $request->disease_category,
                 'treatment' => $request->treatment,
                 'protection' => $request->protection,
                 'symptoms' => $request->symptoms,
-                // 'image_path' => $imageName,
                 
             ]);
         }

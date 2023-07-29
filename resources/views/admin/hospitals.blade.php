@@ -172,7 +172,7 @@
                         <td class="p-2 align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
                           <div class="flex px-2 py-1">
                             <div>
-                              <img src="{{asset('hospitalImages/'. $hospital->image_path)}}" class="inline-flex items-center justify-center mr-4 text-sm text-white transition-all duration-200 ease-in-out h-9 w-9 rounded-xl" alt="user1" />
+                              <img src="{{asset('hospitalsImages/'. $hospital->image_path)}}" class="inline-flex items-center justify-center mr-4 text-sm text-white transition-all duration-200 ease-in-out h-9 w-9 rounded-xl" alt="user1" />
                             </div>
                             <div class="flex flex-col justify-center">
                               <h6 class="mb-0 text-sm leading-normal dark:text-white">{{$hospital->name}}</h6>
