@@ -17,5 +17,6 @@ class Doctor extends Model
         'address',
         'hospital',
         'image_path',
+        'accepted',
     ];
 }

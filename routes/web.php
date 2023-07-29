@@ -6,6 +6,7 @@ use App\Http\Controllers\DoctorsController;
 use App\Http\Controllers\HospitalsController;
 use App\Http\Controllers\DiseasesController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\PagesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +23,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/doctors', [PagesController::class, 'doctorsPage'])->name('user.doctors');
+
 
 
 Route::get('/admin/doctors', [AdminController::class, 'doctors'])->name('doctors.list');
@@ -31,6 +34,7 @@ Route::get('/admin/diseases', [AdminController::class, 'diseases'])->name('disea
 Route::get('/admin/add/doctor', [DoctorsController::class, 'index']);
 Route::get('/admin/edit/doctor/{id}', [DoctorsController::class, 'editPage'])->name('edit.doctor.form');
 Route::post('/admin/add/doctor', [DoctorsController::class, 'create'])->name('add.doctor');
+Route::post('/admin/accept/doctor/{id}', [DoctorsController::class, 'accept'])->name('accept.doctor');
 Route::put('/admin/edit/doctor/{id}', [DoctorsController::class, 'edit'])->name('edit.doctor');
 Route::delete('/admin/delete/doctor/{id}', [DoctorsController::class, 'delete'])->name('delete.doctor');
 

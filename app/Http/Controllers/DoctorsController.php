@@ -33,6 +33,7 @@ class DoctorsController extends Controller
                 'address' => $request->address,
                 'hospital' => $request->hospital,
                 'image_path' => $imageName,
+                'accepted' => 0,
                 
             ]);
         }
@@ -76,7 +77,8 @@ class DoctorsController extends Controller
             'phone' => $request->phone,
             'specialization' => $request->specialization,
             'address' => $request->address,
-            'hospital' => $request->hospital,                
+            'hospital' => $request->hospital,    
+            
         ]);
 
         return redirect()->back();
@@ -86,6 +88,13 @@ class DoctorsController extends Controller
         if(Auth::user()->role == 1){
             Doctor::where('id', $id)->delete();
         }
+        return redirect()->back();
+    }
+    public function accept($id){
+
+        $doctor = Doctor::where('id',$id)->update([
+            'accepted' => 1,           
+        ]);
         return redirect()->back();
     }
 }
