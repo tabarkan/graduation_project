@@ -54,16 +54,16 @@
 
       <hr class="h-px mt-0 bg-transparent bg-gradient-to-r from-transparent via-black/40 to-transparent dark:bg-gradient-to-r dark:from-transparent dark:via-white dark:to-transparent" />
 
-      <div class="items-center block w-auto max-h-screen overflow-auto h-sidenav grow basis-full">
+      <div class="items-center block w-auto max-h-screen  grow basis-full">
         <ul class="flex flex-col pl-0 mb-0">
           <li class="mt-0.5 w-full">
-            <a class="py-2.7 text-md ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors dark:text-white dark:opacity-80" href="../pages/dashboard.html">
+            <a class="py-2.7 text-md ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors dark:text-white dark:opacity-80" href="{{route('admin.main')}}">
               <div class="ml-2 flex h-10 w-10 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
 
                 <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36"><g id="clarityControlLunLine0" fill="#75c2f6"><path d="M8 24.59a25.5 25.5 0 0 0 2.75.59l1.21-1.41a24.13 24.13 0 0 1-4-.83Z"/><path d="M6 27.53V10.3c2.9 1.43 8.34 1.88 12 1.88s9.1-.45 12-1.88v5.11c-.91.82-5 2.13-12 2.13a34.81 34.81 0 0 1-10-1.21V18a40.86 40.86 0 0 0 10 1.16c3.46 0 9.13-.45 12-1.91v3.23h2V7.93c0-3.35-8.8-4.25-14-4.25S4 4.58 4 7.93v19.6c0 2 3.17 3.14 6.83 3.72l-2.45-2.57C7 28.28 6.13 27.84 6 27.53ZM18 5.68c7.15 0 11.53 1.44 12 2.25c-.46.81-4.84 2.25-12 2.25S6.31 8.69 6 8c.31-.82 4.71-2.32 12-2.32Z"/><path d="M32.09 22H15.46l-5.41 6.31L15.49 34h16.6a2 2 0 0 0 2-2v-8.07a2 2 0 0 0-2-1.93Zm0 10H16.34l-3.59-3.77L16.38 24h15.71v8Z"/><path d="M16.11 27a1 1 0 1 0 1 1a1 1 0 0 0-1-1Z"/></g></svg>
 
               </div>
-              <span class="ml-1 duration-300 opacity-100 pointer-events-none ease text-black"> القيادة</span>
+              <span class="ml-1 duration-300 opacity-100 pointer-events-none ease text-black">لوحة التحكم</span>
             </a>
           </li>
 

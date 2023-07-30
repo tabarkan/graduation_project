@@ -27,7 +27,8 @@ class DiseasesController extends Controller
                 'treatment' => $request->treatment,
                 'protection' => $request->protection,
                 'symptoms' => $request->symptoms,
-              
+                'accepted' => 0,
+
                 
             ]);
         }
@@ -46,7 +47,6 @@ class DiseasesController extends Controller
                 'treatment' => $request->treatment,
                 'protection' => $request->protection,
                 'symptoms' => $request->symptoms,
-                'accepted' => 0,
             ]);
         }
         return redirect()->back();

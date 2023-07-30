@@ -19,16 +19,12 @@ use App\Http\Controllers\PagesController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Route::get('/doctors', [PagesController::class, 'doctorsPage'])->name('user.doctors');
 Route::get('/hospitals', [PagesController::class, 'hospitalsPage'])->name('user.hospitals');
 Route::get('/diseases', [PagesController::class, 'diseasesPage'])->name('user.diseases');
 
 
-
+Route::get('/admin', [PagesController::class, 'admin'])->name('admin.main');
 Route::get('/admin/doctors', [AdminController::class, 'doctors'])->name('doctors.list');
 Route::get('/admin/hospitals', [AdminController::class, 'hospitals'])->name('hospitals.list');
 Route::get('/admin/diseases', [AdminController::class, 'diseases'])->name('diseases.list');
@@ -57,7 +53,7 @@ Route::put('/admin/edit/diseases/{id}', [DiseasesController::class, 'edit'])->na
 Route::delete('/admin/delete/diseases/{id}', [DiseasesController::class, 'delete'])->name('delete.disease');
 
 
-Route::get('/dashboard', function () {
+Route::get('/', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 

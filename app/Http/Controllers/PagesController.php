@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Doctor;
 use App\Models\Hospital;
-use App\Models\ Disease;
+use App\Models\Disease;
 
 
 class PagesController extends Controller
@@ -27,6 +27,13 @@ class PagesController extends Controller
 
         $diseases = Disease::get();
         return view('user.diseases')->with(['diseases' => $diseases]);
+
+    }
+
+    public function admin(){
+
+        $diseases = Disease::get();
+        return view('admin.admin-main')->with(['diseases' => $diseases]);
 
     }
 }
