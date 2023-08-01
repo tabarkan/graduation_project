@@ -43,7 +43,7 @@
                 <li class="flex items-center">
                   <a href="../pages/sign-in.html" class="block px-0 py-2 text-sm font-semibold text-white transition-all ease-nav-brand">
                     <i class="fa fa-user sm:mr-1"></i>
-                    <span class="hidden sm:inline">Sign In</span>
+                    <span class="hidden sm:inline"></span>
                   </a>
                 </li>
                 <li class="flex items-center pl-4 xl:hidden">
@@ -162,8 +162,8 @@
                         <p class="mb-0 font-sans text-md font-semibold leading-normal uppercase dark:text-white dark:opacity-60">عدد الأمراض</p>
                         <h5 class="mb-2 font-bold dark:text-white">{{$diseases->count()}}</h5>
                         <p class="mb-0 dark:text-white dark:opacity-60">
-                          <span class="text-sm font-bold leading-normal text-emerald-500">+55%</span>
-                          since yesterday
+                          <span class="text-sm font-bold leading-normal text-emerald-500">         </span>
+                         
                         </p>
                       </div>
                     </div>
@@ -185,11 +185,12 @@
                     </div>
                     <div class="flex-none w-2/3 max-w-full px-3">
                       <div>
-                        <p class="mb-0 font-sans text-sm font-semibold leading-normal uppercase dark:text-white dark:opacity-60">Today's Users</p>
-                        <h5 class="mb-2 font-bold dark:text-white">2,300</h5>
+                        <p class="mb-0 font-sans text-sm font-semibold leading-normal uppercase dark:text-white dark:opacity-60">عدد الاطباء</p>
+                        <h5 class="mb-2 font-bold dark:text-white">
+                          {{$doctors->count()}}
+                        </h5>
                         <p class="mb-0 dark:text-white dark:opacity-60">
-                          <span class="text-sm font-bold leading-normal text-emerald-500">+3%</span>
-                          since last week
+                          <span class="text-sm font-bold leading-normal text-emerald-500"></span>
                         </p>
                       </div>
                     </div>
@@ -210,11 +211,13 @@
                     </div>
                     <div class="flex-none w-2/3 max-w-full px-3">
                       <div>
-                        <p class="mb-0 font-sans text-sm font-semibold leading-normal uppercase dark:text-white dark:opacity-60">New Clients</p>
-                        <h5 class="mb-2 font-bold dark:text-white">+3,462</h5>
+                        <p class="mb-0 font-sans text-sm font-semibold leading-normal uppercase dark:text-white dark:opacity-60">عدد المستشفيات</p>
+                        <h5 class="mb-2 font-bold dark:text-white">
+                          {{$hospitals->count()}}
+                        </h5>
                         <p class="mb-0 dark:text-white dark:opacity-60">
-                          <span class="text-sm font-bold leading-normal text-red-600">-2%</span>
-                          since last quarter
+                          <span class="text-sm font-bold leading-normal text-red-600"></span>
+                          
                         </p>
                       </div>
                     </div>
@@ -236,11 +239,13 @@
                     </div>
                     <div class="flex-none w-2/3 max-w-full px-3">
                       <div>
-                        <p class="mb-0 font-sans text-sm font-semibold leading-normal uppercase dark:text-white dark:opacity-60">Sales</p>
-                        <h5 class="mb-2 font-bold dark:text-white">$103,430</h5>
+                        <p class="mb-0 font-sans text-sm font-semibold leading-normal uppercase dark:text-white dark:opacity-60">عدد المستخدمين</p>
+                        <h5 class="mb-2 font-bold dark:text-white">
+                          {{$users->count()}}
+                        </h5>
                         <p class="mb-0 dark:text-white dark:opacity-60">
-                          <span class="text-sm font-bold leading-normal text-emerald-500">+5%</span>
-                          than last month
+                          <span class="text-sm font-bold leading-normal text-emerald-500"></span>
+                         
                         </p>
                       </div>
                     </div>
@@ -267,7 +272,7 @@
               <div class="relative flex flex-col min-w-0 break-words bg-white border-0 border-solid shadow-xl dark:bg-slate-850 dark:shadow-dark-xl dark:bg-gray-950 border-black-125 rounded-2xl bg-clip-border">
                 <div class="p-4 pb-0 mb-0 rounded-t-4">
                   <div class="flex justify-between">
-                    <h6 class="mb-2 dark:text-white">Sales by Country</h6>
+                    <h6 class="mb-2 dark:text-white">الطلبات</h6>
                   </div>
                 </div>
                 <div class="overflow-x-auto">
@@ -280,7 +285,7 @@
                               <img src="../assets/img/icons/flags/US.png" alt="Country flag" />
                             </div>
                             <div class="ml-6">
-                              <p class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-60">Country:</p>
+                              <p class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-60"></p>
                               <h6 class="mb-0 text-sm leading-normal dark:text-white">United States</h6>
                             </div>
                           </div>
@@ -297,11 +302,19 @@
                             <h6 class="mb-0 text-sm leading-normal dark:text-white">$230,900</h6>
                           </div>
                         </td>
-                        <td class="p-2 text-sm leading-normal align-middle bg-transparent border-b whitespace-nowrap dark:border-white/40">
-                          <div class="flex-1 text-center">
-                            <p class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-60">Bounce:</p>
-                            <h6 class="mb-0 text-sm leading-normal dark:text-white">29.9%</h6>
-                          </div>
+                        @foreach ($doctors as $doctor )
+                          
+                        @endforeach
+                        @if ($doctor->accepted == 0)
+                        <td class="p-2 text-sm leading-normal text-center align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
+                          <span class="bg-gradient-to-tl from-orange-700 to-red-400 px-2.5 text-xs rounded-1.8 py-1.4 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white">
+                            <form class="h-full" action="{{route('accept.doctor', $doctor->id)}}" method="POST">
+                              @csrf
+                            <button type="submit" class="mb-0 text-xs bg-gradient-to-tl from-orange-700 to-red-400 px-2.5 text-xs rounded-1.8 py-1.4 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white ">قبول</p>
+                            </form>
+                          </span>
+                        @endif
+                            </div>
                         </td>
                       </tr>
                       <tr>
@@ -405,7 +418,7 @@
             <div class="w-full max-w-full px-3 mt-0 lg:w-5/12 lg:flex-none">
               <div class="border-black/12.5 shadow-xl dark:bg-slate-850 dark:shadow-dark-xl relative flex min-w-0 flex-col break-words rounded-2xl border-0 border-solid bg-white bg-clip-border">
                 <div class="p-4 pb-0 rounded-t-4">
-                  <h6 class="mb-0 dark:text-white">Categories</h6>
+                  <h6 class="mb-0 dark:text-white">عدد المسؤولين</h6>
                 </div>
                 <div class="flex-auto p-4">
                   <ul class="flex flex-col pl-0 mb-0 rounded-lg">

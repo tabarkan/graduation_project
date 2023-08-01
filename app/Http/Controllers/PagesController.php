@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Doctor;
 use App\Models\Hospital;
 use App\Models\Disease;
-
+use App\Models\User;
 
 class PagesController extends Controller
 {
@@ -33,7 +33,10 @@ class PagesController extends Controller
     public function admin(){
 
         $diseases = Disease::get();
-        return view('admin.admin-main')->with(['diseases' => $diseases]);
-
+        $doctors = Doctor::get();
+        $hospitals = Hospital::get();
+        $users = User::get();
+        return view('admin.admin-main')->with(['diseases' => $diseases,'doctors' => $doctors,'hospitals' => $hospitals,'users' => $users]);
     }
+    
 }
