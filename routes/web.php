@@ -54,8 +54,8 @@ Route::delete('/admin/delete/diseases/{id}', [DiseasesController::class, 'delete
 
 
 Route::get('/', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+    return view('user.index');
+})->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

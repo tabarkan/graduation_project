@@ -153,9 +153,8 @@
                 <div class="flex-auto p-4">
                   <div class="flex flex-row -mx-3">
                     <div class="px-3 text-left basis-1/3">
-                      <div class="inline-block w-12 h-12 text-center rounded-circle bg-gradient-to-tl from-blue-500 to-violet-500">
-                        <i class="ni leading-none ni-money-coins text-lg relative top-3.5 text-white"></i>
-                      </div>
+                      <div class="inline-block w-12 h-12 flex justify-center items-center text-center rounded-circle bg-gradient-to-tl from-blue-500 to-violet-500">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 512 512"><path fill="#fff" d="M236.4 61.4L227 75.5c-21.3 32-59.4 48.5-97.3 42.1l-59.6-9.9C33.4 101.6 0 129.9.1 167.1c0 15.9 6.4 31.2 17.6 42.5l29.2 29.2c11 11 17.2 25.9 17.2 41.5c0 15.8-6.4 30.9-17.7 42l-13.1 12.8C22.2 345.9 16 360.7 16 376.2c0 36.8 34.1 64.2 70.1 56.2l62.3-13.8c7.7-1.7 15.7-2.6 23.6-2.6h10c27.2 0 53.7 9.3 75 26.3l30.8 24.7c10.5 8.4 23.6 13 37 13c32.7 0 59.3-26.5 59.3-59.3v-25.2c0-34.9 21.4-66.2 53.9-78.8l36.9-14.3c22.4-8.7 37.2-30.3 37.2-54.3c0-28.1-20.1-52.3-47.8-57.3l-28-5.1c-36.5-6.7-65.4-34.5-73.6-70.7l-7.1-31.5C348.9 53.4 322.1 32 291.3 32c-22 0-42.6 11-54.9 29.4zM160 192a32 32 0 1 1 0 64a32 32 0 1 1 0-64zm128 16a16 16 0 1 1 32 0a16 16 0 1 1-32 0zm0 80a32 32 0 1 1 0 64a32 32 0 1 1 0-64z"/></svg>                      </div>
                     </div>
                     <div class="flex-none w-2/3 max-w-full px-3">
                       <div>
@@ -163,7 +162,6 @@
                         <h5 class="mb-2 font-bold dark:text-white">{{$diseases->count()}}</h5>
                         <p class="mb-0 dark:text-white dark:opacity-60">
                           <span class="text-sm font-bold leading-normal text-emerald-500">         </span>
-                         
                         </p>
                       </div>
                     </div>
@@ -278,6 +276,8 @@
                 <div class="overflow-x-auto">
                   <table class="items-center w-full mb-4 align-top border-collapse border-gray-200 dark:border-white/40">
                     <tbody>
+                      @foreach ($doctors as $doctor)
+                      @if ($doctor->accepted == 0)
                       <tr>
                         <td class="p-2 align-middle bg-transparent border-b w-3/10 whitespace-nowrap dark:border-white/40">
                           <div class="flex items-center px-2 py-1">
@@ -302,112 +302,57 @@
                             <h6 class="mb-0 text-sm leading-normal dark:text-white">$230,900</h6>
                           </div>
                         </td>
-                        @foreach ($doctors as $doctor )
-                          
-                        @endforeach
-                        @if ($doctor->accepted == 0)
+                      
                         <td class="p-2 text-sm leading-normal text-center align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
                           <span class="bg-gradient-to-tl from-orange-700 to-red-400 px-2.5 text-xs rounded-1.8 py-1.4 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white">
                             <form class="h-full" action="{{route('accept.doctor', $doctor->id)}}" method="POST">
                               @csrf
-                            <button type="submit" class="mb-0 text-xs bg-gradient-to-tl from-orange-700 to-red-400 px-2.5 text-xs rounded-1.8 py-1.4 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white ">قبول</p>
+                            <button type="submit" class="mb-0 text-xs bg-gradient-to-tl  from-orange-700 to-red-400 px-2.5 text-xs rounded-1.8 py-1.4 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white ">قبول</p>
                             </form>
                           </span>
+                 
+                            </div>
+                        </td>
+                      </tr>
+                      @endif
+                      @endforeach
+                      @foreach ($diseases as $disease)
+                      @if ($disease->accepted == 0)
+                      <tr>
+                        <td class="p-2 align-middle bg-transparent border-b w-3/10 whitespace-nowrap dark:border-white/40">
+                          <div class="flex items-center px-2 py-1">
+                            <div>
+                              <img src="../assets/img/icons/flags/US.png" alt="Country flag" />
+                            </div>
+                            <div class="ml-6">
+                              <p class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-60"></p>
+                              <h6 class="mb-0 text-sm leading-normal dark:text-white">United States</h6>
+                            </div>
+                          </div>
+                        </td>
+                        <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap dark:border-white/40">
+                          <div class="text-center">
+                            <p class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-60">Sales:</p>
+                            <h6 class="mb-0 text-sm leading-normal dark:text-white">2500</h6>
+                          </div>
+                        </td>
+                        <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap dark:border-white/40">
+                          <div class="text-center">
+                            <p class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-60">Value:</p>
+                            <h6 class="mb-0 text-sm leading-normal dark:text-white">$230,900</h6>
+                          </div>
+                        </td>
                         @endif
+                        @endforeach
+                        <td class="p-2 text-sm leading-normal text-center align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
+                          <span class="bg-gradient-to-tl from-orange-700 to-red-400 px-2.5 text-xs rounded-1.8 py-1.4 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white">
+                            <form class="h-full" action="{{route('accept.doctor', $doctor->id)}}" method="POST">
+                              @csrf
+                            <button type="submit" class="mb-0 text-xs bg-gradient-to-tl  from-orange-700 to-red-400 px-2.5 text-xs rounded-1.8 py-1.4 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white ">قبول</p>
+                            </form>
+                          </span>
+                 
                             </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="p-2 align-middle bg-transparent border-b w-3/10 whitespace-nowrap dark:border-white/40">
-                          <div class="flex items-center px-2 py-1">
-                            <div>
-                              <img src="../assets/img/icons/flags/DE.png" alt="Country flag" />
-                            </div>
-                            <div class="ml-6">
-                              <p class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-60">Country:</p>
-                              <h6 class="mb-0 text-sm leading-normal dark:text-white">Germany</h6>
-                            </div>
-                          </div>
-                        </td>
-                        <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap dark:border-white/40">
-                          <div class="text-center">
-                            <p class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-60">Sales:</p>
-                            <h6 class="mb-0 text-sm leading-normal dark:text-white">3.900</h6>
-                          </div>
-                        </td>
-                        <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap dark:border-white/40">
-                          <div class="text-center">
-                            <p class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-60">Value:</p>
-                            <h6 class="mb-0 text-sm leading-normal dark:text-white">$440,000</h6>
-                          </div>
-                        </td>
-                        <td class="p-2 text-sm leading-normal align-middle bg-transparent border-b whitespace-nowrap dark:border-white/40">
-                          <div class="flex-1 text-center">
-                            <p class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-60">Bounce:</p>
-                            <h6 class="mb-0 text-sm leading-normal dark:text-white">40.22%</h6>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="p-2 align-middle bg-transparent border-b w-3/10 whitespace-nowrap dark:border-white/40">
-                          <div class="flex items-center px-2 py-1">
-                            <div>
-                              <img src="../assets/img/icons/flags/GB.png" alt="Country flag" />
-                            </div>
-                            <div class="ml-6">
-                              <p class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-60">Country:</p>
-                              <h6 class="mb-0 text-sm leading-normal dark:text-white">Great Britain</h6>
-                            </div>
-                          </div>
-                        </td>
-                        <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap dark:border-white/40">
-                          <div class="text-center">
-                            <p class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-60">Sales:</p>
-                            <h6 class="mb-0 text-sm leading-normal dark:text-white">1.400</h6>
-                          </div>
-                        </td>
-                        <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap dark:border-white/40">
-                          <div class="text-center">
-                            <p class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-60">Value:</p>
-                            <h6 class="mb-0 text-sm leading-normal dark:text-white">$190,700</h6>
-                          </div>
-                        </td>
-                        <td class="p-2 text-sm leading-normal align-middle bg-transparent border-b whitespace-nowrap dark:border-white/40">
-                          <div class="flex-1 text-center">
-                            <p class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-60">Bounce:</p>
-                            <h6 class="mb-0 text-sm leading-normal dark:text-white">23.44%</h6>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="p-2 align-middle bg-transparent border-0 w-3/10 whitespace-nowrap">
-                          <div class="flex items-center px-2 py-1">
-                            <div>
-                              <img src="../assets/img/icons/flags/BR.png" alt="Country flag" />
-                            </div>
-                            <div class="ml-6">
-                              <p class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-60">Country:</p>
-                              <h6 class="mb-0 text-sm leading-normal dark:text-white">Brasil</h6>
-                            </div>
-                          </div>
-                        </td>
-                        <td class="p-2 align-middle bg-transparent border-0 whitespace-nowrap">
-                          <div class="text-center">
-                            <p class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-60">Sales:</p>
-                            <h6 class="mb-0 text-sm leading-normal dark:text-white">562</h6>
-                          </div>
-                        </td>
-                        <td class="p-2 align-middle bg-transparent border-0 whitespace-nowrap">
-                          <div class="text-center">
-                            <p class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-60">Value:</p>
-                            <h6 class="mb-0 text-sm leading-normal dark:text-white">$143,960</h6>
-                          </div>
-                        </td>
-                        <td class="p-2 text-sm leading-normal align-middle bg-transparent border-0 whitespace-nowrap">
-                          <div class="flex-1 text-center">
-                            <p class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-60">Bounce:</p>
-                            <h6 class="mb-0 text-sm leading-normal dark:text-white">32.14%</h6>
-                          </div>
                         </td>
                       </tr>
                     </tbody>
