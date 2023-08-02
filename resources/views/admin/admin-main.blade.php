@@ -177,9 +177,14 @@
                 <div class="flex-auto p-4">
                   <div class="flex flex-row -mx-3">
                     <div class="px-3 text-left basis-1/3">
-                      <div class="inline-block w-12 h-12 text-center rounded-circle bg-gradient-to-tl from-red-600 to-orange-600">
-                        <i class="ni leading-none ni-world text-lg relative top-3.5 text-white"></i>
-                      </div>
+                      <div class="flex justify-center items-center inline-block w-12 h-12 text-center rounded-circle bg-gradient-to-tl from-red-600 to-orange-600">
+                        <svg width="26px" height="26px" viewBox="0 0 15 15" version="1.1" id="doctor" xmlns="http://www.w3.org/2000/svg" fill="#fff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M5.5,7C4.1193,7,3,5.8807,3,4.5l0,0v-2C3,2.2239,3.2239,2,3.5,2H4c0.2761,0,0.5-0.2239,0.5-0.5S4.2761,1,4,1H3.5
+                          C2.6716,1,2,1.6716,2,2.5v2c0.0013,1.1466,0.5658,2.2195,1.51,2.87l0,0C4.4131,8.1662,4.9514,9.297,5,10.5C5,12.433,6.567,14,8.5,14
+                          s3.5-1.567,3.5-3.5V9.93c1.0695-0.2761,1.7126-1.367,1.4365-2.4365C13.1603,6.424,12.0695,5.7809,11,6.057
+                          C9.9305,6.3332,9.2874,7.424,9.5635,8.4935C9.7454,9.198,10.2955,9.7481,11,9.93v0.57c0,1.3807-1.1193,2.5-2.5,2.5S6,11.8807,6,10.5
+                          c0.0511-1.2045,0.5932-2.3356,1.5-3.13l0,0C8.4404,6.7172,9.001,5.6448,9,4.5v-2C9,1.6716,8.3284,1,7.5,1H7
+                          C6.7239,1,6.5,1.2239,6.5,1.5S6.7239,2,7,2h0.5C7.7761,2,8,2.2239,8,2.5v2l0,0C8,5.8807,6.8807,7,5.5,7 M11.5,9
+                          c-0.5523,0-1-0.4477-1-1s0.4477-1,1-1s1,0.4477,1,1S12.0523,9,11.5,9z"></path> </g></svg>                      </div>
                     </div>
                     <div class="flex-none w-2/3 max-w-full px-3">
                       <div>
@@ -276,85 +281,126 @@
                 <div class="overflow-x-auto">
                   <table class="items-center w-full mb-4 align-top border-collapse border-gray-200 dark:border-white/40">
                     <tbody>
-                      @foreach ($doctors as $doctor)
+                      @foreach ($doctors as $doctor )
                       @if ($doctor->accepted == 0)
                       <tr>
                         <td class="p-2 align-middle bg-transparent border-b w-3/10 whitespace-nowrap dark:border-white/40">
                           <div class="flex items-center px-2 py-1">
-                            <div>
-                              <img src="../assets/img/icons/flags/US.png" alt="Country flag" />
-                            </div>
+              
                             <div class="ml-6">
-                              <p class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-60"></p>
-                              <h6 class="mb-0 text-sm leading-normal dark:text-white">United States</h6>
+                              <p class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-60">Name</p>
+                              <h6 class="mb-0 text-sm leading-normal dark:text-white">{{$doctor->first_name}} {{$doctor->last_name}}</h6>
                             </div>
                           </div>
                         </td>
                         <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap dark:border-white/40">
                           <div class="text-center">
-                            <p class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-60">Sales:</p>
-                            <h6 class="mb-0 text-sm leading-normal dark:text-white">2500</h6>
+                            <p class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-60">Type</p>
+                            <h6 class="mb-0 text-sm leading-normal dark:text-white">Doctor</h6>
                           </div>
                         </td>
                         <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap dark:border-white/40">
                           <div class="text-center">
-                            <p class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-60">Value:</p>
-                            <h6 class="mb-0 text-sm leading-normal dark:text-white">$230,900</h6>
+                            <p class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-60">time:</p>
+                            <h6 class="mb-0 text-sm leading-normal dark:text-white">{{$doctor->created_at->format('Y-m-d')}}</h6>
                           </div>
                         </td>
+                       
                       
+                       
                         <td class="p-2 text-sm leading-normal text-center align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
                           <span class="bg-gradient-to-tl from-orange-700 to-red-400 px-2.5 text-xs rounded-1.8 py-1.4 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white">
                             <form class="h-full" action="{{route('accept.doctor', $doctor->id)}}" method="POST">
                               @csrf
-                            <button type="submit" class="mb-0 text-xs bg-gradient-to-tl  from-orange-700 to-red-400 px-2.5 text-xs rounded-1.8 py-1.4 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white ">قبول</p>
+                            <button type="submit" class="mb-0 text-xs bg-gradient-to-tl from-orange-700 to-red-400 px-2.5 text-xs rounded-1.8 py-1.4 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white max-h-[20px] ">قبول</p>
                             </form>
                           </span>
-                 
+
                             </div>
                         </td>
                       </tr>
                       @endif
                       @endforeach
-                      @foreach ($diseases as $disease)
+                      @foreach ($hospitals as $hospital )
+                      @if ($hospital->accepted == 0)
+                      <tr>
+                        <td class="p-2 align-middle bg-transparent border-b w-3/10 whitespace-nowrap dark:border-white/40">
+                          <div class="flex items-center px-2 py-1">
+              
+                            <div class="ml-6">
+                              <p class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-60">Name</p>
+                              <h6 class="mb-0 text-sm leading-normal dark:text-white">{{$hospital->name}}</h6>
+                            </div>
+                          </div>
+                        </td>
+                        <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap dark:border-white/40">
+                          <div class="text-center">
+                            <p class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-60">Type</p>
+                            <h6 class="mb-0 text-sm leading-normal dark:text-white">Hospital</h6>
+                          </div>
+                        </td>
+                        <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap dark:border-white/40">
+                          <div class="text-center">
+                            <p class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-60">time:</p>
+                            <h6 class="mb-0 text-sm leading-normal dark:text-white">{{$hospital->created_at->format('Y-m-d')}}</h6>
+                          </div>
+                        </td>
+                       
+                      
+                       
+                        <td class="p-2 text-sm leading-normal text-center align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
+                          <span class="bg-gradient-to-tl from-orange-700 to-red-400 px-2.5 text-xs rounded-1.8 py-1.4 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white">
+                            <form class="h-full" action="{{route('accept.hospital', $hospital->id)}}" method="POST">
+                              @csrf
+                            <button type="submit" class="mb-0 text-xs bg-gradient-to-tl from-orange-700 to-red-400 px-2.5 text-xs rounded-1.8 py-1.4 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white max-h-[20px] ">قبول</p>
+                            </form>
+                          </span>
+
+                            </div>
+                        </td>
+                      </tr>
+                      @endif
+                      @endforeach
+                      @foreach ($diseases as $disease )
                       @if ($disease->accepted == 0)
                       <tr>
                         <td class="p-2 align-middle bg-transparent border-b w-3/10 whitespace-nowrap dark:border-white/40">
                           <div class="flex items-center px-2 py-1">
-                            <div>
-                              <img src="../assets/img/icons/flags/US.png" alt="Country flag" />
-                            </div>
+              
                             <div class="ml-6">
-                              <p class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-60"></p>
-                              <h6 class="mb-0 text-sm leading-normal dark:text-white">United States</h6>
+                              <p class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-60">Name</p>
+                              <h6 class="mb-0 text-sm leading-normal dark:text-white">{{$disease->disease_name}} </h6>
                             </div>
                           </div>
                         </td>
                         <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap dark:border-white/40">
                           <div class="text-center">
-                            <p class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-60">Sales:</p>
-                            <h6 class="mb-0 text-sm leading-normal dark:text-white">2500</h6>
+                            <p class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-60">Type</p>
+                            <h6 class="mb-0 text-sm leading-normal dark:text-white">disease</h6>
                           </div>
                         </td>
                         <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap dark:border-white/40">
                           <div class="text-center">
-                            <p class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-60">Value:</p>
-                            <h6 class="mb-0 text-sm leading-normal dark:text-white">$230,900</h6>
+                            <p class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-60">time:</p>
+                            <h6 class="mb-0 text-sm leading-normal dark:text-white">{{$disease->created_at->format('Y-m-d')}}</h6>
                           </div>
                         </td>
-                        @endif
-                        @endforeach
+                       
+                      
+                       
                         <td class="p-2 text-sm leading-normal text-center align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
                           <span class="bg-gradient-to-tl from-orange-700 to-red-400 px-2.5 text-xs rounded-1.8 py-1.4 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white">
-                            <form class="h-full" action="{{route('accept.doctor', $doctor->id)}}" method="POST">
+                            <form class="h-full" action="{{route('accept.disease', $disease->id)}}" method="POST">
                               @csrf
-                            <button type="submit" class="mb-0 text-xs bg-gradient-to-tl  from-orange-700 to-red-400 px-2.5 text-xs rounded-1.8 py-1.4 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white ">قبول</p>
+                            <button type="submit" class="mb-0 text-xs bg-gradient-to-tl from-orange-700 to-red-400 px-2.5 text-xs rounded-1.8 py-1.4 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white max-h-[20px] ">قبول</p>
                             </form>
                           </span>
-                 
+
                             </div>
                         </td>
                       </tr>
+                      @endif
+                      @endforeach
                     </tbody>
                   </table>
                 </div>
@@ -363,66 +409,29 @@
             <div class="w-full max-w-full px-3 mt-0 lg:w-5/12 lg:flex-none">
               <div class="border-black/12.5 shadow-xl dark:bg-slate-850 dark:shadow-dark-xl relative flex min-w-0 flex-col break-words rounded-2xl border-0 border-solid bg-white bg-clip-border">
                 <div class="p-4 pb-0 rounded-t-4">
-                  <h6 class="mb-0 dark:text-white">عدد المسؤولين</h6>
+                  <h6 class="mb-0 dark:text-white"> المسؤولين</h6>
                 </div>
                 <div class="flex-auto p-4">
                   <ul class="flex flex-col pl-0 mb-0 rounded-lg">
+                    @foreach ($admins as $admin )
                     <li class="relative flex justify-between py-2 pr-4 mb-2 border-0 rounded-t-lg rounded-xl text-inherit">
                       <div class="flex items-center">
                         <div class="inline-block w-8 h-8 mr-4 text-center text-black bg-center shadow-sm fill-current stroke-none bg-gradient-to-tl from-zinc-800 to-zinc-700 dark:bg-gradient-to-tl dark:from-slate-750 dark:to-gray-850 rounded-xl">
                           <i class="text-white ni ni-mobile-button relative top-0.75 text-xxs"></i>
                         </div>
                         <div class="flex flex-col">
-                          <h6 class="mb-1 text-sm leading-normal text-slate-700 dark:text-white">Devices</h6>
-                          <span class="text-xs leading-tight dark:text-white/80">250 in stock, <span class="font-semibold">346+ sold</span></span>
+                          <h6 class="mb-1 text-sm leading-normal text-slate-700 dark:text-white">{{$admin->first_name}} {{$admin->last_name}}</h6>
+                          <span class="text-xs leading-tight dark:text-white/80">{{$admin->role==1?'Admin':''}}</span>
                         </div>
                       </div>
                       <div class="flex">
                         <button class="group ease-in leading-pro text-xs rounded-3.5xl p-1.2 h-6.5 w-6.5 mx-0 my-auto inline-block cursor-pointer border-0 bg-transparent text-center align-middle font-bold text-slate-700 shadow-none transition-all dark:text-white"><i class="ni ease-bounce text-2xs group-hover:translate-x-1.25 ni-bold-right transition-all duration-200" aria-hidden="true"></i></button>
                       </div>
+                   
+                      
+                   
                     </li>
-                    <li class="relative flex justify-between py-2 pr-4 mb-2 border-0 rounded-xl text-inherit">
-                      <div class="flex items-center">
-                        <div class="inline-block w-8 h-8 mr-4 text-center text-black bg-center shadow-sm fill-current stroke-none bg-gradient-to-tl from-zinc-800 to-zinc-700 dark:bg-gradient-to-tl dark:from-slate-750 dark:to-gray-850 rounded-xl">
-                          <i class="text-white ni ni-tag relative top-0.75 text-xxs"></i>
-                        </div>
-                        <div class="flex flex-col">
-                          <h6 class="mb-1 text-sm leading-normal text-slate-700 dark:text-white">Tickets</h6>
-                          <span class="text-xs leading-tight dark:text-white/80">123 closed, <span class="font-semibold">15 open</span></span>
-                        </div>
-                      </div>
-                      <div class="flex">
-                        <button class="group ease-in leading-pro text-xs rounded-3.5xl p-1.2 h-6.5 w-6.5 mx-0 my-auto inline-block cursor-pointer border-0 bg-transparent text-center align-middle font-bold text-slate-700 shadow-none transition-all dark:text-white"><i class="ni ease-bounce text-2xs group-hover:translate-x-1.25 ni-bold-right transition-all duration-200" aria-hidden="true"></i></button>
-                      </div>
-                    </li>
-                    <li class="relative flex justify-between py-2 pr-4 mb-2 border-0 rounded-b-lg rounded-xl text-inherit">
-                      <div class="flex items-center">
-                        <div class="inline-block w-8 h-8 mr-4 text-center text-black bg-center shadow-sm fill-current stroke-none bg-gradient-to-tl from-zinc-800 to-zinc-700 dark:bg-gradient-to-tl dark:from-slate-750 dark:to-gray-850 rounded-xl">
-                          <i class="text-white ni ni-box-2 relative top-0.75 text-xxs"></i>
-                        </div>
-                        <div class="flex flex-col">
-                          <h6 class="mb-1 text-sm leading-normal text-slate-700 dark:text-white">Error logs</h6>
-                          <span class="text-xs leading-tight dark:text-white/80">1 is active, <span class="font-semibold">40 closed</span></span>
-                        </div>
-                      </div>
-                      <div class="flex">
-                        <button class="group ease-in leading-pro text-xs rounded-3.5xl p-1.2 h-6.5 w-6.5 mx-0 my-auto inline-block cursor-pointer border-0 bg-transparent text-center align-middle font-bold text-slate-700 shadow-none transition-all dark:text-white"><i class="ni ease-bounce text-2xs group-hover:translate-x-1.25 ni-bold-right transition-all duration-200" aria-hidden="true"></i></button>
-                      </div>
-                    </li>
-                    <li class="relative flex justify-between py-2 pr-4 border-0 rounded-b-lg rounded-xl text-inherit">
-                      <div class="flex items-center">
-                        <div class="inline-block w-8 h-8 mr-4 text-center text-black bg-center shadow-sm fill-current stroke-none bg-gradient-to-tl from-zinc-800 to-zinc-700 dark:bg-gradient-to-tl dark:from-slate-750 dark:to-gray-850 rounded-xl">
-                          <i class="text-white ni ni-satisfied relative top-0.75 text-xxs"></i>
-                        </div>
-                        <div class="flex flex-col">
-                          <h6 class="mb-1 text-sm leading-normal text-slate-700 dark:text-white">Happy users</h6>
-                          <span class="text-xs leading-tight dark:text-white/80"><span class="font-semibold">+ 430 </span></span>
-                        </div>
-                      </div>
-                      <div class="flex">
-                        <button class="group ease-in leading-pro text-xs rounded-3.5xl p-1.2 h-6.5 w-6.5 mx-0 my-auto inline-block cursor-pointer border-0 bg-transparent text-center align-middle font-bold text-slate-700 shadow-none transition-all dark:text-white"><i class="ni ease-bounce text-2xs group-hover:translate-x-1.25 ni-bold-right transition-all duration-200" aria-hidden="true"></i></button>
-                      </div>
-                    </li>
+                    @endforeach
                   </ul>
                 </div>
               </div>

@@ -36,7 +36,8 @@ class PagesController extends Controller
         $doctors = Doctor::get();
         $hospitals = Hospital::get();
         $users = User::get();
-        return view('admin.admin-main')->with(['diseases' => $diseases,'doctors' => $doctors,'hospitals' => $hospitals,'users' => $users]);
+        $admins = $users->where('role',1);
+        return view('admin.admin-main')->with(['diseases' => $diseases,'doctors' => $doctors,'hospitals' => $hospitals,'users' => $users, 'admins' =>$admins]);
     }
     
 }
