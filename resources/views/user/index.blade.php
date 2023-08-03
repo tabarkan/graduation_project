@@ -51,6 +51,9 @@
             <div class="img-place custom-img-1">
               <img src="{{asset('one-health/assets/img/bg-doctor.png')}}" alt="">
             </div>
+            <div class="img-place custom-img-1">
+              <img src="{{asset('one-health/assets/img/bg-diseae.png')}}" alt="">
+            </div>
           </div>
           <div class="col-lg-6 py-3 wow text-right fadeInUp">
             <h1>اهلاً بكم في موقع صحتي </h1>
@@ -66,6 +69,7 @@
   <div class="page-section">
     <div class="container">
       <h1 class="text-center mb-5 wow fadeInUp">Our Doctors</h1>
+      <h1 class="text-center mb-5 wow fadeInUp">Our Diseaes</h1>
 
       <div class="owl-carousel wow fadeInUp" id="doctorSlideshow">
         <div class="item">

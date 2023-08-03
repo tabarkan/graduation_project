@@ -50,10 +50,10 @@
               <a class="nav-link" href="index.html">الخدمات</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="about.html">الأمراض</a>
+              <a class="nav-link" href="{{route('user.diseases')}}">الأمراض</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="doctors.html">المستشفيات</a>
+              <a class="nav-link" href="{{route('user.hospitals')}}">المستشفيات</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{{route('user.doctors')}}">الأطباء</a>
