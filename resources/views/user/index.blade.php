@@ -30,7 +30,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-light shadow-sm">
       <div class="container">
-        <a class="navbar-brand" href="#"><span class="text-primary">One</span>-Health</a>
+        <a class="navbar-brand" href="#"><span class="text-primary"> صحتي  </span> </a>
 
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupport" aria-controls="navbarSupport" aria-expanded="false" aria-label="Toggle navigation">
@@ -63,7 +63,7 @@
             </li>
             @else
             <li class="nav-item">
-              <a class="btn btn-primary ml-lg-3" href="#">Login / Register</a>
+              <a class="btn btn-primary ml-lg-3" href="#">تسجيل دخول / انشاء حساب</a>
             </li>
             @endif
             
@@ -93,7 +93,7 @@
               <div class="circle-shape bg-secondary text-white">
                 <span class="mai-chatbubbles-outline"></span>
               </div>
-              <p><span>Chat</span> with a doctors</p>
+              <p><span>البحث</span> عن طبيب</p>
             </div>
           </div>
           <div class="col-md-4 py-3 py-md-0">
@@ -101,7 +101,7 @@
               <div class="circle-shape bg-primary text-white">
                 <span class="mai-shield-checkmark"></span>
               </div>
-              <p><span>One</span>-Health Protection</p>
+              <p><span> البحث </span>عن مستشفى </p>
             </div>
           </div>
           <div class="col-md-4 py-3 py-md-0">
@@ -109,7 +109,7 @@
               <div class="circle-shape bg-accent text-white">
                 <span class="mai-basket"></span>
               </div>
-              <p><span>One</span>-Health Pharmacy</p>
+              <p><span> البحث </span>عن مرض</p>
             </div>
           </div>
         </div>
@@ -120,8 +120,8 @@
       <div class="container">
         <div class="row align-items-center">
           <div class="col-lg-6 py-3 wow fadeInUp">
-            <h1>Welcome to Your Health <br> Center</h1>
-            <p class="text-grey mb-4">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Accusantium aperiam earum ipsa eius, inventore nemo labore eaque porro consequatur ex aspernatur. Explicabo, excepturi accusantium! Placeat voluptates esse ut optio facilis!</p>
+            <h1>اهلاً بكم في موقع صحتي </h1>
+            <p class="text-grey mb-4">موقع يحتوي على كل مايخص الصحه من الاطباء والمستشفيات والامراض والعلاجات وغيرها</p>
             <a href="about.html" class="btn btn-primary">Learn More</a>
           </div>
           <div class="col-lg-6 wow fadeInRight" data-wow-delay="400ms">
