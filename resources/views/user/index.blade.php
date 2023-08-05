@@ -4,9 +4,8 @@
   <div class="page-hero bg-image overlay-dark" style="background-image: url({{asset('one-health/assets/img/bg_image_1.jpg')}});">
     <div class="hero-section">
       <div class="container text-center wow zoomIn">
-        <span class="subhead">Let's make your life happier</span>
-        <h1 class="display-4">Healthy Living</h1>
-        <a href="#" class="btn btn-primary">Let's Consult</a>
+        <h1 class="display-4">صحتك افضل</h1>
+        <a href="#" class="btn btn-primary">ابدأ استشارتك</a>
       </div>
     </div>
   </div>
@@ -68,9 +67,7 @@
 
   <div class="page-section">
     <div class="container">
-      <h1 class="text-center mb-5 wow fadeInUp">Our Doctors</h1>
-      <h1 class="text-center mb-5 wow fadeInUp">Our Diseaes</h1>
-
+      <h1 class="text-center mb-5 wow fadeInUp">اشهر  المستشفيات</h1>
       <div class="owl-carousel wow fadeInUp" id="doctorSlideshow">
         <div class="item">
           <div class="card-doctor">
@@ -82,8 +79,8 @@
               </div>
             </div>
             <div class="body">
-              <p class="text-xl mb-0">Dr. Stein Albert</p>
-              <span class="text-sm text-grey">Cardiology</span>
+              <p class="text-xl mb-0">مستشفى بغداد التعليمي</p>
+              <span class="text-sm text-grey">بغداد</span>
             </div>
           </div>
         </div>
@@ -97,8 +94,8 @@
               </div>
             </div>
             <div class="body">
-              <p class="text-xl mb-0">Dr. Alexa Melvin</p>
-              <span class="text-sm text-grey">Dental</span>
+              <p class="text-xl mb-0">مستشفى الموصل العام</p>
+              <span class="text-sm text-grey"> الموصل</span>
             </div>
           </div>
         </div>
@@ -112,8 +109,8 @@
               </div>
             </div>
             <div class="body">
-              <p class="text-xl mb-0">Dr. Rebecca Steffany</p>
-              <span class="text-sm text-grey">General Health</span>
+              <p class="text-xl mb-0">مستشفى البصرة العام</p>
+              <span class="text-sm text-grey"> البصرة</span>
             </div>
           </div>
         </div>
@@ -127,8 +124,8 @@
               </div>
             </div>
             <div class="body">
-              <p class="text-xl mb-0">Dr. Rebecca Steffany</p>
-              <span class="text-sm text-grey">General Health</span>
+              <p class="text-xl mb-0">مستشفى الحلة التعليمي</p>
+              <span class="text-sm text-grey">بابل</span>
             </div>
           </div>
         </div>
@@ -142,8 +139,173 @@
               </div>
             </div>
             <div class="body">
-              <p class="text-xl mb-0">Dr. Rebecca Steffany</p>
-              <span class="text-sm text-grey">General Health</span>
+              <p class="text-xl mb-0">مستشفى الصدر التعليمي</p>
+              <span class="text-sm text-grey">النجف</span>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="card-doctor">
+            <div class="header">
+              <img src="../assets/img/doctors/doctor_3.jpg" alt="">
+              <div class="meta">
+                <a href="#"><span class="mai-call"></span></a>
+                <a href="#"><span class="mai-logo-whatsapp"></span></a>
+              </div>
+            </div>
+            <div class="body">
+              <p class="text-xl mb-0">مستشفى الكفيل التخصصي</p>
+              <span class="text-sm text-grey">كربلاء</span>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="card-doctor">
+            <div class="header">
+              <img src="../assets/img/doctors/doctor_3.jpg" alt="">
+              <div class="meta">
+                <a href="#"><span class="mai-call"></span></a>
+                <a href="#"><span class="mai-logo-whatsapp"></span></a>
+              </div>
+            </div>
+            <div class="body">
+              <p class="text-xl mb-0">مستشفى الديوانيةالعام </p>
+              <span class="text-sm text-grey">الديوانية</span>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="card-doctor">
+            <div class="header">
+              <img src="../assets/img/doctors/doctor_3.jpg" alt="">
+              <div class="meta">
+                <a href="#"><span class="mai-call"></span></a>
+                <a href="#"><span class="mai-logo-whatsapp"></span></a>
+              </div>
+            </div>
+            <div class="body">
+              <p class="text-xl mb-0">مستشفى البتول العام </p>
+              <span class="text-sm text-grey">ديالى</span>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="card-doctor">
+            <div class="header">
+              <img src="../assets/img/doctors/doctor_3.jpg" alt="">
+              <div class="meta">
+                <a href="#"><span class="mai-call"></span></a>
+                <a href="#"><span class="mai-logo-whatsapp"></span></a>
+              </div>
+            </div>
+            <div class="body">
+              <p class="text-xl mb-0">مستشفى الجراحات التخصصية </p>
+              <span class="text-sm text-grey">صلاح الدين</span>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="card-doctor">
+            <div class="header">
+              <img src="../assets/img/doctors/doctor_3.jpg" alt="">
+              <div class="meta">
+                <a href="#"><span class="mai-call"></span></a>
+                <a href="#"><span class="mai-logo-whatsapp"></span></a>
+              </div>
+            </div>
+            <div class="body">
+              <p class="text-xl mb-0">مستشفى الرازي </p>
+              <span class="text-sm text-grey">الانبار</span>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="card-doctor">
+            <div class="header">
+              <img src="../assets/img/doctors/doctor_3.jpg" alt="">
+              <div class="meta">
+                <a href="#"><span class="mai-call"></span></a>
+                <a href="#"><span class="mai-logo-whatsapp"></span></a>
+              </div>
+            </div>
+            <div class="body">
+              <p class="text-xl mb-0">مستشفى القادسية العام </p>
+              <span class="text-sm text-grey">القادسية</span>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="card-doctor">
+            <div class="header">
+              <img src="../assets/img/doctors/doctor_3.jpg" alt="">
+              <div class="meta">
+                <a href="#"><span class="mai-call"></span></a>
+                <a href="#"><span class="mai-logo-whatsapp"></span></a>
+              </div>
+            </div>
+            <div class="body">
+              <p class="text-xl mb-0">مستشفى الحسين العام </p>
+              <span class="text-sm text-grey">ذي قار</span>
+            </div>
+          </div>
+        </div> 
+        <div class="item">
+          <div class="card-doctor">
+            <div class="header">
+              <img src="../assets/img/doctors/doctor_3.jpg" alt="">
+              <div class="meta">
+                <a href="#"><span class="mai-call"></span></a>
+                <a href="#"><span class="mai-logo-whatsapp"></span></a>
+              </div>
+            </div>
+            <div class="body">
+              <p class="text-xl mb-0">مستشفى اكركوك العام </p>
+              <span class="text-sm text-grey">كركوك</span>
+            </div>
+          </div>
+        </div> 
+        <div class="item">
+          <div class="card-doctor">
+            <div class="header">
+              <img src="../assets/img/doctors/doctor_3.jpg" alt="">
+              <div class="meta">
+                <a href="#"><span class="mai-call"></span></a>
+                <a href="#"><span class="mai-logo-whatsapp"></span></a>
+              </div>
+            </div>
+            <div class="body">
+              <p class="text-xl mb-0">مستشفى المثنى التخصصي</p>
+              <span class="text-sm text-grey">المثنى</span>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="card-doctor">
+            <div class="header">
+              <img src="../assets/img/doctors/doctor_3.jpg" alt="">
+              <div class="meta">
+                <a href="#"><span class="mai-call"></span></a>
+                <a href="#"><span class="mai-logo-whatsapp"></span></a>
+              </div>
+            </div>
+            <div class="body">
+              <p class="text-xl mb-0">مستشفى الزهراوي الجراحي</p>
+              <span class="text-sm text-grey">ميسان</span>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="card-doctor">
+            <div class="header">
+              <img src="../assets/img/doctors/doctor_3.jpg" alt="">
+              <div class="meta">
+                <a href="#"><span class="mai-call"></span></a>
+                <a href="#"><span class="mai-logo-whatsapp"></span></a>
+              </div>
+            </div>
+            <div class="body">
+              <p class="text-xl mb-0">مستشفى الهلال الأحمر العراقي</p>
+              <span class="text-sm text-grey">واسط</span>
             </div>
           </div>
         </div>

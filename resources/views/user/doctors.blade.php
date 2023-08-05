@@ -17,11 +17,11 @@ __________________________<br>
       <div class="container text-center wow fadeInUp">
         <nav aria-label="Breadcrumb">
           <ol class="breadcrumb breadcrumb-dark bg-transparent justify-content-center py-0 mb-2">
-            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Doctors</li>
+            <li class="breadcrumb-item active" aria-current="page">الأطباء</li>
+            <li class="breadcrumb-item"><a href="index.html">الصفحة الرئيسية</a></li>
           </ol>
         </nav>
-        <h1 class="font-weight-normal">Our Doctors</h1>
+        <h1 class="font-weight-normal">الأطباء</h1>
       </div> <!-- .container -->
     </div> <!-- .banner-section -->
   </div> <!-- .page-banner -->
