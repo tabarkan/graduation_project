@@ -22,6 +22,8 @@ use App\Http\Controllers\PagesController;
 Route::get('/doctors', [PagesController::class, 'doctorsPage'])->name('user.doctors');
 Route::get('/hospitals', [PagesController::class, 'hospitalsPage'])->name('user.hospitals');
 Route::get('/diseases', [PagesController::class, 'diseasesPage'])->name('user.diseases');
+Route::get('/suggest', [PagesController::class, 'suggestsPage'])->name('user.suggest');
+Route::get('/doctor/show', [PagesController::class, 'doctorShowPage'])->name('user.show.doctor');
 
 
 Route::get('/admin', [PagesController::class, 'admin'])->name('admin.main');

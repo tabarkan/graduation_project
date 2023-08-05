@@ -29,6 +29,16 @@ class PagesController extends Controller
         return view('user.diseases')->with(['diseases' => $diseases]);
 
     }
+    public function suggestsPage(){
+
+        return view('user.suggest');
+
+    }
+    public function doctorShowPage(){
+
+        return view('user.doctor-show');
+
+    }
 
     public function admin(){
 

@@ -22,6 +22,8 @@
   <link rel="stylesheet" href="{{asset('one-health/assets/vendor/animate/animate.css')}}">
 
   <link rel="stylesheet" href="{{asset('one-health/assets/css/theme.css')}}">
+
+
 </head>
 <body>
 
@@ -37,7 +39,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-light shadow-sm">
       <div class="container">
-        <a class="navbar-brand" href="#"><span class="text-primary"> صحتي  </span> </a>
+        <a class="navbar-brand" href="#"><span class="text-primary"> صحتي </span> </a>
 
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupport" aria-controls="navbarSupport" aria-expanded="false" aria-label="Toggle navigation">
@@ -47,7 +49,7 @@
         <div class="collapse navbar-collapse" id="navbarSupport">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link" href="index.html">الخدمات</a>
+              <a class="nav-link" href="{{route('user.suggest')}}">اقترح علينا</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{{route('user.diseases')}}">الأمراض</a>
