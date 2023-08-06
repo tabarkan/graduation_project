@@ -243,36 +243,41 @@
 </style>
 
 
-
 <div id="main-content" class="blog-page  m-4">
     <div class="container">
         <div class="row clearfix">
             <div class="col-lg-8 col-md-12 left-box">
                 <div class="card single_post">
-                    <div class="body">
+                    <div class="body text-right">
                         <div class="img-post">
-                            <img class="d-block img-fluid" src="https://www.bootdey.com/image/800x280/87CEFA/000000" alt="First slide">
+                            <img class="d-block img-fluid" src="{{asset('doctorsImages/'.$doctor->image_path)}}" alt="First slide">
                         </div>
-                        <h3><a href="blog-details.html">All photographs are accurate</a></h3>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                        <h3>Dr. {{$doctor->first_name}} {{$doctor->last_name}}</h3>
+                        <p>{{$doctor->specialization}} : التخصص</p>
+                        <p>{{$doctor->email}} : ايميل التواصل</p>
+                        <p>{{$doctor->phone}} : رقم الهاتف</p>
+                        <p>{{$doctor->address}} : العنوان</p>
                     </div>                        
                 </div>
                 <div class="card">
                         <div class="header">
-                            <h2>Comments 3</h2>
+                            <h5>Comments</h5>
                         </div>
                         <div class="body">
                             <ul class="comment-reply list-unstyled">
-                                <li class="row clearfix">
-                                    <div class="icon-box col-md-2 col-4"><img class="img-fluid img-thumbnail" src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Awesome Image"></div>
-                                    <div class="text-box col-md-10 col-8 p-l-0 p-r0">
-                                        <h5 class="m-b-0">Gigi Hadid </h5>
-                                        <p>Why are there so many tutorials on how to decouple WordPress? how fast and easy it is to get it running (and keep it running!) and its massive ecosystem. </p>
-                                        <ul class="list-inline">
-                                            <li><a href="javascript:void(0);">Mar 09 2018</a></li>
-                                        </ul>
-                                    </div>
-                                </li>
+                                @foreach ($comments as $comment)
+                                    <li class="row clearfix">
+                                        <div class="icon-box col-md-2 col-4"><img class="img-fluid img-thumbnail" src="{{asset('images/'.$comment->user->image_path)}}" alt="Awesome Image"></div>
+                                        <div class="text-box col-md-10 col-8 p-l-0 p-r0">
+                                            <h5 class="m-b-0">{{$comment->user->first_name}} {{$comment->user->last_name}}</h5>
+                                            <p>{{$comment->comment}}</p>
+                                            <ul class="list-inline">
+                                                <li><a href="javascript:void(0);">{{$comment->created_at}}</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                @endforeach
+                               
                        
                             </ul>                                        
                         </div>
@@ -280,12 +285,11 @@
                     <div class="card">
                         <div class="body">
                             <div class="comment-form">
-                                <form class="row clearfix">
+                                <form class="row clearfix" method="POST" action="{{route('doctor.comment' , $doctor->id)}}">
                                     <div class="col-sm-12">
-                                        <div class="form-group">
-                                            <textarea rows="4" class="form-control no-resize" placeholder="Please type what you want..."></textarea>
-                                        </div>
-                                        <button type="submit" class="btn btn-block btn-primary">SUBMIT</button>
+                                            @csrf
+                                            <textarea name="comment" rows="4" class="form-control no-resize" placeholder="Please type what you want..."></textarea>
+                                            <button type="submit" class="btn btn-block btn-primary">Add Comment</button>
                                     </div>                                
                                 </form>
                             </div>

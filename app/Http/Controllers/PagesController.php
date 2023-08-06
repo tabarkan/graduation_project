@@ -34,11 +34,7 @@ class PagesController extends Controller
         return view('user.suggest');
 
     }
-    public function doctorShowPage(){
-
-        return view('user.doctor-show');
-
-    }
+  
     public function addDoctor(){
 
         return view('user.add-doctor');

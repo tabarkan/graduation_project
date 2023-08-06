@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Auth;
 use App\Models\Doctor;
+use App\Models\DoctorComment;
 
 class DoctorsController extends Controller
 {
@@ -90,6 +91,13 @@ class DoctorsController extends Controller
         return redirect()->back();
     }
 
+    public function show($id){
+        $doctor = Doctor::where('id', $id)->get()->first();
+        $comments = DoctorComment::where('doctor_id', $id)->get();
+        
+        return view('user.doctor-show')->with(['doctor' => $doctor , 'comments' => $comments]);
+    }
+
     public function delete($id){
         if(Auth::user()->role == 1){
             Doctor::where('id', $id)->delete();
@@ -100,6 +108,16 @@ class DoctorsController extends Controller
 
         $doctor = Doctor::where('id',$id)->update([
             'accepted' => 1,           
+        ]);
+        return redirect()->back();
+    }
+
+
+    public function commentAdd(Request $request, $id){
+        $comment = DoctorComment::create([
+            'user_id' => Auth::user()->id,  
+            'doctor_id' => $id,
+            'comment' => $request->comment,
         ]);
         return redirect()->back();
     }
