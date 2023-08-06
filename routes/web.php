@@ -23,7 +23,6 @@ Route::get('/doctors', [PagesController::class, 'doctorsPage'])->name('user.doct
 Route::get('/hospitals', [PagesController::class, 'hospitalsPage'])->name('user.hospitals');
 Route::get('/diseases', [PagesController::class, 'diseasesPage'])->name('user.diseases');
 Route::get('/suggest', [PagesController::class, 'suggestsPage'])->name('user.suggest');
-Route::get('/doctor/show', [PagesController::class, 'doctorShowPage'])->name('user.show.doctor');
 
 
 Route::get('/admin', [PagesController::class, 'admin'])->name('admin.main');
@@ -34,7 +33,9 @@ Route::get('/admin/diseases', [AdminController::class, 'diseases'])->name('disea
 Route::get('/admin/add/doctor', [DoctorsController::class, 'index']);
 Route::get('/user/add/doctor', [PagesController::class, 'addDoctor'])->name('user.add.doctor');
 Route::get('/admin/edit/doctor/{id}', [DoctorsController::class, 'editPage'])->name('edit.doctor.form');
+Route::get('/doctor/show/{id}', [DoctorsController::class, 'show'])->name('user.show.doctor');
 Route::post('/admin/add/doctor', [DoctorsController::class, 'create'])->name('add.doctor');
+Route::post('/doctor/add/comment/{id}', [DoctorsController::class, 'commentAdd'])->name('doctor.comment');
 Route::post('/admin/accept/doctor/{id}', [DoctorsController::class, 'accept'])->name('accept.doctor');
 Route::put('/admin/edit/doctor/{id}', [DoctorsController::class, 'edit'])->name('edit.doctor');
 Route::delete('/admin/delete/doctor/{id}', [DoctorsController::class, 'delete'])->name('delete.doctor');

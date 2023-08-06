@@ -19,4 +19,9 @@ class Doctor extends Model
         'image_path',
         'accepted',
     ];
+
+    public function comments(): HasMany
+    {
+        return $this->hasMany(DoctorComment::class);
+    }
 }

@@ -10,6 +10,7 @@ __________________________<br>
 
 @endforeach --}}
 
+
 @include('user.layouts')
 @yield('header')
   <div class="page-banner overlay-dark bg-image" style="background-image: url(../assets/img/bg_image_1.jpg);">
@@ -38,7 +39,7 @@ __________________________<br>
                     <div class="header">
                         <img src="{{asset('doctorsImages/'.$doctor->image_path)}}" alt="">
                         <div class="meta">
-                        <a href="#"><span class="mai-call"></span></a>
+                        <a href="{{route('user.show.doctor', $doctor->id)}}"><span class="mai-call"></span></a>
                         <a href="#"><span class="mai-logo-whatsapp"></span></a>
                         </div>
                     </div>
@@ -48,6 +49,7 @@ __________________________<br>
                     </div>
                     </div>
                 </div>
+              </a>
             @endforeach
             
           </div>
