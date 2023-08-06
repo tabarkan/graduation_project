@@ -39,6 +39,11 @@ class PagesController extends Controller
         return view('user.doctor-show');
 
     }
+    public function addDoctor(){
+
+        return view('user.add-doctor');
+
+    }
 
     public function admin(){
 

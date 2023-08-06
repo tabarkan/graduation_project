@@ -17,6 +17,12 @@ class DoctorsController extends Controller
             return view('dashboard');
         }
     }
+    public function add(){
+        if(Auth::user()->role == 0){
+            return view('user.add-doctor');
+        }
+      
+    }
 
 
     public function create(Request $request){

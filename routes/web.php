@@ -32,6 +32,7 @@ Route::get('/admin/hospitals', [AdminController::class, 'hospitals'])->name('hos
 Route::get('/admin/diseases', [AdminController::class, 'diseases'])->name('diseases.list');
 
 Route::get('/admin/add/doctor', [DoctorsController::class, 'index']);
+Route::get('/user/add/doctor', [PagesController::class, 'addDoctor'])->name('user.add.doctor');
 Route::get('/admin/edit/doctor/{id}', [DoctorsController::class, 'editPage'])->name('edit.doctor.form');
 Route::post('/admin/add/doctor', [DoctorsController::class, 'create'])->name('add.doctor');
 Route::post('/admin/accept/doctor/{id}', [DoctorsController::class, 'accept'])->name('accept.doctor');
