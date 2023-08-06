@@ -17,7 +17,7 @@ class HospitalsController extends Controller
             return view('dashboard');
         }
     }
-
+    
 
     public function create(Request $request){
         if(Auth::user()->role == 1){

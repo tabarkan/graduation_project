@@ -17,7 +17,7 @@ class DiseasesController extends Controller
         }
     }
 
-
+    
     public function create(Request $request){
         if(Auth::user()->role == 1){
             
