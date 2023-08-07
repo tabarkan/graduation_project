@@ -40,6 +40,16 @@ class PagesController extends Controller
         return view('user.add-doctor');
 
     }
+    public function addHospital(){
+
+        return view('user.add-hospital');
+
+    }
+    public function addDisease(){
+
+        return view('user.add-disease');
+
+    }
 
     public function admin(){
 
