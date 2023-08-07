@@ -38,6 +38,7 @@ __________________________<br>
                     <div class="header">
                         <img src="{{asset('hospitalsImages/'.$hospital->image_path)}}" alt="">
                         <div class="meta">
+                          <a href="{{route('user.show.hospital', $hospital->id)}}"><span class="mai-call"></span></a>
                         <a href="#"><span class="mai-call"></span></a>
                         <a href="#"><span class="mai-logo-whatsapp"></span></a>
                         </div>
@@ -48,6 +49,7 @@ __________________________<br>
                     </div>
                     </div>
                 </div>
+              </a>
             @endforeach
             
           </div>

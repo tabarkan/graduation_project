@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Auth;
 use App\Models\Hospital;
+use App\Models\HospitalComment;
 
 class HospitalsController extends Controller
 {
@@ -72,6 +73,12 @@ class HospitalsController extends Controller
     ]);
        return redirect()->back();
     }
+    public function show($id){
+        $hospital = Hospital::where('id', $id)->get()->first();
+        $comments = HospitalComment::where('hospital_id', $id)->get();
+        
+        return view('user.hospital-show')->with(['hospital' => $hospital , 'comments' => $comments]);
+    }
     public function delete($id){
         if(Auth::user()->role == 1){
             hospital::where('id', $id)->delete();
@@ -82,6 +89,15 @@ class HospitalsController extends Controller
 
         $hospital = Hospital::where('id',$id)->update([
             'accepted' => 1,           
+        ]);
+        return redirect()->back();
+    }
+    
+    public function commentAdd(Request $request, $id){
+        $comment = HospitalComment::create([
+            'user_id' => Auth::user()->id,  
+            'hospital_id' => $id,
+            'comment' => $request->comment,
         ]);
         return redirect()->back();
     }

@@ -17,4 +17,8 @@ class Hospital extends Model
         'image_path',
         'accepted',
     ];
+    public function comments(): HasMany
+    {
+        return $this->hasMany(HospitalComment::class);
+    }
 }
