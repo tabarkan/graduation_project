@@ -252,16 +252,16 @@
                         <div class="img-post">
                             <img class="d-block img-fluid" src="{{asset('hospitalsImages/'.$hospital->image_path)}}" alt="First slide">
                         </div>
-                        <h3> {{$hospital->name}}</h3>
-                        <p>{{$hospital->website}} : الموقع</p>
-                        <p>{{$hospital->contact_email}} : ايميل التواصل</p>
-                        <p>{{$hospital->contact_number}} : رقم الهاتف</p>
+                        <h3> {{$hospital->name}} : الاسم</h3>
                         <p>{{$hospital->address}} : العنوان</p>
+                        <p>{{$hospital->contact_number}} : رقم الهاتف</p>
+                        <p>{{$hospital->contact_email}} : ايميل التواصل</p>
+                        <p>{{$hospital->website}} :  الموقع الالكتروني</p>
                     </div>                        
                 </div>
                 <div class="card">
                         <div class="header">
-                            <h5>Comments</h5>
+                            <h5>التعليقات</h5>
                         </div>
                         <div class="body">
                             <ul class="comment-reply list-unstyled">

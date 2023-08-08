@@ -34,11 +34,10 @@
               </div>
             </div>
             <div class="container">
-              <div class="flex flex-wrap -mx-3 -mt-48 md:-mt-56 lg:-mt-48">
+              <div class="d-flex align-content-center flex-wrap margin-left-3 margin-top-48 shadow-lg p-3 mb-5 bg-body-tertiary rounded">
                 <div class="w-full max-w-full px-3 mx-auto mt-0 md:flex-0 shrink-0 md:w-7/12 lg:w-5/12 xl:w-4/12">
                   <div class="relative z-0 flex flex-col min-w-0 break-words bg-white border-0 shadow-xl rounded-2xl bg-clip-border">
                     <div class="p-6 mb-0 text-center bg-white border-b-0 rounded-t-2xl">
-                      <h5>Add Hospital</h5>
                     </div>
                     <div class="flex flex-wrap px-3 -mx-3 sm:px-6 xl:px-12">
                       <div class="w-3/12 max-w-full px-1 ml-auto flex-0">
@@ -51,34 +50,37 @@
      
                       </div>
                     </div>
-                    <div class="flex-auto p-6">
+                    <div class="flex-auto p-6 text-center" style="background-color: #B8E7E1">
                       <form role="form text-left" method="POST" action="{{route('user.add.hospital')}}" enctype="multipart/form-data">
                         @csrf
                         <div class="mb-4">
-                          <input type="text" name="name" class="placeholder:text-gray-500 text-sm focus:shadow-primary-outline leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-blue-500 focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow" placeholder="Name" />
+                          <h5 >اضافة مستشفى </h5>
                         </div>
                         <div class="mb-4">
-                          <input type="email" name="contact_email" class="placeholder:text-gray-500 text-sm focus:shadow-primary-outline leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-blue-500 focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow" placeholder="contact_email"/>
+                          <input type="text" name="name" class="placeholder:text-gray-500 text-sm focus:shadow-primary-outline leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-blue-500 focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow" placeholder="الاسم" />
                         </div>
                         <div class="mb-4">
-                          <input type="text" name="contact_number" class="placeholder:text-gray-500 text-sm focus:shadow-primary-outline leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-blue-500 focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow" placeholder="contact_number"/>
+                          <input type="email" name="contact_email" class="placeholder:text-gray-500 text-sm focus:shadow-primary-outline leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-blue-500 focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow" placeholder="الايميل"/>
                         </div>
                         <div class="mb-4">
-                          <input type="text" name="website" class="placeholder:text-gray-500 text-sm focus:shadow-primary-outline leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-blue-500 focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow" placeholder="website" aria-label="Phone"/>
+                          <input type="text" name="contact_number" class="placeholder:text-gray-500 text-sm focus:shadow-primary-outline leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-blue-500 focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow" placeholder="رقم الهاتف"/>
                         </div>
                         <div class="mb-4">
-                          <input type="text" name="address" class="placeholder:text-gray-500 text-sm focus:shadow-primary-outline leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-blue-500 focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow" placeholder="Address" aria-label="Address"/>
+                          <input type="text" name="website" class="placeholder:text-gray-500 text-sm focus:shadow-primary-outline leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-blue-500 focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow" placeholder="الموقع الالكتروني" aria-label="Phone"/>
+                        </div>
+                        <div class="mb-4">
+                          <input type="text" name="address" class="placeholder:text-gray-500 text-sm focus:shadow-primary-outline leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-blue-500 focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow" placeholder="العنوان" aria-label="Address"/>
                         </div>
                         
                         <div>
-                          <x-input-label for="image" :value="__('image')" />
+                          <x-input-label for="image" :value="__('اضافة صورة')" />
                           <x-text-input id="image" class="block mt-1 w-full" type="file" name="image" :value="old('image')" required autofocus autocomplete="image" />
                           <x-input-error :messages="$errors->get('image')" class="mt-2" />
                       </div>
                       
                         <div class="text-center">
-                          <button type="submit" class="btn-close" aria-label="Close">ADD</button>
-                          <button type="submit"class="inline-block w-full px-5 py-2.5 mt-6 mb-2 font-bold text-center text-white align-middle transition-all bg-transparent border-0 rounded-lg cursor-pointer active:opacity-85 hover:-translate-y-px hover:shadow-xs leading-normal text-sm ease-in tracking-tight-rem shadow-md bg-150 bg-x-25 bg-gradient-to-tl from-zinc-800 to-zinc-700 hover:border-slate-700 hover:bg-slate-700 hover:text-white">Add</button>
+                          <button type="submit" class="btn btn-primary" aria-label="Close">اضافة</button>
+                          {{-- <button type="submit"class="inline-block w-full px-5 py-2.5 mt-6 mb-2 font-bold text-center text-white align-middle transition-all bg-transparent border-0 rounded-lg cursor-pointer active:opacity-85 hover:-translate-y-px hover:shadow-xs leading-normal text-sm ease-in tracking-tight-rem shadow-md bg-150 bg-x-25 bg-gradient-to-tl from-zinc-800 to-zinc-700 hover:border-slate-700 hover:bg-slate-700 hover:text-white">Add</button> --}}
                         </div>
                       </form>
                     </div>
