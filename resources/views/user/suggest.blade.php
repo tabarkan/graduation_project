@@ -47,7 +47,7 @@
             </li>
         <li style="padding: 35px 35px 35px 35px; font-size:20px;font-weight:600" class="list-group-item d-flex justify-content-between align-items-center py-4">
     <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24"><g transform="translate(24 0) scale(-1 1)"><path fill="currentColor" d="M12 22c5.5 0 10-4.5 10-10S17.5 2 12 2S2 6.5 2 12s4.5 10 10 10M11 7h2v2h-2V7m3 10h-4v-2h1v-2h-1v-2h3v4h1v2Z"/></g></svg>  
-      <p>ابلاغنا عن مشكلة </p>
+      <a href="">ابلاغنا عن مشكلة</a>
             </li>
 </ul>
 </div>
