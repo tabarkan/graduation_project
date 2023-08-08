@@ -31,20 +31,22 @@ Route::get('/admin/hospitals', [AdminController::class, 'hospitals'])->name('hos
 Route::get('/admin/diseases', [AdminController::class, 'diseases'])->name('diseases.list');
 
 Route::get('/admin/add/doctor', [DoctorsController::class, 'index']);
-Route::get('/user/add/doctor', [PagesController::class, 'addDoctor'])->name('user.add.doctor');
 Route::get('/admin/edit/doctor/{id}', [DoctorsController::class, 'editPage'])->name('edit.doctor.form');
+Route::get('/user/add/doctor', [pagesController::class, 'addDoctor'])->name('user.add.doctor');
 Route::get('/doctor/show/{id}', [DoctorsController::class, 'show'])->name('user.show.doctor');
 Route::post('/admin/add/doctor', [DoctorsController::class, 'create'])->name('add.doctor');
+Route::post('/user/add/doctor', [DoctorsController::class, 'create'])->name('user.add.doctor');
 Route::post('/doctor/add/comment/{id}', [DoctorsController::class, 'commentAdd'])->name('doctor.comment');
 Route::post('/admin/accept/doctor/{id}', [DoctorsController::class, 'accept'])->name('accept.doctor');
 Route::put('/admin/edit/doctor/{id}', [DoctorsController::class, 'edit'])->name('edit.doctor');
 Route::delete('/admin/delete/doctor/{id}', [DoctorsController::class, 'delete'])->name('delete.doctor');
 
 Route::get('/admin/add/hospital',[HospitalsController::class, 'index']);
-Route::get('/user/add/hospital', [PagesController::class, 'addHospital'])->name('user.add.hospital');
 Route::get('/admin/edit/hospital/{id}', [HospitalsController::class, 'editPage'])->name('edit.hospital.form');
+Route::get('/user/add/hospital', [pagesController::class, 'addHospital'])->name('user.add.hospital');
 Route::get('/hospital/show/{id}', [HospitalsController::class, 'show'])->name('user.show.hospital');
 Route::post('/admin/add/hospital', [HospitalsController::class, 'create'])->name('add.hospital');
+Route::post('/user/add/hospital', [HospitalsController::class, 'create'])->name('user.add.hospital');
 Route::post('/hospital/add/comment/{id}', [HospitalsController::class, 'commentAdd'])->name('hospital.comment');
 Route::post('/admin/accept/hospital/{id}', [HospitalsController::class, 'accept'])->name('accept.hospital');
 Route::put('/admin/edit/hospital/{id}', [HospitalsController::class, 'edit'])->name('edit.hospital');
@@ -53,9 +55,10 @@ Route::delete('/admin/delete/hospital/{id}', [HospitalsController::class, 'delet
 
 
 Route::get('/admin/add/diseases',[DiseasesController::class, 'index']);
-Route::get('/user/add/disease', [PagesController::class, 'addDisease'])->name('user.add.disease');
 Route::get('/admin/edit/diseases/{id}', [DiseasesController::class, 'editPage'])->name('edit.diseases.form');
+Route::get('/user/add/disease', [pagesController::class, 'addDisease'])->name('user.add.disease');
 Route::post('/admin/add/diseases', [DiseasesController::class, 'create'])->name('add.diseases');
+Route::post('/user/add/disease', [DiseasesController::class, 'create'])->name('user.add.disease');
 Route::post('/admin/accept/disease/{id}', [DiseasesController::class, 'accept'])->name('accept.disease');
 Route::put('/admin/edit/diseases/{id}', [DiseasesController::class, 'edit'])->name('edit.diseases');
 Route::delete('/admin/delete/diseases/{id}', [DiseasesController::class, 'delete'])->name('delete.disease');

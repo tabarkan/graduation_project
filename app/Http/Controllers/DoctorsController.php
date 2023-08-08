@@ -22,10 +22,10 @@ class DoctorsController extends Controller
 
 
     public function create(Request $request){
-        if(Auth::user()->role == 1){
-
         $imageName = time().'.'.$request->image->extension();
         $request->image->move(public_path('doctorsImages'), $imageName);
+        if(Auth::user()->role == null){
+
             $doctor = Doctor::create([
                 'first_name' => $request->first_name,
                 'last_name' => $request->last_name,
@@ -38,6 +38,20 @@ class DoctorsController extends Controller
                 'accepted' => 0,
                 
             ]);
+        }
+        else{
+           
+                $doctor = Doctor::create([
+                    'first_name' => $request->first_name,
+                    'last_name' => $request->last_name,
+                    'email' => $request->email,
+                    'phone' => $request->phone,
+                    'specialization' => $request->specialization,
+                    'address' => $request->address,
+                    'hospital' => $request->hospital,
+                    'image_path' => $imageName,
+                    'accepted' => 1,
+                ]);
         }
         return redirect()->back();
     }

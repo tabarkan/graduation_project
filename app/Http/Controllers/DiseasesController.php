@@ -19,7 +19,7 @@ class DiseasesController extends Controller
 
     
     public function create(Request $request){
-        if(Auth::user()->role == 1){
+        if(Auth::user()->role == null){
             
             $diseases = Disease::create([
                 'disease_name' => $request->disease_name,
@@ -28,6 +28,18 @@ class DiseasesController extends Controller
                 'protection' => $request->protection,
                 'symptoms' => $request->symptoms,
                 'accepted' => 0,
+
+                
+            ]);
+        }
+        else{
+            $diseases = Disease::create([
+                'disease_name' => $request->disease_name,
+                'disease_category' => $request->disease_category,
+                'treatment' => $request->treatment,
+                'protection' => $request->protection,
+                'symptoms' => $request->symptoms,
+                'accepted' => 1,
 
                 
             ]);
