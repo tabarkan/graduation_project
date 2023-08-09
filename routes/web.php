@@ -7,6 +7,7 @@ use App\Http\Controllers\HospitalsController;
 use App\Http\Controllers\DiseasesController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\NotificationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,13 +30,16 @@ Route::get('/admin', [PagesController::class, 'admin'])->name('admin.main');
 Route::get('/admin/doctors', [AdminController::class, 'doctors'])->name('doctors.list');
 Route::get('/admin/hospitals', [AdminController::class, 'hospitals'])->name('hospitals.list');
 Route::get('/admin/diseases', [AdminController::class, 'diseases'])->name('diseases.list');
+Route::get('/admin/notifications', [AdminController::class, 'notifications'])->name('notifications.list');
 
 Route::get('/admin/add/doctor', [DoctorsController::class, 'index']);
 Route::get('/admin/edit/doctor/{id}', [DoctorsController::class, 'editPage'])->name('edit.doctor.form');
 Route::get('/user/add/doctor', [pagesController::class, 'addDoctor'])->name('user.add.doctor');
 Route::get('/doctor/show/{id}', [DoctorsController::class, 'show'])->name('user.show.doctor');
+Route::get('/issue/show/{id}', [NotificationController::class, 'show'])->name('issue.show');
 Route::post('/admin/add/doctor', [DoctorsController::class, 'create'])->name('add.doctor');
 Route::post('/user/add/doctor', [DoctorsController::class, 'create'])->name('user.add.doctor');
+Route::post('/user/add/notification', [NotificationController::class, 'create'])->name('user.add.notification');
 Route::post('/doctor/add/comment/{id}', [DoctorsController::class, 'commentAdd'])->name('doctor.comment');
 Route::post('/admin/accept/doctor/{id}', [DoctorsController::class, 'accept'])->name('accept.doctor');
 Route::put('/admin/edit/doctor/{id}', [DoctorsController::class, 'edit'])->name('edit.doctor');

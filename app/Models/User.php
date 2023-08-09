@@ -31,7 +31,10 @@ class User extends Authenticatable
         return $this->hasMany(DoctorComment::class);
     }
     public function hospitalComment(){
-        return $this->hasMany(hospitalComment::class);
+        return $this->hasMany(HospitalComment::class);
+    }
+    public function notifications(){
+        return $this->hasMany(Notification::class);
     }
    
 

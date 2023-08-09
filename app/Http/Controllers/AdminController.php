@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Doctor;
 use App\Models\Hospital;
 use App\Models\Disease;
+use App\Models\Notification;
 
 class AdminController extends Controller
 {
@@ -26,6 +27,13 @@ class AdminController extends Controller
         $diseases = Disease::get();
 
         return view('admin.diseases')->with(['diseases' => $diseases]);
+    }
+   
+    public function notifications(){
+
+        $notifications = Notification::get();
+
+        return view('admin.notifications')->with(['notifications' => $notifications]);
     }
    
 
