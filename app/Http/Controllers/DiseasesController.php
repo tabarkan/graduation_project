@@ -44,6 +44,7 @@ class DiseasesController extends Controller
                 
             ]);
         }
+        return redirect()->back();
     }
         public function editPage($id){
         $diseases = Disease::where('id',$id)->get()->first();
@@ -71,6 +72,13 @@ class DiseasesController extends Controller
         return redirect()->back();
     }
     public function accept($id){
+        if(Auth::user()->role == 1){
+            return view('admin.add-diseases');
+        }
+        else{
+            return view('dashboard');
+        }
+    
 
         $disease =  Disease::where('id',$id)->update([
             'accepted' => 1,           

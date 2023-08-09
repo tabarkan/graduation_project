@@ -49,10 +49,13 @@ class HospitalsController extends Controller
         return redirect()->back();
     }
     public function editPage($id){
+        if(Auth::user()->role == 1){
         $hospital = Hospital::where('id',$id)->get()->first();
         return view('admin.edit-hospitals')->with('hospital', $hospital);
     }
+}
     public function edit(Request $request ,$id){
+        if(Auth::user()->role == 1){
        
         if($request->image){
             $imageName = time().'.'.$request->image->extension();
@@ -84,12 +87,15 @@ class HospitalsController extends Controller
     ]);
        return redirect()->back();
     }
+}
     public function show($id){
+        if(Auth::user()->role == 1){
         $hospital = Hospital::where('id', $id)->get()->first();
         $comments = HospitalComment::where('hospital_id', $id)->get();
         
         return view('user.hospital-show')->with(['hospital' => $hospital , 'comments' => $comments]);
     }
+}
     public function delete($id){
         if(Auth::user()->role == 1){
             hospital::where('id', $id)->delete();
@@ -97,14 +103,17 @@ class HospitalsController extends Controller
         return redirect()->back();
     }
     public function accept($id){
+        if(Auth::user()->role == 1){
 
         $hospital = Hospital::where('id',$id)->update([
             'accepted' => 1,           
         ]);
         return redirect()->back();
     }
+}
     
     public function commentAdd(Request $request, $id){
+        if(Auth::user()->role == 1){
         $comment = HospitalComment::create([
             'user_id' => Auth::user()->id,  
             'hospital_id' => $id,
@@ -112,4 +121,5 @@ class HospitalsController extends Controller
         ]);
         return redirect()->back();
     }
+}
 }

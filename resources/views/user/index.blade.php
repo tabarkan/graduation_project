@@ -313,7 +313,7 @@
     </div>
   </div>
 
-  <div class="page-section bg-light">
+  {{-- <div class="page-section bg-light">
     <div class="container">
       <h1 class="text-center wow fadeInUp">Latest News</h1>
       <div class="row mt-5">
@@ -396,7 +396,7 @@
 
       </div>
     </div>
-  </div> <!-- .page-section -->
+  </div> <!-- .page-section --> --}}
 
   <div class="page-section">
     <div class="container">
@@ -432,7 +432,7 @@
           </div>
         </div>
         <div class="col-lg-8 wow fadeInRight">
-          <h1 class="font-weight-normal mb-3">Get easy access of all features using One Health Application</h1>
+          <h1 class="font-weight-normal mb-3">اختر ماتحتاج من القائمة ادنى</h1>
           <a href="#"><img src="../assets/img/google_play.svg" alt=""></a>
           <a href="#" class="ml-2"><img src="../assets/img/app_store.svg" alt=""></a>
         </div>

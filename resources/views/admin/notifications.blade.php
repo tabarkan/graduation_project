@@ -33,9 +33,9 @@
               <li class="text-sm leading-normal">
                 <a class="text-white opacity-50" href="javascript:;">Admin</a>
               </li>
-              <li class="text-sm pl-2 capitalize leading-normal text-white before:float-left before:pr-2 before:text-white before:content-['/']" aria-current="page">Doctors</li>
+              <li class="text-sm pl-2 capitalize leading-normal text-white before:float-left before:pr-2 before:text-white before:content-['/']" aria-current="page">notifications</li>
             </ol>
-            <h6 class="mb-0 font-bold text-white capitalize">Doctors List</h6>
+            <h6 class="mb-0 font-bold text-white capitalize">notification List</h6>
           </nav>
 
           <div class="flex items-center mt-2 grow sm:mt-0 sm:mr-6 md:mr-0 lg:flex lg:basis-auto">
@@ -151,7 +151,7 @@
           <div class="flex-none  w-full max-w-full px-3">
             <div class="relative flex flex-col min-w-0 mb-6 break-words bg-white h-[80vh] border-0 border-transparent border-solid shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border">
               <div class="p-6 pb-0 mb-0 border-b-0 border-b-solid rounded-t-2xl border-b-transparent">
-                <h6 class="dark:text-white">All Doctors</h6>
+                <h6 class="dark:text-white">All Notifications</h6>
               </div>
               <div class="flex-auto px-0 pt-0 pb-2">
                 <div class="p-0 overflow-x-auto">

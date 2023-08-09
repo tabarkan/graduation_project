@@ -101,12 +101,13 @@ class DoctorsController extends Controller
     }
 
     public function show($id){
+        if(Auth::user()->role == 1){
         $doctor = Doctor::where('id', $id)->get()->first();
         $comments = DoctorComment::where('doctor_id', $id)->get();
         
         return view('user.doctor-show')->with(['doctor' => $doctor , 'comments' => $comments]);
     }
-
+    }
     public function delete($id){
         if(Auth::user()->role == 1){
             Doctor::where('id', $id)->delete();
@@ -114,15 +115,16 @@ class DoctorsController extends Controller
         return redirect()->back();
     }
     public function accept($id){
-
+        if(Auth::user()->role == 1){
         $doctor = Doctor::where('id',$id)->update([
             'accepted' => 1,           
         ]);
         return redirect()->back();
     }
 
-
+    }
     public function commentAdd(Request $request, $id){
+        if(Auth::user()->role == 1){
         $comment = DoctorComment::create([
             'user_id' => Auth::user()->id,  
             'doctor_id' => $id,
@@ -130,4 +132,5 @@ class DoctorsController extends Controller
         ]);
         return redirect()->back();
     }
+}
 }
