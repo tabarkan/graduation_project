@@ -261,7 +261,7 @@
                 </div>
                 <div class="card">
                         <div class="header">
-                            <h5>Comments</h5>
+                            <h5>التعليقات</h5>
                         </div>
                         <div class="body">
                             <ul class="comment-reply list-unstyled">
@@ -289,7 +289,7 @@
                                     <div class="col-sm-12">
                                             @csrf
                                             <textarea name="comment" rows="4" class="form-control no-resize" placeholder="Please type what you want..."></textarea>
-                                            <button type="submit" class="btn btn-block btn-primary">Add Comment</button>
+                                            <button type="submit" class="btn btn-block btn-primary">اضافة تعليق</button>
                                     </div>                                
                                 </form>
                             </div>
