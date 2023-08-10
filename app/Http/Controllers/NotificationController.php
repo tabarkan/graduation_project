@@ -30,4 +30,10 @@ class NotificationController extends Controller
         return view('admin.issue-show')->with('notification',$notification );
     }
 }
+public function delete($id){
+    if(Auth::user()->role == 1){
+        Notification::where('id', $id)->delete();
+    }
+    return redirect()->back();
+}
 }

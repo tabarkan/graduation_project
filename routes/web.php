@@ -36,10 +36,8 @@ Route::get('/admin/add/doctor', [DoctorsController::class, 'index']);
 Route::get('/admin/edit/doctor/{id}', [DoctorsController::class, 'editPage'])->name('edit.doctor.form');
 Route::get('/user/add/doctor', [pagesController::class, 'addDoctor'])->name('user.add.doctor');
 Route::get('/doctor/show/{id}', [DoctorsController::class, 'show'])->name('user.show.doctor');
-Route::get('/issue/show/{id}', [NotificationController::class, 'show'])->name('issue.show');
 Route::post('/admin/add/doctor', [DoctorsController::class, 'create'])->name('add.doctor');
 Route::post('/user/add/doctor', [DoctorsController::class, 'create'])->name('user.add.doctor');
-Route::post('/user/add/notification', [NotificationController::class, 'create'])->name('user.add.notification');
 Route::post('/doctor/add/comment/{id}', [DoctorsController::class, 'commentAdd'])->name('doctor.comment');
 Route::post('/admin/accept/doctor/{id}', [DoctorsController::class, 'accept'])->name('accept.doctor');
 Route::put('/admin/edit/doctor/{id}', [DoctorsController::class, 'edit'])->name('edit.doctor');
@@ -66,6 +64,11 @@ Route::post('/user/add/disease', [DiseasesController::class, 'create'])->name('u
 Route::post('/admin/accept/disease/{id}', [DiseasesController::class, 'accept'])->name('accept.disease');
 Route::put('/admin/edit/diseases/{id}', [DiseasesController::class, 'edit'])->name('edit.diseases');
 Route::delete('/admin/delete/diseases/{id}', [DiseasesController::class, 'delete'])->name('delete.disease');
+
+Route::get('/issue/show/{id}', [NotificationController::class, 'show'])->name('issue.show');
+Route::post('/user/add/notification', [NotificationController::class, 'create'])->name('user.add.notification');
+Route::delete('/user/delete/notification/{id}', [notificationController::class, 'delete'])->name('delete.notification');
+
 
 
 Route::get('/', function () {

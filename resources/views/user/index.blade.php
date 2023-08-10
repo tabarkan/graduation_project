@@ -417,7 +417,7 @@
               <option value="الأطباء">الأطباء</option>
               <option value="الأمراض">الأمراض</option>
               <option value="المستشفيات">المستشفيات</option>
-              <option value="اقسام اخرى<">اقسام اخرى</option>
+              <option value="اقسام اخرى">اقسام اخرى</option>
             </select>
           </div>
           <div class="col-12 py-2 wow fadeInUp" data-wow-delay="300ms">
