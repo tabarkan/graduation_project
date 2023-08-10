@@ -67,11 +67,23 @@
                </form>
             </li>
             @else
-            <li class="nav-item">
-              <a class="btn btn-primary ml-lg-3" href="#">تسجيل دخول / انشاء حساب</a>
+            <form method="POST" action="{{ route('login') }}">
+              @csrf
+              <li class="nav-item">
+                {{-- <a href="{{ route('login') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log in</a>
+                <a href="{{ route('register') }}" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Register</a> --}}
+
+  
+                <a href="{{ route('login') }}" class="btn btn-primary ml-lg-3" >تسجيل دخول</a>
             </li>
-            @endif
-            
+          </form>
+          <form method="POST" action="{{ route('register') }}">
+            @csrf
+            <li class="nav-item">
+            <a  href="{{ route('register') }}" class="btn btn-primary ml-lg-3" href="#">انشاء حساب</a>
+          </li>
+        </form>
+           @endif 
           </ul>
         </div> <!-- .navbar-collapse -->
       </div> <!-- .container -->
@@ -79,13 +91,6 @@
   </header>
 
 @endsection
-
-
-
-
-
-
-
 
 
 @section('footer')
