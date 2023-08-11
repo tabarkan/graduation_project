@@ -253,10 +253,13 @@
                             <img class="d-block img-fluid" src="{{asset('hospitalsImages/'.$hospital->image_path)}}" alt="First slide">
                         </div>
                         <h3> {{$hospital->name}} : الاسم</h3>
-                        <p>{{$hospital->address}} : العنوان</p>
                         <p>{{$hospital->contact_number}} : رقم الهاتف</p>
                         <p>{{$hospital->contact_email}} : ايميل التواصل</p>
                         <p>{{$hospital->website}} :  الموقع الالكتروني</p>
+                        <p>{{$hospital->governorate}} :  المحافظة</p>
+                        <p>{{$hospital->region}} :  المنطقة</p>
+                        <p>{{$hospital->street}} :  الشارع</p>
+
                     </div>                        
                 </div>
                 <div class="card">

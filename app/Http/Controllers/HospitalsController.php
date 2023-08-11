@@ -29,7 +29,9 @@ class HospitalsController extends Controller
                 'name' => $request->name,
                 'contact_email' => $request->contact_email,
                 'contact_number' => $request->contact_number,
-                'website' => $request->website,
+                'governorate' => $request->governorate,
+                'region' => $request->region,
+                'street' => $request->street,
                 'address' => $request->address,
                 'image_path' => $imageName,
                 'accepted' => 0,
@@ -41,7 +43,9 @@ class HospitalsController extends Controller
                 'contact_email' => $request->contact_email,
                 'contact_number' => $request->contact_number,
                 'website' => $request->website,
-                'address' => $request->address,
+                'governorate' => $request->governorate,
+                'region' => $request->region,
+                'street' => $request->street,
                 'image_path' => $imageName,
                 'accepted' => 1,
             ]);
@@ -121,5 +125,12 @@ class HospitalsController extends Controller
         ]);
         return redirect()->back();
     }
+}
+public function governorateFilter(Request $request){
+
+    $governorate = $request->governorate;
+    $filterdHospitals = Hospital::where('governorate', $governorate)->get();
+    return view('user.hospitals')->with('hospitals', $filterdHospitals);
+
 }
 }

@@ -17,7 +17,9 @@ return new class extends Migration
             $table->string('contact_email')->unique();        
             $table->string('contact_number');
             $table->string('website');
-            $table->string('address');
+            $table->string('governorate');
+            $table->string('region');
+            $table->string('street')->nullable();
             $table->string('image_path');
             $table->boolean('accepted')->defualt(0);
             $table->rememberToken();

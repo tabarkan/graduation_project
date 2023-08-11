@@ -159,6 +159,17 @@
                     <p class="m-6">{{$notification->issue}}</p>
                 </div>
               </div>
+              <td class="p-2 align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
+                <form class="h-full p-10" action="{{route('delete.notification', $notification->id)}}" method="POST">
+                  @method('DELETE')
+                  @csrf
+                  <button type="submit" class="bg-red hover:bg-red-100 text-red-800 font-semibold py-1 px-10 border border-red-400 text-blue-400 rounded shadow">
+                    حذف
+                  </button>
+                  {{-- <button type="submit" class="text-xs font-semibold leading-tight text-red-400">حذف</button> --}}
+                </form>
+                {{-- <a href="{{route('issue.show', $notification->id)}}" class="text-xs font-semibold leading-tight dark:text-white dark:opacity-80 text-slate-400"> عرض المشكلة </a> --}}
+              </td>
             </div>
           </div>
         </div>

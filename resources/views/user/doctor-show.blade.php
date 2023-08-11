@@ -257,6 +257,9 @@
                         <p>{{$doctor->email}} : ايميل التواصل</p>
                         <p>{{$doctor->phone}} : رقم الهاتف</p>
                         <p>{{$doctor->address}} : العنوان</p>
+                        <p>{{$doctor->hospital}} : ينتمي الى مستشفى</p>
+                        
+
                     </div>                        
                 </div>
                 <div class="card">

@@ -265,7 +265,7 @@
               </div>
             </div>
             <div class="body">
-              <p class="text-xl mb-0">مستشفى اكركوك العام </p>
+              <p class="text-xl mb-0">مستشفى كركوك العام </p>
               <span class="text-sm text-grey">كركوك</span>
             </div>
           </div>

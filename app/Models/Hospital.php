@@ -13,7 +13,9 @@ class Hospital extends Model
         'contact_email',
         'contact_number',
         'website',
-        'address',
+        'governorate',
+        'region',
+        'street',
         'image_path',
         'accepted',
     ];

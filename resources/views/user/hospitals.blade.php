@@ -23,11 +23,41 @@ __________________________<br>
         </nav>
         <h1 class="font-weight-normal">المستشفيات</h1>
       </div> <!-- .container -->
+      
     </div> <!-- .banner-section -->
   </div> <!-- .page-banner -->
 
+
   <div class="page-section bg-light">
     <div class="container">
+      <div class="p-4 bg-white" >
+        <form action="{{route('hospital.governorate')}}" method="POST">
+          @csrf
+        <select class="form-select" onchange="this.form.submit()" name="governorate">
+            <option>اختر المحافظة</option>
+            <option value="بغداد">بغداد</option>
+            <option value="نينوى">نينوى</option>
+            <option value="البصرة">البصرة</option>
+            <option value="بابل">بابل</option>
+            <option value="النجف">النجف</option>
+            <option value="كربلاء">كربلاء</option>
+            <option value="ديالى">ديالى</option>
+            <option value="صلاح الدين">صلاح الدين</option>
+            <option value="الانبار">الانبار</option>
+            <option value="القادسية">القادسية</option>
+            <option value="ذي قار">ذي قار</option>
+            <option value="كركوك">كركوك</option>
+            <option value="المثنى">المثنى</option>
+            <option value="ميسان">ميسان</option>
+            <option value="واسط">واسط</option>
+            <option value="اربيل">اربيل</option>
+            <option value="حلبجة">حلبجة</option>
+            <option value="دهوك">دهوك</option>
+            <option value="السليمانية">السليمانية</option>
+            
+        </select>
+      </form>
+      </div>
       <div class="row justify-content-center">
         <div class="col-lg-10">
 
@@ -45,7 +75,7 @@ __________________________<br>
                     </div>
                     <div class="body">
                         <p class="text-lg fw-bold mb-0">{{$hospital->name}} </p>
-                        <span class="text-sm text-grey">{{$hospital->website}}</span>
+                        <span class="text-sm text-grey">{{$hospital->governorate}}</span>
                     </div>
                     </div>
                 </div>

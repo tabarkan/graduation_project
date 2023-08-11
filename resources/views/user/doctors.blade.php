@@ -33,13 +33,26 @@ __________________________<br>
         <form action="{{route('doctor.specialization')}}" method="POST">
           @csrf
         <select class="form-select" onchange="this.form.submit()" name="specialization">
-            <option>اختر التخصص</option>
-            <option value="Internist">Internist</option>
-            <option value="Eyes">Eyes</option>
-            <option value="Otorhinolaryngologist">Otorhinolaryngologist</option>
+          <option value="">اختر الاختصاص</option>
+          <option value="جلدية">جلدية</option>
+          <option value="نفسية">نفسية</option>
+          <option value="جراحة">جراحة</option>
+          <option value=" باطني"> باطني</option>
+          <option value=" نووي">نووي </option>
+          <option value="عظام">عظام</option>
+          <option value="المخ والاعصاب">المخ والاعصاب</option>
+          <option value="اسنان">اسنان</option>
+          <option value="اطفال">اطفال</option>
+          <option value="انف واذن وحنجرة">انف واذن وحنجرة</option>
+          <option value="الجهاز البولي">الجهاز البولي</option>
+          <option value="عيون">عيون</option>
+          <option value="نساء">نساء</option>
+          <option value="قلب">قلب</option>
+          <option value="اخرى">اخرى</option>
         </select>
       </form>
       </div>
+      
       <div class="row justify-content-center">
         <div class="col-lg-10">
 

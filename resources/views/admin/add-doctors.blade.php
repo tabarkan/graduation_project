@@ -65,21 +65,31 @@
                         <div class="mb-4">
                           <div class="mb-4">
                             <select name="specialization" id="specialization">
-                              <option value="Heart">Heart</option>
-                              <option value="Eyes">Eyes</option>
-                              <option value="Internist">Internist</option>
-                              <option value="Orthopedic">Orthopedic</option>
-                              <option value="Otorhinolaryngologist">Otorhinolaryngologist</option>
-                              <option value="neurologist">neurologist</option>
+                              <option value="">اختر الاختصاص</option>
+                              <option value="جلدية">جلدية</option>
+                              <option value="نفسية">نفسية</option>
+                              <option value="جراحة">جراحة</option>
+                              <option value=" باطني"> باطني</option>
+                              <option value=" نووي">نووي </option>
+                              <option value="عظام">عظام</option>
+                              <option value="المخ والاعصاب">المخ والاعصاب</option>
+                              <option value="اسنان">اسنان</option>
+                              <option value="اطفال">اطفال</option>
+                              <option value="انف واذن وحنجرة">انف واذن وحنجرة</option>
+                              <option value="الجهاز البولي">الجهاز البولي</option>
+                              <option value="عيون">عيون</option>
+                              <option value="نساء">نساء</option>
+                              <option value="قلب">قلب</option>
+                              <option value="اخرى">اخرى</option>
                             </select>
                           </div>
                         </div>
                         <div class="mb-4">
-                          <input type="text" name="address"  class="placeholder:text-gray-500 text-sm focus:shadow-primary-outline leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-blue-500 focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow" placeholder="Address" aria-label="Address" aria-describedby="password-addon" />
+                          <input type="text" name="العنوان"  class="placeholder:text-gray-500 text-sm focus:shadow-primary-outline leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-blue-500 focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow" placeholder="العنوان" aria-label="العنوان" aria-describedby="password-addon" />
                         </div>
                     
                         <div class="mb-4">
-                          <input type="text" name="hospital"  class="placeholder:text-gray-500 text-sm focus:shadow-primary-outline leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-blue-500 focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow" placeholder="Hospital" aria-label="Hospital" aria-describedby="password-addon" />
+                          <input type="text" name="ينتمي الى مستشفى"  class="placeholder:text-gray-500 text-sm focus:shadow-primary-outline leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-blue-500 focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow" placeholder="ينتمي الى مستشفى" aria-label="ينتمي الى مستشفى" aria-describedby="password-addon" />
                         </div>
                     
                         <div>
