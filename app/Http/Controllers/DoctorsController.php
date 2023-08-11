@@ -132,5 +132,13 @@ class DoctorsController extends Controller
         ]);
         return redirect()->back();
     }
-}
+    }
+
+    public function specializationFilter(Request $request){
+
+        $specialization = $request->specialization;
+        $filterdDoctors = Doctor::where('specialization', $specialization)->get();
+        return view('user.doctors')->with('doctors', $filterdDoctors);
+    
+    }
 }

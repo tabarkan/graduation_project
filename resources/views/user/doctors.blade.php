@@ -29,6 +29,17 @@ __________________________<br>
 
   <div class="page-section bg-light">
     <div class="container">
+      <div class="p-4 bg-white" >
+        <form action="{{route('doctor.specialization')}}" method="POST">
+          @csrf
+        <select class="form-select" onchange="this.form.submit()" name="specialization">
+            <option>اختر التخصص</option>
+            <option value="Internist">Internist</option>
+            <option value="Eyes">Eyes</option>
+            <option value="Otorhinolaryngologist">Otorhinolaryngologist</option>
+        </select>
+      </form>
+      </div>
       <div class="row justify-content-center">
         <div class="col-lg-10">
 
