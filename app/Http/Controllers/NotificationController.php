@@ -31,9 +31,13 @@ class NotificationController extends Controller
     }
 }
 public function delete($id){
+
     if(Auth::user()->role == 1){
         Notification::where('id', $id)->delete();
     }
-    return redirect()->back();
+    
+    $notifications = Notification::get();
+
+    return view('admin.notifications')->with(['notifications' => $notifications]);
 }
 }

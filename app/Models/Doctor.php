@@ -24,4 +24,8 @@ class Doctor extends Model
     {
         return $this->hasMany(DoctorComment::class);
     }
+    public function likes(): HasMany
+    {
+        return $this->hasMany(DoctorLike::class);
+    }
 }

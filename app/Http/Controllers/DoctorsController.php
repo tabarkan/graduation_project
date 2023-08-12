@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Auth;
 use App\Models\Doctor;
 use App\Models\DoctorComment;
+use App\Models\DoctorLike;
 
 class DoctorsController extends Controller
 {
@@ -102,10 +103,23 @@ class DoctorsController extends Controller
 
     public function show($id){
         if(Auth::user()->role == 1){
+            $likes = DoctorLike::where('doctor_id', $id)->get('user_id');
+            $isLiked = false;
+            foreach($likes as $like){
+                if($like->user_id == Auth::user()->id){
+                    $isLiked = true;
+                    break;
+                }
+            }
         $doctor = Doctor::where('id', $id)->get()->first();
         $comments = DoctorComment::where('doctor_id', $id)->get();
         
-        return view('user.doctor-show')->with(['doctor' => $doctor , 'comments' => $comments]);
+        return view('user.doctor-show')->with([
+            'doctor' => $doctor,
+            'comments' => $comments,
+            'isLiked' => $isLiked,
+            'likes' => $likes,
+        ]);
     }
     }
     public function delete($id){
@@ -122,6 +136,29 @@ class DoctorsController extends Controller
         return redirect()->back();
     }
 
+    }
+    public function like($id){
+        $likes = DoctorLike::where('doctor_id', $id)->get('user_id');
+        $isLiked = false;
+        foreach($likes as $like){
+            if($like->user_id == Auth::user()->id){
+                $isLiked = true;
+                break;
+            }
+        }
+
+        if($isLiked == false){
+            $like = DoctorLike::create([
+                'doctor_id' => $id,
+                'user_id' => Auth::user()->id,
+            ]);
+        }
+            return redirect('/doctor/show/'.$id);
+    }
+    public function likeDelete($id){
+        $like = DoctorLike::where(['doctor_id' => $id, 'user_id' => Auth::user()->id])->delete();
+    
+        return redirect('/doctor/show/'.$id);
     }
     public function commentAdd(Request $request, $id){
         if(Auth::user()->role == 1){

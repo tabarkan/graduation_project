@@ -40,9 +40,11 @@ Route::post('/doctor/specialization/filterd', [DoctorsController::class, 'specia
 Route::post('/admin/add/doctor', [DoctorsController::class, 'create'])->name('add.doctor');
 Route::post('/user/add/doctor', [DoctorsController::class, 'create'])->name('user.add.doctor');
 Route::post('/doctor/add/comment/{id}', [DoctorsController::class, 'commentAdd'])->name('doctor.comment');
+Route::post('/doctor/like/{id}', [DoctorsController::class, 'like'])->name('doctor.like');
 Route::post('/admin/accept/doctor/{id}', [DoctorsController::class, 'accept'])->name('accept.doctor');
 Route::put('/admin/edit/doctor/{id}', [DoctorsController::class, 'edit'])->name('edit.doctor');
 Route::delete('/admin/delete/doctor/{id}', [DoctorsController::class, 'delete'])->name('delete.doctor');
+Route::delete('/like/delete/doctor/{id}', [DoctorsController::class, 'LikeDelete'])->name('doctor.like.delete');
 
 Route::get('/admin/add/hospital',[HospitalsController::class, 'index']);
 Route::get('/admin/edit/hospital/{id}', [HospitalsController::class, 'editPage'])->name('edit.hospital.form');
@@ -70,7 +72,7 @@ Route::delete('/admin/delete/diseases/{id}', [DiseasesController::class, 'delete
 
 Route::get('/issue/show/{id}', [NotificationController::class, 'show'])->name('issue.show');
 Route::post('/user/add/notification', [NotificationController::class, 'create'])->name('user.add.notification');
-Route::delete('/user/delete/notification/{id}', [notificationController::class, 'delete'])->name('delete.notification');
+Route::delete('/admin/delete/notification/{id}', [notificationController::class, 'delete'])->name('delete.notification');
 
 
 

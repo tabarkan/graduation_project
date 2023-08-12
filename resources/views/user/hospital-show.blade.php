@@ -256,9 +256,8 @@
                         <p>{{$hospital->contact_number}} : رقم الهاتف</p>
                         <p>{{$hospital->contact_email}} : ايميل التواصل</p>
                         <p>{{$hospital->website}} :  الموقع الالكتروني</p>
-                        <p>{{$hospital->governorate}} :  المحافظة</p>
-                        <p>{{$hospital->region}} :  المنطقة</p>
-                        <p>{{$hospital->street}} :  الشارع</p>
+                        <p> العنوان : {{$hospital->governorate}} / {{$hospital->region}} / {{$hospital->street}}</p>
+
 
                     </div>                        
                 </div>
