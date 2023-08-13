@@ -178,4 +178,18 @@ class DoctorsController extends Controller
         return view('user.doctors')->with('doctors', $filterdDoctors);
     
     }
+    public function search(Request $request){
+
+        $fullName = $request->search;
+        $array = explode(" ",$fullName);
+        $first_name = $array[0];
+        $last_name  = $array[count($array)-1];
+        // dd($first_name);
+        // if($first_name == $last_name){
+            
+        // }
+        $result = Doctor::where('first_name', $first_name,)->orWhere('last_name', $last_name)->get();
+        return view('user.doctors')->with('doctors', $result);
+    
+    }
 }

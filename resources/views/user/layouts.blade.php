@@ -22,8 +22,8 @@
   <link rel="stylesheet" href="{{asset('one-health/assets/vendor/animate/animate.css')}}">
 
   <link rel="stylesheet" href="{{asset('one-health/assets/css/theme.css')}}">
-
-
+  
+  <style></style>
 </head>
 <body>
 
@@ -45,19 +45,20 @@
         <div class="collapse navbar-collapse" id="navbarSupport">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link" href="{{route('user.suggest')}}">اقترح علينا</a>
+              <a class="nav-link {{ Route::currentRouteName() == 'user.suggest' ? 'active' : ''}}" href="{{route('user.suggest')}}">اقترح علينا</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{route('user.diseases')}}">الأمراض</a>
+
+              <a href="{{route('user.diseases')}} "class="nav-link  {{ Route::currentRouteName() == 'user.diseases' ? 'active' : ''}} ">الأمراض</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{route('user.hospitals')}}">المستشفيات</a>
+              <a class="nav-link {{ Route::currentRouteName() == 'user.hospitals' ? 'active' : ''}}" href="{{route('user.hospitals')}}">المستشفيات</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{route('user.doctors')}}">الأطباء</a>
+              <a class="nav-link {{ Route::currentRouteName() == 'user.doctors' ? 'active' : ''}}" href="{{route('user.doctors')}}">الأطباء</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="{{route('dashboard')}}">الصفحة الرئيسية</a>
+              <a class="nav-link {{ Route::currentRouteName() == 'dashboard' ? 'active' : ''}}" href="{{route('dashboard')}}">الصفحة الرئيسية</a>
             </li>
             @if(Auth::user())
             <li class="nav-item">
