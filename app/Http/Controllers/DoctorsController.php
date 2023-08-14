@@ -37,6 +37,7 @@ class DoctorsController extends Controller
                 'hospital' => $request->hospital,
                 'image_path' => $imageName,
                 'accepted' => 0,
+                'likes' => 0,
                 
             ]);
         }
@@ -52,6 +53,7 @@ class DoctorsController extends Controller
                     'hospital' => $request->hospital,
                     'image_path' => $imageName,
                     'accepted' => 1,
+                    'likes' => 0,
                 ]);
         }
         return redirect()->back();

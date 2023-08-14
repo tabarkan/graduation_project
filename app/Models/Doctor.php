@@ -13,6 +13,7 @@ class Doctor extends Model
         'last_name',
         'email',
         'phone',
+        'likes',
         'specialization',
         'address',
         'hospital',

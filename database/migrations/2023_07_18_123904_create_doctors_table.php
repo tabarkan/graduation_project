@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('address');
             $table->string('hospital');
             $table->string('image_path');
-            $table->integer('likes');
+            $table->integer('likes')->default(0);
             $table->boolean('accepted')->defualt(0);
             $table->rememberToken();
             $table->timestamps();
