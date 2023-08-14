@@ -67,6 +67,11 @@
                   <button type="submit" class="btn btn-primary ml-lg-3">تسجيل خروج</button>
                </form>
             </li>
+            <li class="nav-item">
+              @if (Auth::user()->role == 1)
+                <a href="{{route('admin.main')}}" class="btn btn-primary ml-lg-3">Admin Dashboard</a>
+              @endif
+            </li>
             @else
             <form method="POST" action="{{ route('login') }}">
               @csrf

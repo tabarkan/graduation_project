@@ -59,7 +59,7 @@ Route::post('/hospital/like/{id}', [HospitalsController::class, 'like'])->name('
 Route::post('/admin/accept/hospital/{id}', [HospitalsController::class, 'accept'])->name('accept.hospital');
 Route::put('/admin/edit/hospital/{id}', [HospitalsController::class, 'edit'])->name('edit.hospital');
 Route::delete('/admin/delete/hospital/{id}', [HospitalsController::class, 'delete'])->name('delete.hospital');
-Route::delete('/like/delete/hospital/{id}', [HospitalsController::class, 'LikeDelete'])->name('hospital.like.delete');
+Route::delete('/like/delete/hospital/{id}', [HospitalsController::class, 'likeDelete'])->name('hospital.like.delete');
 Route::post('/doctor/governorate/filterd', [HospitalsController::class, 'governorateFilter'])->name('hospital.governorate');
 
 

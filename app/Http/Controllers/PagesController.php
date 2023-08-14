@@ -8,6 +8,8 @@ use App\Models\Hospital;
 use App\Models\Disease;
 use App\Models\User;
 use Auth;
+use Carbon\Carbon;
+
 class PagesController extends Controller
 {
     public function doctorsPage(){

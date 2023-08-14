@@ -1,11 +1,11 @@
 
 <!DOCTYPE html>
+
 <html lang="en">
     @include('admin.layout')
     @yield('header')
 
   <body class="m-0 font-sans text-base antialiased font-normal dark:bg-slate-900 leading-default bg-gray-50 text-slate-500">
-    <div class="absolute w-full bg-blue-500 dark:hidden min-h-75"></div>
 
       @yield('sidebar')
 
@@ -302,7 +302,7 @@
                         <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap dark:border-white/40">
                           <div class="text-center">
                             <p class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-60">time:</p>
-                            <h6 class="mb-0 text-sm leading-normal dark:text-white">{{$doctor->created_at->format('Y-m-d')}}</h6>
+                            <h6 class="mb-0 text-sm leading-normal dark:text-white">{{\Carbon\Carbon::parse($doctor->created_at)->ago()}}</h6>
                           </div>
                         </td>
                        
@@ -342,7 +342,7 @@
                         <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap dark:border-white/40">
                           <div class="text-center">
                             <p class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-60">time:</p>
-                            <h6 class="mb-0 text-sm leading-normal dark:text-white">{{$hospital->created_at->format('Y-m-d')}}</h6>
+                            <h6 class="mb-0 text-sm leading-normal dark:text-white">{{\Carbon\Carbon::parse($hospital->created_at)->ago()}}</h6>
                           </div>
                         </td>
                        
@@ -382,7 +382,8 @@
                         <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap dark:border-white/40">
                           <div class="text-center">
                             <p class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-60">time:</p>
-                            <h6 class="mb-0 text-sm leading-normal dark:text-white">{{$disease->created_at->format('Y-m-d')}}</h6>
+                            <h6 class="mb-0 text-sm leading-normal dark:text-white">{{\Carbon\Carbon::parse($disease->created_at)->ago()}}
+                            </h6>
                           </div>
                         </td>
                        

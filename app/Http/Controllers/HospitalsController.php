@@ -36,6 +36,7 @@ class HospitalsController extends Controller
                 'address' => $request->address,
                 'image_path' => $imageName,
                 'accepted' => 0,
+                'likes' => 0,
             ]);
         }
         else{
@@ -49,6 +50,7 @@ class HospitalsController extends Controller
                 'street' => $request->street,
                 'image_path' => $imageName,
                 'accepted' => 1,
+                'likes' => 0,
             ]);
         }
         return redirect()->back();
@@ -95,7 +97,7 @@ class HospitalsController extends Controller
 }
     public function show($id){
         if(Auth::user()->role == 1){
-            $likes = HospitalLike::where('hospital', $id)->get('user_id');
+            $likes = HospitalLike::where('hospital_id', $id)->get('user_id');
             $isLiked = false;
             foreach($likes as $like){
                 if($like->user_id == Auth::user()->id){
@@ -142,13 +144,13 @@ public function like($id){
 
     if($isLiked == false){
         $like = HospitalLike::create([
-            'doctor_id' => $id,
+            'hospital_id' => $id,
             'user_id' => Auth::user()->id,
         ]);
     }
         return redirect('/hospital/show/'.$id);
 }
-public function likeHospital($id){
+public function likeDelete($id){
     $like = HospitalLike::where(['hospital_id' => $id, 'user_id' => Auth::user()->id])->delete();
 
     return redirect('/hospital/show/'.$id);
@@ -173,13 +175,9 @@ public function governorateFilter(Request $request){
 }
 public function search(Request $request){
 
-    $fullName = $request->search;
-    $array = explode(" ",$fullName);
-    $first_name = $array[0];
-    $last_name  = $array[count($array)-1];
-  
-    $result = Hospital::where('first_name', $first_name,)->orWhere('last_name', $last_name)->get();
+    $name = $request->search;
+    $result = Hospital::where('name', $name,)->get();
     return view('user.hospitals')->with('hospitals', $result);
 
-}
+    }
 }

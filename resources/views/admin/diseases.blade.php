@@ -19,7 +19,6 @@
     @yield('header')
 
   <body class="m-0 font-sans text-base antialiased font-normal dark:bg-slate-900 leading-default bg-gray-50 text-slate-500">
-    <div class="absolute w-full bg-blue-500 dark:hidden min-h-75"></div>
 
     <aside class="fixed inset-y-0 flex-wrap items-center justify-between block w-full p-0 overflow-y-auto antialiased transition-transform duration-200 translate-x-full bg-white border-0 shadow-none dark:shadow-none dark:bg-slate-850 xl:mr-4 max-w-64 ease-nav-brand z-990 rounded-2xl xl:right-0 xl:translate-x-0" aria-expanded="false">
       @yield('sidebar')
