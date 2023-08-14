@@ -23,4 +23,8 @@ class Hospital extends Model
     {
         return $this->hasMany(HospitalComment::class);
     }
+    public function likes(): HasMany
+    {
+        return $this->hasMany(HospitalLike::class);
+    }
 }

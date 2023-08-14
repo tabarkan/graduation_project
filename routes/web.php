@@ -51,12 +51,15 @@ Route::get('/admin/add/hospital',[HospitalsController::class, 'index']);
 Route::get('/admin/edit/hospital/{id}', [HospitalsController::class, 'editPage'])->name('edit.hospital.form');
 Route::get('/user/add/hospital', [pagesController::class, 'addHospital'])->name('user.add.hospital');
 Route::get('/hospital/show/{id}', [HospitalsController::class, 'show'])->name('user.show.hospital');
+Route::post('/hospital/search', [HospitalsController::class, 'search'])->name('hospital.search');
 Route::post('/admin/add/hospital', [HospitalsController::class, 'create'])->name('add.hospital');
 Route::post('/user/add/hospital', [HospitalsController::class, 'create'])->name('user.add.hospital');
 Route::post('/hospital/add/comment/{id}', [HospitalsController::class, 'commentAdd'])->name('hospital.comment');
+Route::post('/hospital/like/{id}', [HospitalsController::class, 'like'])->name('hospital.like');
 Route::post('/admin/accept/hospital/{id}', [HospitalsController::class, 'accept'])->name('accept.hospital');
 Route::put('/admin/edit/hospital/{id}', [HospitalsController::class, 'edit'])->name('edit.hospital');
 Route::delete('/admin/delete/hospital/{id}', [HospitalsController::class, 'delete'])->name('delete.hospital');
+Route::delete('/like/delete/hospital/{id}', [HospitalsController::class, 'LikeDelete'])->name('hospital.like.delete');
 Route::post('/doctor/governorate/filterd', [HospitalsController::class, 'governorateFilter'])->name('hospital.governorate');
 
 

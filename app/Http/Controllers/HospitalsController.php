@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Auth;
 use App\Models\Hospital;
 use App\Models\HospitalComment;
+use App\Models\HospitalLike;
 
 class HospitalsController extends Controller
 {
@@ -94,10 +95,24 @@ class HospitalsController extends Controller
 }
     public function show($id){
         if(Auth::user()->role == 1){
+            $likes = HospitalLike::where('hospital', $id)->get('user_id');
+            $isLiked = false;
+            foreach($likes as $like){
+                if($like->user_id == Auth::user()->id){
+                    $isLiked = true;
+                    break;
+                }
+            }
         $hospital = Hospital::where('id', $id)->get()->first();
         $comments = HospitalComment::where('hospital_id', $id)->get();
         
-        return view('user.hospital-show')->with(['hospital' => $hospital , 'comments' => $comments]);
+        // return view('user.hospital-show')->with(['hospital' => $hospital , 'comments' => $comments]);
+        return view('user.hospital-show')->with([
+            'hospital' => $hospital,
+            'comments' => $comments,
+            'isLiked' => $isLiked,
+            'likes' => $likes,
+        ]);
     }
 }
     public function delete($id){
@@ -115,6 +130,29 @@ class HospitalsController extends Controller
         return redirect()->back();
     }
 }
+public function like($id){
+    $likes = HospitalLike::where('hospital_id', $id)->get('user_id');
+    $isLiked = false;
+    foreach($likes as $like){
+        if($like->user_id == Auth::user()->id){
+            $isLiked = true;
+            break;
+        }
+    }
+
+    if($isLiked == false){
+        $like = HospitalLike::create([
+            'doctor_id' => $id,
+            'user_id' => Auth::user()->id,
+        ]);
+    }
+        return redirect('/hospital/show/'.$id);
+}
+public function likeHospital($id){
+    $like = HospitalLike::where(['hospital_id' => $id, 'user_id' => Auth::user()->id])->delete();
+
+    return redirect('/hospital/show/'.$id);
+}
     
     public function commentAdd(Request $request, $id){
         if(Auth::user()->role == 1){
@@ -131,6 +169,17 @@ public function governorateFilter(Request $request){
     $governorate = $request->governorate;
     $filterdHospitals = Hospital::where('governorate', $governorate)->get();
     return view('user.hospitals')->with('hospitals', $filterdHospitals);
+
+}
+public function search(Request $request){
+
+    $fullName = $request->search;
+    $array = explode(" ",$fullName);
+    $first_name = $array[0];
+    $last_name  = $array[count($array)-1];
+  
+    $result = Hospital::where('first_name', $first_name,)->orWhere('last_name', $last_name)->get();
+    return view('user.hospitals')->with('hospitals', $result);
 
 }
 }

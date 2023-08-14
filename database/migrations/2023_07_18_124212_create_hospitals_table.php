@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('region');
             $table->string('street')->nullable();
             $table->string('image_path');
+            $table->integer('likes');
             $table->boolean('accepted')->defualt(0);
             $table->rememberToken();
             $table->timestamps();
