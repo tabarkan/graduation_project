@@ -69,6 +69,7 @@ Route::get('/admin/add/diseases',[DiseasesController::class, 'index']);
 Route::get('/admin/edit/diseases/{id}', [DiseasesController::class, 'editPage'])->name('edit.diseases.form');
 Route::get('/user/add/disease', [pagesController::class, 'addDisease'])->name('user.add.disease');
 Route::post('/admin/add/diseases', [DiseasesController::class, 'create'])->name('add.diseases');
+Route::post('/disease/search', [DiseasesController::class, 'search'])->name('disease.search');
 Route::post('/user/add/disease', [DiseasesController::class, 'create'])->name('user.add.disease');
 Route::post('/admin/accept/disease/{id}', [DiseasesController::class, 'accept'])->name('accept.disease');
 Route::put('/admin/edit/diseases/{id}', [DiseasesController::class, 'edit'])->name('edit.diseases');

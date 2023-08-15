@@ -85,5 +85,17 @@ class DiseasesController extends Controller
         ]);
         return redirect()->back();
     }
+    public function search(Request $request){
+
+        $name = $request->search;
+    
+        // dd($first_name);
+        // if($first_name == $last_name){
+            
+        // }
+        $result = Disease::where('disease_name', $name,)->get();
+        return view('user.diseases')->with('diseases', $result);
+    
+    }
 
 }
