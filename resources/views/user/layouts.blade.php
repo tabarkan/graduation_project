@@ -159,7 +159,7 @@
           document.write(new Date().getFullYear() + ",");
         </script>
         made with <i class="fa fa-heart"></i> by
-        <a href="#" class="font-semibold text-slate-700 dark:text-white" target="_blank">students 4th Tim</a>
+        <a href="#" class="font-semibold text-slate-700 dark:text-white" target="_blank">students 4th Team</a>
         for a healthy web.
       </div>
   </footer>

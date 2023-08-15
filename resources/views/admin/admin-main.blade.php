@@ -5,7 +5,7 @@
     @include('admin.layout')
     @yield('header')
 
-  <body class="m-0 font-sans text-base antialiased font-normal dark:bg-slate-900 leading-default bg-gray-50 text-slate-500">
+  <body class="m-0 font-sans text-base antialiased font-normal  leading-default bg-gray-50 text-slate-500">
 
       @yield('sidebar')
 
@@ -32,7 +32,7 @@
                   <span class="text-sm ease leading-5.6 absolute z-50 -ml-px flex h-full items-center whitespace-nowrap rounded-lg rounded-tr-none rounded-br-none border border-r-0 border-transparent bg-transparent py-2 px-2.5 text-center font-normal text-slate-500 transition-all">
                     <i class="fas fa-search"></i>
                   </span>
-                  <input type="text" class="pl-9 text-sm focus:shadow-primary-outline ease w-1/100 leading-5.6 relative -ml-px block min-w-0 flex-auto rounded-lg border border-solid border-gray-300 dark:bg-slate-850 dark:text-white bg-white bg-clip-padding py-2 pr-3 text-gray-700 transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none focus:transition-shadow" placeholder="Type here..." />
+                  <input type="text" class="pl-9 text-sm focus:shadow-primary-outline ease w-1/100 leading-5.6 relative -ml-px block min-w-0 flex-auto rounded-lg border border-solid border-gray-300   bg-white bg-clip-padding py-2 pr-3 text-gray-700 transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none focus:transition-shadow" placeholder="Type here..." />
                 </div>
               </div>
               <ul class="flex flex-row justify-end pl-0 mb-0 list-none md-max:w-full">
@@ -70,17 +70,17 @@
                     <i class="cursor-pointer fa fa-bell"></i>
                   </a>
   
-                  <ul dropdown-menu class="text-sm transform-dropdown before:font-awesome before:leading-default before:duration-350 before:ease lg:shadow-3xl duration-250 min-w-44 before:sm:right-8 before:text-5.5 pointer-events-none absolute right-0 top-0 z-50 origin-top list-none rounded-lg border-0 border-solid border-transparent dark:shadow-dark-xl dark:bg-slate-850 bg-white bg-clip-padding px-2 py-4 text-left text-slate-500 opacity-0 transition-all before:absolute before:right-2 before:left-auto before:top-0 before:z-50 before:inline-block before:font-normal before:text-white before:antialiased before:transition-all before:content-['\f0d8'] sm:-mr-6 lg:absolute lg:right-0 lg:left-auto lg:mt-2 lg:block lg:cursor-pointer">
+                  <ul dropdown-menu class="text-sm transform-dropdown before:font-awesome before:leading-default before:duration-350 before:ease lg:shadow-3xl duration-250 min-w-44 before:sm:right-8 before:text-5.5 pointer-events-none absolute right-0 top-0 z-50 origin-top list-none rounded-lg border-0 border-solid border-transparent bg-white bg-clip-padding px-2 py-4 text-left text-slate-500 opacity-0 transition-all before:absolute before:right-2 before:left-auto before:top-0 before:z-50 before:inline-block before:font-normal before:text-white before:antialiased before:transition-all before:content-['\f0d8'] sm:-mr-6 lg:absolute lg:right-0 lg:left-auto lg:mt-2 lg:block lg:cursor-pointer">
                     <!-- add show class on dropdown open js -->
                     <li class="relative mb-2">
-                      <a class="dark:hover:bg-slate-900 ease py-1.2 clear-both block w-full whitespace-nowrap rounded-lg bg-transparent px-4 duration-300 hover:bg-gray-200 hover:text-slate-700 lg:transition-colors" href="javascript:;">
+                      <a class=" ease py-1.2 clear-both block w-full whitespace-nowrap rounded-lg bg-transparent px-4 duration-300 hover:bg-gray-200 hover:text-slate-700 lg:transition-colors" href="javascript:;">
                         <div class="flex py-1">
                           <div class="my-auto">
                             <img src="../assets/img/team-2.jpg" class="inline-flex items-center justify-center mr-4 text-sm text-white h-9 w-9 max-w-none rounded-xl" />
                           </div>
                           <div class="flex flex-col justify-center">
-                            <h6 class="mb-1 text-sm font-normal leading-normal dark:text-white"><span class="font-semibold">New message</span> from Laur</h6>
-                            <p class="mb-0 text-xs leading-tight text-slate-400 dark:text-white/80">
+                            <h6 class="mb-1 text-sm font-normal leading-normal "><span class="font-semibold">New message</span> from Laur</h6>
+                            <p class="mb-0 text-xs leading-tight text-slate-400 ">
                               <i class="mr-1 fa fa-clock"></i>
                               13 minutes ago
                             </p>
@@ -90,14 +90,14 @@
                     </li>
   
                     <li class="relative mb-2">
-                      <a class="dark:hover:bg-slate-900 ease py-1.2 clear-both block w-full whitespace-nowrap rounded-lg px-4 transition-colors duration-300 hover:bg-gray-200 hover:text-slate-700" href="javascript:;">
+                      <a class=" ease py-1.2 clear-both block w-full whitespace-nowrap rounded-lg px-4 transition-colors duration-300 hover:bg-gray-200 hover:text-slate-700" href="javascript:;">
                         <div class="flex py-1">
                           <div class="my-auto">
-                            <img src="../assets/img/small-logos/logo-spotify.svg" class="inline-flex items-center justify-center mr-4 text-sm text-white bg-gradient-to-tl from-zinc-800 to-zinc-700 dark:bg-gradient-to-tl dark:from-slate-750 dark:to-gray-850 h-9 w-9 max-w-none rounded-xl" />
+                            <img src="../assets/img/small-logos/logo-spotify.svg" class="inline-flex items-center justify-center mr-4 text-sm text-white bg-gradient-to-tl from-zinc-800 to-zinc-700 h-9 w-9 max-w-none rounded-xl" />
                           </div>
                           <div class="flex flex-col justify-center">
-                            <h6 class="mb-1 text-sm font-normal leading-normal dark:text-white"><span class="font-semibold">New album</span> by Travis Scott</h6>
-                            <p class="mb-0 text-xs leading-tight text-slate-400 dark:text-white/80">
+                            <h6 class="mb-1 text-sm font-normal leading-normal "><span class="font-semibold">New album</span> by Travis Scott</h6>
+                            <p class="mb-0 text-xs leading-tight text-slate-400 ">
                               <i class="mr-1 fa fa-clock"></i>
                               1 day
                             </p>
@@ -107,7 +107,7 @@
                     </li>
   
                     <li class="relative">
-                      <a class="dark:hover:bg-slate-900 ease py-1.2 clear-both block w-full whitespace-nowrap rounded-lg px-4 transition-colors duration-300 hover:bg-gray-200 hover:text-slate-700" href="javascript:;">
+                      <a class=" ease py-1.2 clear-both block w-full whitespace-nowrap rounded-lg px-4 transition-colors duration-300 hover:bg-gray-200 hover:text-slate-700" href="javascript:;">
                         <div class="flex py-1">
                           <div class="inline-flex items-center justify-center my-auto mr-4 text-sm text-white transition-all duration-200 ease-nav-brand bg-gradient-to-tl from-slate-600 to-slate-300 h-9 w-9 rounded-xl">
                             <svg width="12px" height="12px" viewBox="0 0 43 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -125,8 +125,8 @@
                             </svg>
                           </div>
                           <div class="flex flex-col justify-center">
-                            <h6 class="mb-1 text-sm font-normal leading-normal dark:text-white">Payment successfully completed</h6>
-                            <p class="mb-0 text-xs leading-tight text-slate-400 dark:text-white/80">
+                            <h6 class="mb-1 text-sm font-normal leading-normal ">Payment successfully completed</h6>
+                            <p class="mb-0 text-xs leading-tight text-slate-400 /80">
                               <i class="mr-1 fa fa-clock"></i>
                               2 days
                             </p>
@@ -149,7 +149,7 @@
           <div class="flex flex-wrap -mx-3">
             <!-- card1 -->
             <div class="w-full max-w-full px-3 mb-6 sm:w-1/2 sm:flex-none xl:mb-0 xl:w-1/4">
-              <div class="relative flex flex-col min-w-0 break-words bg-white shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border">
+              <div class="relative flex flex-col min-w-0 break-words bg-white shadow-xl  bg-clip-border">
                 <div class="flex-auto p-4">
                   <div class="flex flex-row -mx-3">
                     <div class="px-3 text-left basis-1/3">
@@ -158,9 +158,9 @@
                     </div>
                     <div class="flex-none w-2/3 max-w-full px-3">
                       <div>
-                        <p class="mb-0 font-sans text-md font-semibold leading-normal uppercase dark:text-white dark:opacity-60">عدد الأمراض</p>
-                        <h5 class="mb-2 font-bold dark:text-white">{{$diseases->count()}}</h5>
-                        <p class="mb-0 dark:text-white dark:opacity-60">
+                        <p class="mb-0 font-sans text-md font-semibold leading-normal uppercase ">عدد الأمراض</p>
+                        <h5 class="mb-2 font-bold">{{$diseases->count()}}</h5>
+                        <p class="mb-0 ">
                           <span class="text-sm font-bold leading-normal text-emerald-500">         </span>
                         </p>
                       </div>
@@ -173,7 +173,7 @@
   
             <!-- card2 -->
             <div class="w-full max-w-full px-3 mb-6 sm:w-1/2 sm:flex-none xl:mb-0 xl:w-1/4">
-              <div class="relative flex flex-col min-w-0 break-words bg-white shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border">
+              <div class="relative flex flex-col min-w-0 break-words bg-white shadow-xl  rounded-2xl bg-clip-border">
                 <div class="flex-auto p-4">
                   <div class="flex flex-row -mx-3">
                     <div class="px-3 text-left basis-1/3">
@@ -188,11 +188,11 @@
                     </div>
                     <div class="flex-none w-2/3 max-w-full px-3">
                       <div>
-                        <p class="mb-0 font-sans text-sm font-semibold leading-normal uppercase dark:text-white dark:opacity-60">عدد الاطباء</p>
-                        <h5 class="mb-2 font-bold dark:text-white">
+                        <p class="mb-0 font-sans text-sm font-semibold leading-normal uppercase ">عدد الاطباء</p>
+                        <h5 class="mb-2 font-bold ">
                           {{$doctors->count()}}
                         </h5>
-                        <p class="mb-0 dark:text-white dark:opacity-60">
+                        <p class="mb-0 ">
                           <span class="text-sm font-bold leading-normal text-emerald-500"></span>
                         </p>
                       </div>
@@ -204,7 +204,7 @@
             </div>
             <!-- card3 -->
             <div class="w-full max-w-full px-3 mb-6 sm:w-1/2 sm:flex-none xl:mb-0 xl:w-1/4">
-              <div class="relative flex flex-col min-w-0 break-words bg-white shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border">
+              <div class="relative flex flex-col min-w-0 break-words bg-white shadow-xl  rounded-2xl bg-clip-border">
                 <div class="flex-auto p-4">
                   <div class="flex flex-row -mx-3">
                     <div class="px-3 text-left basis-1/3">
@@ -214,11 +214,11 @@
                     </div>
                     <div class="flex-none w-2/3 max-w-full px-3">
                       <div>
-                        <p class="mb-0 font-sans text-sm font-semibold leading-normal uppercase dark:text-white dark:opacity-60">عدد المستشفيات</p>
-                        <h5 class="mb-2 font-bold dark:text-white">
+                        <p class="mb-0 font-sans text-sm font-semibold leading-normal uppercase ">عدد المستشفيات</p>
+                        <h5 class="mb-2 font-bold ">
                           {{$hospitals->count()}}
                         </h5>
-                        <p class="mb-0 dark:text-white dark:opacity-60">
+                        <p class="mb-0 ">
                           <span class="text-sm font-bold leading-normal text-red-600"></span>
                           
                         </p>
@@ -232,7 +232,7 @@
   
             <!-- card4 -->
             <div class="w-full max-w-full px-3 sm:w-1/2 sm:flex-none xl:w-1/4">
-              <div class="relative flex flex-col min-w-0 break-words bg-white shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border">
+              <div class="relative flex flex-col min-w-0 break-words bg-white shadow-xl  rounded-2xl bg-clip-border">
                 <div class="flex-auto p-4">
                   <div class="flex flex-row -mx-3">
                     <div class="px-3 text-left basis-1/3">
@@ -242,11 +242,11 @@
                     </div>
                     <div class="flex-none w-2/3 max-w-full px-3">
                       <div>
-                        <p class="mb-0 font-sans text-sm font-semibold leading-normal uppercase dark:text-white dark:opacity-60">عدد المستخدمين</p>
-                        <h5 class="mb-2 font-bold dark:text-white">
+                        <p class="mb-0 font-sans text-sm font-semibold leading-normal uppercase ">عدد المستخدمين</p>
+                        <h5 class="mb-2 font-bold ">
                           {{$users->count()}}
                         </h5>
-                        <p class="mb-0 dark:text-white dark:opacity-60">
+                        <p class="mb-0 ">
                           <span class="text-sm font-bold leading-normal text-emerald-500"></span>
                          
                         </p>
@@ -272,43 +272,43 @@
   
           <div class="flex flex-wrap mt-6 mx-4">
             <div class="w-full max-w-full px-3 mt-0 mb-6 lg:mb-0 lg:w-7/12 lg:flex-none">
-              <div class="relative flex flex-col min-w-0 break-words bg-white border-0 border-solid shadow-xl dark:bg-slate-850 dark:shadow-dark-xl dark:bg-gray-950 border-black-125 rounded-2xl bg-clip-border">
+              <div class="relative flex flex-col min-w-0 break-words bg-white border-0 border-solid shadow-xl  border-black-125 rounded-2xl bg-clip-border">
                 <div class="p-4 pb-0 mb-0 rounded-t-4">
                   <div class="flex justify-between">
-                    <h6 class="mb-2 dark:text-white">الطلبات</h6>
+                    <h6 class="mb-2 ">الطلبات</h6>
                   </div>
                 </div>
                 <div class="overflow-x-auto">
-                  <table class="items-center w-full mb-4 align-top border-collapse border-gray-200 dark:border-white/40">
+                  <table class="items-center w-full mb-4 align-top border-collapse border-gray-200 ">
                     <tbody>
                       @foreach ($doctors as $doctor )
                       @if ($doctor->accepted == 0)
                       <tr>
-                        <td class="p-2 align-middle bg-transparent border-b w-3/10 whitespace-nowrap dark:border-white/40">
+                        <td class="p-2 align-middle bg-transparent border-b w-3/10 whitespace-nowrap ">
                           <div class="flex items-center px-2 py-1">
               
                             <div class="ml-6">
-                              <p class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-60">Name</p>
-                              <h6 class="mb-0 text-sm leading-normal dark:text-white">{{$doctor->first_name}} {{$doctor->last_name}}</h6>
+                              <p class="mb-0 text-xs font-semibold leading-tight ">Name</p>
+                              <h6 class="mb-0 text-sm leading-normal ">{{$doctor->first_name}} {{$doctor->last_name}}</h6>
                             </div>
                           </div>
                         </td>
-                        <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap dark:border-white/40">
+                        <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap ">
                           <div class="text-center">
-                            <p class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-60">Type</p>
-                            <h6 class="mb-0 text-sm leading-normal dark:text-white">Doctor</h6>
+                            <p class="mb-0 text-xs font-semibold leading-tight ">Type</p>
+                            <h6 class="mb-0 text-sm leading-normal ">Doctor</h6>
                           </div>
                         </td>
-                        <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap dark:border-white/40">
+                        <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap">
                           <div class="text-center">
-                            <p class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-60">time:</p>
-                            <h6 class="mb-0 text-sm leading-normal dark:text-white">{{\Carbon\Carbon::parse($doctor->created_at)->ago()}}</h6>
+                            <p class="mb-0 text-xs font-semibold leading-tight">time:</p>
+                            <h6 class="mb-0 text-sm leading-normal ">{{\Carbon\Carbon::parse($doctor->created_at)->ago()}}</h6>
                           </div>
                         </td>
                        
                       
                        
-                        <td class="p-2 text-sm leading-normal text-center align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
+                        <td class="p-2 text-sm leading-normal text-center align-middle bg-transparent border-b  whitespace-nowrap shadow-transparent">
                           <span class="bg-gradient-to-tl from-orange-700 to-red-400 px-2.5 text-xs rounded-1.8 py-1.4 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white">
                             <form class="h-full" action="{{route('accept.doctor', $doctor->id)}}" method="POST">
                               @csrf
@@ -324,31 +324,31 @@
                       @foreach ($hospitals as $hospital )
                       @if ($hospital->accepted == 0)
                       <tr>
-                        <td class="p-2 align-middle bg-transparent border-b w-3/10 whitespace-nowrap dark:border-white/40">
+                        <td class="p-2 align-middle bg-transparent border-b w-3/10 whitespace-nowrap">
                           <div class="flex items-center px-2 py-1">
               
                             <div class="ml-6">
-                              <p class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-60">Name</p>
-                              <h6 class="mb-0 text-sm leading-normal dark:text-white">{{$hospital->name}}</h6>
+                              <p class="mb-0 text-xs font-semibold leading-tight ">Name</p>
+                              <h6 class="mb-0 text-sm leading-normal ">{{$hospital->name}}</h6>
                             </div>
                           </div>
                         </td>
-                        <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap dark:border-white/40">
+                        <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap ">
                           <div class="text-center">
-                            <p class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-60">Type</p>
-                            <h6 class="mb-0 text-sm leading-normal dark:text-white">Hospital</h6>
+                            <p class="mb-0 text-xs font-semibold leading-tight ">Type</p>
+                            <h6 class="mb-0 text-sm leading-normal ">Hospital</h6>
                           </div>
                         </td>
-                        <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap dark:border-white/40">
+                        <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap ">
                           <div class="text-center">
-                            <p class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-60">time:</p>
-                            <h6 class="mb-0 text-sm leading-normal dark:text-white">{{\Carbon\Carbon::parse($hospital->created_at)->ago()}}</h6>
+                            <p class="mb-0 text-xs font-semibold leading-tight ">time:</p>
+                            <h6 class="mb-0 text-sm leading-normal ">{{\Carbon\Carbon::parse($hospital->created_at)->ago()}}</h6>
                           </div>
                         </td>
                        
                       
                        
-                        <td class="p-2 text-sm leading-normal text-center align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
+                        <td class="p-2 text-sm leading-normal text-center align-middle bg-transparent border-b  whitespace-nowrap shadow-transparent">
                           <span class="bg-gradient-to-tl from-orange-700 to-red-400 px-2.5 text-xs rounded-1.8 py-1.4 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white">
                             <form class="h-full" action="{{route('accept.hospital', $hospital->id)}}" method="POST">
                               @csrf
@@ -364,32 +364,32 @@
                       @foreach ($diseases as $disease )
                       @if ($disease->accepted == 0)
                       <tr>
-                        <td class="p-2 align-middle bg-transparent border-b w-3/10 whitespace-nowrap dark:border-white/40">
+                        <td class="p-2 align-middle bg-transparent border-b w-3/10 whitespace-nowrap ">
                           <div class="flex items-center px-2 py-1">
               
                             <div class="ml-6">
-                              <p class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-60">Name</p>
-                              <h6 class="mb-0 text-sm leading-normal dark:text-white">{{$disease->disease_name}} </h6>
+                              <p class="mb-0 text-xs font-semibold leading-tight ">Name</p>
+                              <h6 class="mb-0 text-sm leading-normal ">{{$disease->disease_name}} </h6>
                             </div>
                           </div>
                         </td>
-                        <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap dark:border-white/40">
+                        <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap ">
                           <div class="text-center">
-                            <p class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-60">Type</p>
-                            <h6 class="mb-0 text-sm leading-normal dark:text-white">disease</h6>
+                            <p class="mb-0 text-xs font-semibold leading-tight ">Type</p>
+                            <h6 class="mb-0 text-sm leading-normal ">disease</h6>
                           </div>
                         </td>
-                        <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap dark:border-white/40">
+                        <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap">
                           <div class="text-center">
-                            <p class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-60">time:</p>
-                            <h6 class="mb-0 text-sm leading-normal dark:text-white">{{\Carbon\Carbon::parse($disease->created_at)->ago()}}
+                            <p class="mb-0 text-xs font-semibold leading-tight ">time:</p>
+                            <h6 class="mb-0 text-sm leading-normal ">{{\Carbon\Carbon::parse($disease->created_at)->ago()}}
                             </h6>
                           </div>
                         </td>
                        
                       
                        
-                        <td class="p-2 text-sm leading-normal text-center align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
+                        <td class="p-2 text-sm leading-normal text-center align-middle bg-transparent border-b  whitespace-nowrap shadow-transparent">
                           <span class="bg-gradient-to-tl from-orange-700 to-red-400 px-2.5 text-xs rounded-1.8 py-1.4 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white">
                             <form class="h-full" action="{{route('accept.disease', $disease->id)}}" method="POST">
                               @csrf
@@ -408,25 +408,25 @@
               </div>
             </div>
             <div class="w-full max-w-full px-3 mt-0 lg:w-5/12 lg:flex-none">
-              <div class="border-black/12.5 shadow-xl dark:bg-slate-850 dark:shadow-dark-xl relative flex min-w-0 flex-col break-words rounded-2xl border-0 border-solid bg-white bg-clip-border">
+              <div class="border-black/12.5 shadow-xl  relative flex min-w-0 flex-col break-words rounded-2xl border-0 border-solid bg-white bg-clip-border">
                 <div class="p-4 pb-0 rounded-t-4">
-                  <h6 class="mb-0 dark:text-white"> المسؤولين</h6>
+                  <h6 class="mb-0 "> المسؤولين</h6>
                 </div>
                 <div class="flex-auto p-4">
                   <ul class="flex flex-col pl-0 mb-0 rounded-lg">
                     @foreach ($admins as $admin )
                     <li class="relative flex justify-between py-2 pr-4 mb-2 border-0 rounded-t-lg rounded-xl text-inherit">
                       <div class="flex items-center">
-                        <div class="inline-block w-8 h-8 mr-4 text-center text-black bg-center shadow-sm fill-current stroke-none bg-gradient-to-tl from-zinc-800 to-zinc-700 dark:bg-gradient-to-tl dark:from-slate-750 dark:to-gray-850 rounded-xl">
+                        <div class="inline-block w-8 h-8 mr-4 text-center text-black bg-center shadow-sm fill-current stroke-none bg-gradient-to-tl from-zinc-800 to-zinc-700 ">
                           <i class="text-white ni ni-mobile-button relative top-0.75 text-xxs"></i>
                         </div>
                         <div class="flex flex-col">
-                          <h6 class="mb-1 text-sm leading-normal text-slate-700 dark:text-white">{{$admin->first_name}} {{$admin->last_name}}</h6>
-                          <span class="text-xs leading-tight dark:text-white/80">{{$admin->role==1?'Admin':''}}</span>
+                          <h6 class="mb-1 text-sm leading-normal text-slate-700 ">{{$admin->first_name}} {{$admin->last_name}}</h6>
+                          <span class="text-xs leading-tight ">{{$admin->role==1?'Admin':''}}</span>
                         </div>
                       </div>
                       <div class="flex">
-                        <button class="group ease-in leading-pro text-xs rounded-3.5xl p-1.2 h-6.5 w-6.5 mx-0 my-auto inline-block cursor-pointer border-0 bg-transparent text-center align-middle font-bold text-slate-700 shadow-none transition-all dark:text-white"><i class="ni ease-bounce text-2xs group-hover:translate-x-1.25 ni-bold-right transition-all duration-200" aria-hidden="true"></i></button>
+                        <button class="group ease-in leading-pro text-xs rounded-3.5xl p-1.2 h-6.5 w-6.5 mx-0 my-auto inline-block cursor-pointer border-0 bg-transparent text-center align-middle font-bold text-slate-700 shadow-none transition-all "><i class="ni ease-bounce text-2xs group-hover:translate-x-1.25 ni-bold-right transition-all duration-200" aria-hidden="true"></i></button>
                       </div>
                    
                       
@@ -451,7 +451,7 @@
                     document.write(new Date().getFullYear() + ",");
                   </script>
                   made with <i class="fa fa-heart"></i> by
-                  <a href="#" class="font-semibold text-slate-700 dark:text-white" target="_blank">students 4th Tim</a>
+                  <a href="#" class="font-semibold text-slate-700 " target="_blank">students 4th Team</a>
                   for a healthy web.
                 </div>
               </div>
