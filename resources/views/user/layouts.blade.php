@@ -123,7 +123,7 @@
             <li><a href="{{route('user.add.doctor')}}" href="#">اضافة طبيب</a></li>
             <li><a href="{{route('user.add.hospital')}}" href="#">اضافة مستشفى</a></li>
             <li><a href="{{route('user.add.disease')}}" href="#">اضافة مرض</a></li>
-            <li><a href="#">بعدين نقرر شنضيف</a></li>
+            {{-- <li><a href="#">بعدين نقرر شنضيف</a></li> --}}
           </ul>
         </div>
         {{-- <div class="col-sm-6 col-lg-3 py-3">
@@ -158,9 +158,9 @@
         <script>
           document.write(new Date().getFullYear() + ",");
         </script>
-        made with <i class="fa fa-heart"></i> by
-        <a href="#" class="font-semibold text-slate-700 dark:text-white" target="_blank">students 4th Team</a>
-        for a healthy web.
+        Programmer by <i class="fa fa-heart"></i> 
+        <a href="#" class="font-semibold text-slate-700 dark:text-white" target="_blank">Tabark.a.n & Asraa.m.s</a>
+        for a healthy web
       </div>
   </footer>
 
