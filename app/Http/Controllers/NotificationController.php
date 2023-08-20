@@ -30,10 +30,26 @@ class NotificationController extends Controller
         return view('admin.issue-show')->with('notification',$notification );
     }
 }
+    public function showDeleted($id){
+        if(Auth::user()->role == 1){
+        $notification = Notification::onlyTrashed()->where('id', $id)->get()->first();
+        return view('admin.issue-show')->with('notification',$notification );
+    }
+}
 public function delete($id){
 
     if(Auth::user()->role == 1){
         Notification::where('id', $id)->delete();
+    }
+    
+    $notifications = Notification::get();
+
+    return view('admin.notifications')->with(['notifications' => $notifications]);
+}
+public function forceDelete($id){
+
+    if(Auth::user()->role == 1){
+        Notification::where('id', $id)->forceDelete();
     }
     
     $notifications = Notification::get();

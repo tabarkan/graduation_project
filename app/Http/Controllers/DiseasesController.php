@@ -44,7 +44,7 @@ class DiseasesController extends Controller
                 
             ]);
         }
-        return redirect()->back();
+        return redirect()->back()->with('message', 'Disease added successfully');
     }
         public function editPage($id){
         $diseases = Disease::where('id',$id)->get()->first();

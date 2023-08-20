@@ -19,7 +19,6 @@
     @yield('header')
 
   <body class="m-0 font-sans text-base antialiased font-normal dark:bg-slate-900 leading-default bg-gray-50 text-slate-500">
-    <div class="absolute w-full bg-blue-500 dark:hidden min-h-75"></div>
 
       @yield('sidebar')
 
@@ -160,14 +159,25 @@
                 </div>
               </div>
               <td class="p-2 align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
+                @if($notification->deleted_at)
+                <form class="h-full p-10" action="{{route('force.delete.notification', $notification->id)}}" method="POST">
+                  @method('DELETE')
+                  @csrf
+                  <button type="submit" class="bg-red hover:bg-red-100 text-red-800 font-semibold py-1 px-10 border border-red-400 text-blue-400 rounded shadow">
+                   حذف نهائي
+                  </button>
+                  {{-- <button type="submit" class="text-xs font-semibold leading-tight text-red-400">حذف</button> --}}
+                </form>
+                @else
                 <form class="h-full p-10" action="{{route('delete.notification', $notification->id)}}" method="POST">
                   @method('DELETE')
                   @csrf
                   <button type="submit" class="bg-red hover:bg-red-100 text-red-800 font-semibold py-1 px-10 border border-red-400 text-blue-400 rounded shadow">
-                    حذف
+                   حذف 
                   </button>
                   {{-- <button type="submit" class="text-xs font-semibold leading-tight text-red-400">حذف</button> --}}
                 </form>
+                @endif
                 {{-- <a href="{{route('issue.show', $notification->id)}}" class="text-xs font-semibold leading-tight dark:text-white dark:opacity-80 text-slate-400"> عرض المشكلة </a> --}}
               </td>
             </div>

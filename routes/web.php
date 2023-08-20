@@ -31,6 +31,7 @@ Route::get('/admin/doctors', [AdminController::class, 'doctors'])->name('doctors
 Route::get('/admin/hospitals', [AdminController::class, 'hospitals'])->name('hospitals.list');
 Route::get('/admin/diseases', [AdminController::class, 'diseases'])->name('diseases.list');
 Route::get('/admin/notifications', [AdminController::class, 'notifications'])->name('notifications.list');
+Route::get('/admin/notifications/archive', [AdminController::class, 'deletedNotifications'])->name('notifications.list.archive');
 
 Route::get('/admin/add/doctor', [DoctorsController::class, 'index']);
 Route::get('/admin/edit/doctor/{id}', [DoctorsController::class, 'editPage'])->name('edit.doctor.form');
@@ -75,8 +76,10 @@ Route::put('/admin/edit/diseases/{id}', [DiseasesController::class, 'edit'])->na
 Route::delete('/admin/delete/diseases/{id}', [DiseasesController::class, 'delete'])->name('delete.disease');
 
 Route::get('/issue/show/{id}', [NotificationController::class, 'show'])->name('issue.show');
+Route::get('/issue/show/deleted/{id}', [NotificationController::class, 'showDeleted'])->name('deleted.issue.show');
 Route::post('/user/add/notification', [NotificationController::class, 'create'])->name('user.add.notification');
 Route::delete('/admin/delete/notification/{id}', [notificationController::class, 'delete'])->name('delete.notification');
+Route::delete('/admin/forcedelete/notification/{id}', [notificationController::class, 'forceDelete'])->name('force.delete.notification');
 
 
 

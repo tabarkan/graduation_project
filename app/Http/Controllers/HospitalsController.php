@@ -53,7 +53,7 @@ class HospitalsController extends Controller
                 'likes' => 0,
             ]);
         }
-        return redirect()->back();
+        return redirect()->back()->with('message', 'Hospital added successfully');
     }
     public function editPage($id){
         if(Auth::user()->role == 1){

@@ -56,7 +56,7 @@ class DoctorsController extends Controller
                     'likes' => 0,
                 ]);
         }
-        return redirect()->back();
+        return redirect()->back()->with('message', 'Doctor added successfully');
     }
     public function editPage($id){
         $doctor = Doctor::where('id',$id)->get()->first();

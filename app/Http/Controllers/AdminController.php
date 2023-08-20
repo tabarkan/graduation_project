@@ -45,6 +45,13 @@ class AdminController extends Controller
         return view('admin.notifications')->with(['notifications' => $notifications]);
     }
 }
+    public function deletedNotifications(){
+        if(Auth::user()->role == 1){
+        $notifications = Notification::onlyTrashed()->get();
+
+        return view('admin.archived-notifications')->with(['notifications' => $notifications]);
+    }
+}
    
 
    
