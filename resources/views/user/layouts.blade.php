@@ -159,7 +159,7 @@
           document.write(new Date().getFullYear() + ",");
         </script>
         Programmer by <i class="fa fa-heart"></i> 
-        <a href="#" class="font-semibold text-slate-700 dark:text-white" target="_blank">Tabark.a.n & Asraa.m.s</a>
+        <a href="#" class="font-semibold text-slate-700 dark:text-white" target="_blank">Tabark.a.n & Asraa.m</a>
         for a healthy web
       </div>
   </footer>

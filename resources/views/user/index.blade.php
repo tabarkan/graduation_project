@@ -424,10 +424,13 @@
           </div>
         </div>
 
-        <button type="submit" class="btn btn-primary mt-3 wow zoomIn">Submit Request</button>
+        <button type="submit" class="btn btn-primary mt-3 wow zoomIn">ارسال الابلاغ</button>
       </form>
+      
     </div>
-  </div> <!-- .page-section -->
+  </div>
+  
+   <!-- .page-section -->
   <div class="page-section banner-home bg-image" style="background-image: url(../assets/img/banner-pattern.svg);">
     <div class="container py-5 py-lg-0">
       <div class="row align-items-center">
