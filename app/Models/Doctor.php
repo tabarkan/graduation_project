@@ -29,4 +29,8 @@ class Doctor extends Model
     {
         return $this->hasMany(DoctorLike::class);
     }
+    public function favs(): HasMany
+    {
+        return $this->hasMany(DoctorFav::class);
+    }
 }

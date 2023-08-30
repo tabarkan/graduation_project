@@ -21,6 +21,7 @@ use App\Http\Controllers\NotificationController;
 */
 
 Route::get('/doctors', [PagesController::class, 'doctorsPage'])->name('user.doctors');
+Route::get('/doctors/favs', [PagesController::class, 'doctorsFav'])->name('user.fav.doctors');
 Route::get('/hospitals', [PagesController::class, 'hospitalsPage'])->name('user.hospitals');
 Route::get('/diseases', [PagesController::class, 'diseasesPage'])->name('user.diseases');
 Route::get('/suggest', [PagesController::class, 'suggestsPage'])->name('user.suggest');
@@ -43,10 +44,12 @@ Route::post('/admin/add/doctor', [DoctorsController::class, 'create'])->name('ad
 Route::post('/user/add/doctor', [DoctorsController::class, 'create'])->name('user.add.doctor');
 Route::post('/doctor/add/comment/{id}', [DoctorsController::class, 'commentAdd'])->name('doctor.comment');
 Route::post('/doctor/like/{id}', [DoctorsController::class, 'like'])->name('doctor.like');
+Route::post('/doctor/fav/{id}', [DoctorsController::class, 'fav'])->name('doctor.fav');
 Route::post('/admin/accept/doctor/{id}', [DoctorsController::class, 'accept'])->name('accept.doctor');
 Route::put('/admin/edit/doctor/{id}', [DoctorsController::class, 'edit'])->name('edit.doctor');
 Route::delete('/admin/delete/doctor/{id}', [DoctorsController::class, 'delete'])->name('delete.doctor');
 Route::delete('/like/delete/doctor/{id}', [DoctorsController::class, 'LikeDelete'])->name('doctor.like.delete');
+Route::delete('/fav/delete/doctor/{id}', [DoctorsController::class, 'favDelete'])->name('doctor.fav.delete');
 
 Route::get('/admin/add/hospital',[HospitalsController::class, 'index']);
 Route::get('/admin/edit/hospital/{id}', [HospitalsController::class, 'editPage'])->name('edit.hospital.form');

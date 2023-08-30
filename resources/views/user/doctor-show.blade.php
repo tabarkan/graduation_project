@@ -253,9 +253,7 @@
                             <img class="d-block img-fluid" src="{{asset('doctorsImages/'.$doctor->image_path)}}" alt="First slide">
                         </div>
                    
-                    <div>
-                        
-                    </div>
+                    <div class="d-flex w-100">
                         @if ($isLiked == false)
                         <form action="{{route('doctor.like', $doctor->id)}}" method="POST">
                             @csrf
@@ -272,7 +270,14 @@
                             </button>                       
                         </form>
                          @endif
-                         <p>{{$likes->count()}}</p>
+                         <p class="text-lg">{{$likes->count()}}</p>
+
+                        
+                         
+                    </div>
+                       
+
+
                         <h3>Dr. {{$doctor->first_name}} {{$doctor->last_name}}</h3>
                         <p>التخصص : {{$doctor->specialization}} </p>
                         <p>{{$doctor->email}} : ايميل التواصل</p>
@@ -282,8 +287,22 @@
                         
 
                     </div>    
-                   
-                   
+                    <div class="w-100 d-flex justify-content-center p-4">
+                        @if ($isFav == false)
+                        <form action="{{route('doctor.fav', $doctor->id)}}" method="POST">
+                           @csrf
+                           <button class="btn-primary p-2 rounded-lg" type="submit" >أضف الى المفضلة</button>
+                        </form>
+                        @else
+                        <form class="" action="{{route('doctor.fav.delete', $doctor->id)}}" method="POST">
+                           @method('DELETE')
+                           @csrf
+                           <button class="btn-primary p-2 rounded-lg" type="submit" >ازالة من المفضلة</button>
+                        </form>
+                         @endif
+                  
+                    </div>
+                 
                 </div>
                 <div class="card">
                         <div class="header">

@@ -22,68 +22,31 @@ __________________________<br>
             <li class="breadcrumb-item"><a href="index.html">الصفحة الرئيسية</a></li>
           </ol>
         </nav>
-        <h1 class="font-weight-normal">الأطباء</h1>
+        <h1 class="font-weight-normal"> المفضلة </h1>
       </div> <!-- .container -->
     </div> <!-- .banner-section -->
   </div> <!-- .page-banner -->
 
   <div class="page-section bg-light">
-    <div class="container">
-      <div class="p-4 bg-white d-flex justify-content-between" >
-        <a href="{{route('user.fav.doctors')}}">المفضلة</a>
-
-        <form action="{{route('doctor.search')}}" method="POST">
-          @csrf
-          <div>
-            <input name="search" class="ml-4" type="text" name="" id="">
-            <button type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5A6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5S14 7.01 14 9.5S11.99 14 9.5 14z"/></svg></button>
-          </div>
-        
-          </form>
-
-        <form action="{{route('doctor.specialization')}}" method="POST">
-          @csrf
-        <select class="form-select" onchange="this.form.submit()" name="specialization">
-          <option value="">اختر الاختصاص</option>
-          <option value="جلدية">جلدية</option>
-          <option value="نفسية">نفسية</option>
-          <option value="جراحة">جراحة</option>
-          <option value=" باطني"> باطني</option>
-          <option value=" نووي">نووي </option>
-          <option value="عظام">عظام</option>
-          <option value="المخ والاعصاب">المخ والاعصاب</option>
-          <option value="اسنان">اسنان</option>
-          <option value="اطفال">اطفال</option>
-          <option value="انف واذن وحنجرة">انف واذن وحنجرة</option>
-          <option value="الجهاز البولي">الجهاز البولي</option>
-          <option value="عيون">عيون</option>
-          <option value="نساء">نساء</option>
-          <option value="قلب">قلب</option>
-          <option value="اخرى">اخرى</option>
-        </select>
-      </form>
-
-      
-      </div>
-      
+    <div class="container">      
       <div class="row justify-content-center">
         <div class="col-lg-10">
 
           <div class="row">
             @foreach ($doctors as $doctor)
           
-                <div onclick="window.location='{{route('user.show.doctor', $doctor->id)}}'" class="col-md-6 col-lg-4 py-3 wow zoomIn">
+                <div onclick="window.location='{{route('user.show.doctor', $doctor->doctor->id)}}'" class="col-md-6 col-lg-4 py-3 wow zoomIn">
                     <div class="card-doctor">
                     <div class="header">
-                        <img src="{{asset('doctorsImages/'.$doctor->image_path)}}" alt="">
+                        <img src="{{asset('doctorsImages/'.$doctor->doctor->image_path)}}" alt="">
                         <div class="meta">
                         <a><span class="mai-call"></span></a>
                         <a href="#"><span class="mai-logo-whatsapp"></span></a>
                         </div>
                     </div>
                     <div class="body">
-                        <p class="text-lg fw-bold mb-0">Dr. {{$doctor->first_name}} {{$doctor->last_name}}</p>
-                        <span class="text-sm text-grey">{{$doctor->specialization}}</span>
+                        <p class="text-lg fw-bold mb-0">Dr. {{$doctor->doctor->first_name}} {{$doctor->doctor->last_name}}</p>
+                        <span class="text-sm text-grey">{{$doctor->doctor->specialization}}</span>
                     </div>
                     </div>
                 </div>

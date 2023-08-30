@@ -7,6 +7,7 @@ use App\Models\Doctor;
 use App\Models\Hospital;
 use App\Models\Disease;
 use App\Models\User;
+use App\Models\DoctorFav;
 use Auth;
 use Carbon\Carbon;
 
@@ -16,6 +17,12 @@ class PagesController extends Controller
        
         $doctors = Doctor::get();
         return view('user.doctors')->with(['doctors' => $doctors]);
+
+    }
+    public function doctorsFav(){
+       
+        $doctors = DoctorFav::get();
+        return view('user.fav-doctors')->with(['doctors' => $doctors]);
 
     }
 
