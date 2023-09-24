@@ -69,7 +69,7 @@ __________________________<br>
       <div class="row justify-content-center">
         <div class="col-lg-10">
 
-          <div class="row">
+          <div class="row ">
             @foreach ($doctors as $doctor)
           
                 <div onclick="window.location='{{route('user.show.doctor', $doctor->id)}}'" class="col-md-6 col-lg-4 py-3 wow zoomIn">

@@ -34,7 +34,7 @@ Route::get('/admin/diseases', [AdminController::class, 'diseases'])->name('disea
 Route::get('/admin/notifications', [AdminController::class, 'notifications'])->name('notifications.list');
 Route::get('/admin/notifications/archive', [AdminController::class, 'deletedNotifications'])->name('notifications.list.archive');
 
-Route::get('/admin/add/doctor', [DoctorsController::class, 'index']);
+Route::get('/admin/add/doctor', [DoctorsController::class, 'index'])->name('add.doctor');
 Route::get('/admin/edit/doctor/{id}', [DoctorsController::class, 'editPage'])->name('edit.doctor.form');
 Route::get('/user/add/doctor', [pagesController::class, 'addDoctor'])->name('user.add.doctor');
 Route::get('/doctor/show/{id}', [DoctorsController::class, 'show'])->name('user.show.doctor');
@@ -51,7 +51,7 @@ Route::delete('/admin/delete/doctor/{id}', [DoctorsController::class, 'delete'])
 Route::delete('/like/delete/doctor/{id}', [DoctorsController::class, 'LikeDelete'])->name('doctor.like.delete');
 Route::delete('/fav/delete/doctor/{id}', [DoctorsController::class, 'favDelete'])->name('doctor.fav.delete');
 
-Route::get('/admin/add/hospital',[HospitalsController::class, 'index']);
+Route::get('/admin/add/hospital',[HospitalsController::class, 'index'])->name('add.hospital');
 Route::get('/admin/edit/hospital/{id}', [HospitalsController::class, 'editPage'])->name('edit.hospital.form');
 Route::get('/user/add/hospital', [pagesController::class, 'addHospital'])->name('user.add.hospital');
 Route::get('/hospital/show/{id}', [HospitalsController::class, 'show'])->name('user.show.hospital');
@@ -69,7 +69,7 @@ Route::post('/hospital/governorate/filterd', [HospitalsController::class, 'gover
 
 
 
-Route::get('/admin/add/diseases',[DiseasesController::class, 'index']);
+Route::get('/admin/add/diseases',[DiseasesController::class, 'index'])->name('add.disease');
 Route::get('/admin/edit/diseases/{id}', [DiseasesController::class, 'editPage'])->name('edit.diseases.form');
 Route::get('/user/add/disease', [pagesController::class, 'addDisease'])->name('user.add.disease');
 Route::post('/admin/add/diseases', [DiseasesController::class, 'create'])->name('add.diseases');

@@ -246,7 +246,7 @@
 <div id="main-content" class="blog-page  m-4">
     <div class="container">
         <div class="row clearfix">
-            <div class="col-lg-8 col-md-12 left-box">
+            <div style="margin-left: 20%" class="col-lg-8 col-md-12 left-box">
                 <div class="card single_post">
                     <div class="body text-right">
                         <div class="img-post">
@@ -283,22 +283,22 @@
                     </div>                        
                 </div>
                 <div class="card">
-                        <div class="header">
+                        <div class="header text-right">
                             <h5>التعليقات</h5>
                         </div>
                         <div class="body">
                             <ul class="comment-reply list-unstyled">
                                 @foreach ($comments as $comment)
-                                    <li class="row clearfix">
-                                        <div class="icon-box col-md-2 col-4"><img class="img-fluid img-thumbnail" src="{{asset('images/'.$comment->user->image_path)}}" alt="Awesome Image"></div>
-                                        <div class="text-box col-md-10 col-8 p-l-0 p-r0">
-                                            <h5 class="m-b-0">{{$comment->user->first_name}} {{$comment->user->last_name}}</h5>
-                                            <p>{{$comment->comment}}</p>
-                                            <ul class="list-inline">
-                                                <li><a href="javascript:void(0);">{{$comment->created_at}}</a></li>
-                                            </ul>
-                                        </div>
-                                    </li>
+                                <li class="row clearfix">
+                                    <div class="text-right col-md-10 col-8 p-l-0 p-r0">
+                                        <h5 class="m-b-0">{{$comment->user->first_name}} {{$comment->user->last_name}}</h5>
+                                        <p>{{$comment->comment}}</p>
+                                        <ul class="list-inline">
+                                            <li><a href="javascript:void(0);">{{$comment->created_at}}</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="icon-box col-md-2 col-4"><img class="img-fluid img-thumbnail" src="{{asset('images/'.$comment->user->image_path)}}" alt="Awesome Image"></div>
+                                </li>
                                 @endforeach
                                
                        
