@@ -69,13 +69,13 @@ __________________________<br>
 
           <div class="row">
             @foreach ($hospitals as $hospital)
-                <div class="col-md-6 col-lg-4 py-3 wow zoomIn">
+            
+            <div onclick="window.location='{{route('user.show.hospital', $hospital->id)}}'" class="col-md-6 col-lg-4 py-3 wow zoomIn">
                     <div class="card-doctor">
                     <div class="header">
                         <img src="{{asset('hospitalsImages/'.$hospital->image_path)}}" alt="">
                         <div class="meta">
-                          <a href="{{route('user.show.hospital', $hospital->id)}}"><span class="mai-call"></span></a>
-                        <a href="#"><span class="mai-call"></span></a>
+                        <a><span class="mai-call"></span></a>
                         <a href="#"><span class="mai-logo-whatsapp"></span></a>
                         </div>
                     </div>
