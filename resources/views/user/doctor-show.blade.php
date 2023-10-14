@@ -243,19 +243,17 @@
 </style>
 
 
-<div id="main-content" class="blog-page  m-4">
-    <div class="container">
+<div style="margin-left:20%;" id="main-content" class="blog-page m-4">
+    <div  class="container">
         <div class="row clearfix">
-            <div class="col-lg-8 col-md-12 left-box">
+            <div style="margin-left:20%;" class="col-lg-8 col-md-12 left-box">
                 <div class="card single_post">
                     <div class="body text-right">
                         <div class="img-post">
                             <img class="d-block img-fluid" src="{{asset('doctorsImages/'.$doctor->image_path)}}" alt="First slide">
                         </div>
                    
-                    <div>
-                        
-                    </div>
+                    <div class="d-flex w-100">
                         @if ($isLiked == false)
                         <form action="{{route('doctor.like', $doctor->id)}}" method="POST">
                             @csrf
@@ -272,7 +270,14 @@
                             </button>                       
                         </form>
                          @endif
-                         <p>{{$likes->count()}}</p>
+                         <p class="text-lg">{{$likes->count()}}</p>
+
+                        
+                         
+                    </div>
+                       
+
+
                         <h3>Dr. {{$doctor->first_name}} {{$doctor->last_name}}</h3>
                         <p>التخصص : {{$doctor->specialization}} </p>
                         <p>{{$doctor->email}} : ايميل التواصل</p>
@@ -282,25 +287,40 @@
                         
 
                     </div>    
-                   
-                   
+                    <div class="w-100 d-flex justify-content-center p-4">
+                        @if ($isFav == false)
+                        <form action="{{route('doctor.fav', $doctor->id)}}" method="POST">
+                           @csrf
+                           <button class="btn-primary p-2 rounded-lg" type="submit" >أضف الى المفضلة</button>
+                        </form>
+                        @else
+                        <form class="" action="{{route('doctor.fav.delete', $doctor->id)}}" method="POST">
+                           @method('DELETE')
+                           @csrf
+                           <button class="btn-primary p-2 rounded-lg" type="submit" >ازالة من المفضلة</button>
+                        </form>
+                         @endif
+                  
+                    </div>
+                 
                 </div>
                 <div class="card">
-                        <div class="header">
+                        <div class="header text-right">
                             <h5>التعليقات</h5>
                         </div>
                         <div class="body">
                             <ul class="comment-reply list-unstyled">
                                 @foreach ($comments as $comment)
                                     <li class="row clearfix">
-                                        <div class="icon-box col-md-2 col-4"><img class="img-fluid img-thumbnail" src="{{asset('images/'.$comment->user->image_path)}}" alt="Awesome Image"></div>
-                                        <div class="text-box col-md-10 col-8 p-l-0 p-r0">
+                                        <div class="text-right col-md-10 col-8 p-l-0 p-r0">
                                             <h5 class="m-b-0">{{$comment->user->first_name}} {{$comment->user->last_name}}</h5>
                                             <p>{{$comment->comment}}</p>
                                             <ul class="list-inline">
                                                 <li><a href="javascript:void(0);">{{$comment->created_at}}</a></li>
                                             </ul>
                                         </div>
+                                        <div class="icon-box col-md-2 col-4"><img class="img-fluid img-thumbnail" src="{{asset('images/'.$comment->user->image_path)}}" alt="Awesome Image"></div>
+                                      
                                     </li>
                                 @endforeach
                                

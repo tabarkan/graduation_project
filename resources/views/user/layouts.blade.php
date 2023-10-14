@@ -100,14 +100,24 @@
 
 
 @section('footer')
-<footer class="page-footer">
-  <div class="col-lg-8 wow fadeInRight text-center">
+<footer class="page-footer" style="padding-left: 10%">
+  <div style="padding-left: 20%" class="col-lg-8 text-center">
     <h1 class="font-weight-normal mb-3">اختر ماتحتاج من القائمة ادنى</h1>
     <a href="#"><img src="../assets/img/google_play.svg" alt=""></a>
     <a href="#" class="ml-2"><img src="../assets/img/app_store.svg" alt=""></a>
   </div>
     <div class="container">
       <div class="row px-md-3">
+        <div class="col-sm-6 col-lg-3 py-3">
+          <h5 class="mt-3 text-center">Social Media</h5>
+          <div class="footer-sosmed mt-3">
+            <a href="#" target="_blank"><span class="mai-logo-facebook-f"></span></a>
+            <a href="#" target="_blank"><span class="mai-logo-twitter"></span></a>
+            <a href="#" target="_blank"><span class="mai-logo-google-plus-g"></span></a>
+            <a href="#" target="_blank"><span class="mai-logo-instagram"></span></a>
+            <a href="#" target="_blank"><span class="mai-logo-linkedin"></span></a>
+          </div>
+        </div>
         <div class="col-sm-6 col-lg-3 py-3 text-center">
           <h5>مكونات الموقع</h5>
           <ul class="footer-menu">
@@ -126,40 +136,18 @@
             {{-- <li><a href="#">بعدين نقرر شنضيف</a></li> --}}
           </ul>
         </div>
-        {{-- <div class="col-sm-6 col-lg-3 py-3">
-          <h5>Our partner</h5>
-          <ul class="footer-menu">
-            <li><a href="#">One-Fitness</a></li>
-            <li><a href="#">One-Drugs</a></li>
-            <li><a href="#">One-Live</a></li>
-          </ul>
-        </div> --}}
-        <div class="col-sm-6 col-lg-3 py-3">
-          {{-- <h5>Contact</h5>
-          <p class="footer-link mt-2">351 Willow Street Franklin, MA 02038</p>
-          <a href="#" class="footer-link">701-573-7582</a>
-          <a href="#" class="footer-link">healthcare@temporary.net</a> --}}
-
-          <h5 class="mt-3 text-center">Social Media</h5>
-          <div class="footer-sosmed mt-3">
-            <a href="#" target="_blank"><span class="mai-logo-facebook-f"></span></a>
-            <a href="#" target="_blank"><span class="mai-logo-twitter"></span></a>
-            <a href="#" target="_blank"><span class="mai-logo-google-plus-g"></span></a>
-            <a href="#" target="_blank"><span class="mai-logo-instagram"></span></a>
-            <a href="#" target="_blank"><span class="mai-logo-linkedin"></span></a>
-          </div>
-        </div>
+        
       </div>
 
       <hr>
 
-      <div class="text-sm leading-normal text-center text-slate-500 lg:text-left">
+      <div style="padding-right: 23%" class="text-sm leading-normal text-center text-slate-500 lg:text-left">
         ©
         <script>
           document.write(new Date().getFullYear() + ",");
         </script>
         Programmer by <i class="fa fa-heart"></i> 
-        <a href="#" class="font-semibold text-slate-700 dark:text-white" target="_blank">Tabark.a.n & Asraa.m.s</a>
+        <a href="#" class="font-semibold text-slate-700 dark:text-white" target="_blank">Tabark.a.n & Asraa.m</a>
         for a healthy web
       </div>
   </footer>

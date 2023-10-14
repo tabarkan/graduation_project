@@ -7,6 +7,7 @@ use Auth;
 use App\Models\Doctor;
 use App\Models\DoctorComment;
 use App\Models\DoctorLike;
+use App\Models\DoctorFav;
 
 class DoctorsController extends Controller
 {
@@ -113,6 +114,15 @@ class DoctorsController extends Controller
                     break;
                 }
             }
+        if(Auth::user()->role == 1){
+            $favs = DoctorFav::where('doctor_id', $id)->get('user_id');
+            $isFav = false;
+            foreach($favs as $fav){
+                if($fav->user_id == Auth::user()->id){
+                    $isFav = true;
+                    break;
+                }
+            }
         $doctor = Doctor::where('id', $id)->get()->first();
         $comments = DoctorComment::where('doctor_id', $id)->get();
         
@@ -120,10 +130,12 @@ class DoctorsController extends Controller
             'doctor' => $doctor,
             'comments' => $comments,
             'isLiked' => $isLiked,
+            'isFav' => $isFav,
             'likes' => $likes,
         ]);
     }
     }
+}
     public function delete($id){
         if(Auth::user()->role == 1){
             Doctor::where('id', $id)->delete();
@@ -157,6 +169,34 @@ class DoctorsController extends Controller
         }
             return redirect('/doctor/show/'.$id);
     }
+
+
+    public function fav($id){
+        $favs = DoctorFav::where('doctor_id', $id)->get('user_id');
+        $isFav = false;
+        foreach($favs as $fav){
+            if($fav->user_id == Auth::user()->id){
+                $isFav = true;
+                break;
+            }
+        }
+
+        if($isFav == false){
+            $fav = DoctorFav::create([
+                'doctor_id' => $id,
+                'user_id' => Auth::user()->id,
+            ]);
+        }
+            return redirect('/doctor/show/'.$id);
+    }
+
+
+    public function favDelete($id){
+        $fav = DoctorFav::where(['doctor_id' => $id, 'user_id' => Auth::user()->id])->delete();
+    
+        return redirect('/doctor/show/'.$id);
+    }
+
     public function likeDelete($id){
         $like = DoctorLike::where(['doctor_id' => $id, 'user_id' => Auth::user()->id])->delete();
     

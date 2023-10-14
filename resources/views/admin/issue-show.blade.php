@@ -163,7 +163,6 @@
                     <p class="m-6">{{$notification->issue}}</p>
                 </div>
               </div>
-<<<<<<< HEAD
               <td class="p-2 align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
                 @if($notification->deleted_at)
                 <form class="h-full p-10" action="{{route('force.delete.notification', $notification->id)}}" method="POST">
@@ -175,9 +174,7 @@
                   {{-- <button type="submit" class="text-xs font-semibold leading-tight text-red-400">حذف</button> --}}
                 </form>
                 @else
-=======
               <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
->>>>>>> a20a7ff311b44e1fc5bae117878fa581dda929ff
                 <form class="h-full p-10" action="{{route('delete.notification', $notification->id)}}" method="POST">
                   @method('DELETE')
                   @csrf

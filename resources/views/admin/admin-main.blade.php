@@ -154,7 +154,7 @@
                 <div class="flex-auto p-4">
                   <div class="flex flex-row -mx-3">
                     <div class="px-3 text-left basis-1/3">
-                      <div class="inline-block w-12 h-12 flex justify-center items-center text-center rounded-circle bg-gradient-to-tl from-blue-500 to-violet-500">
+                      <div class="inline-block w-12 h-12 flex justify-center items-center text-center rounded-circle bg-gradient-to-tl from-blue-400 to-blue-500">
                         <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 512 512"><path fill="#fff" d="M236.4 61.4L227 75.5c-21.3 32-59.4 48.5-97.3 42.1l-59.6-9.9C33.4 101.6 0 129.9.1 167.1c0 15.9 6.4 31.2 17.6 42.5l29.2 29.2c11 11 17.2 25.9 17.2 41.5c0 15.8-6.4 30.9-17.7 42l-13.1 12.8C22.2 345.9 16 360.7 16 376.2c0 36.8 34.1 64.2 70.1 56.2l62.3-13.8c7.7-1.7 15.7-2.6 23.6-2.6h10c27.2 0 53.7 9.3 75 26.3l30.8 24.7c10.5 8.4 23.6 13 37 13c32.7 0 59.3-26.5 59.3-59.3v-25.2c0-34.9 21.4-66.2 53.9-78.8l36.9-14.3c22.4-8.7 37.2-30.3 37.2-54.3c0-28.1-20.1-52.3-47.8-57.3l-28-5.1c-36.5-6.7-65.4-34.5-73.6-70.7l-7.1-31.5C348.9 53.4 322.1 32 291.3 32c-22 0-42.6 11-54.9 29.4zM160 192a32 32 0 1 1 0 64a32 32 0 1 1 0-64zm128 16a16 16 0 1 1 32 0a16 16 0 1 1-32 0zm0 80a32 32 0 1 1 0 64a32 32 0 1 1 0-64z"/></svg>                      </div>
                     </div>
                     <div class="flex-none w-2/3 max-w-full px-3">
@@ -178,7 +178,7 @@
                 <div class="flex-auto p-4">
                   <div class="flex flex-row -mx-3">
                     <div class="px-3 text-left basis-1/3">
-                      <div class="flex justify-center items-center inline-block w-12 h-12 text-center rounded-circle bg-gradient-to-tl from-red-600 to-orange-600">
+                      <div class="flex justify-center items-center inline-block w-12 h-12 text-center rounded-circle bg-gradient-to-tl from-blue-400 to-blue-500">
                         <svg width="26px" height="26px" viewBox="0 0 15 15" version="1.1" id="doctor" xmlns="http://www.w3.org/2000/svg" fill="#fff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M5.5,7C4.1193,7,3,5.8807,3,4.5l0,0v-2C3,2.2239,3.2239,2,3.5,2H4c0.2761,0,0.5-0.2239,0.5-0.5S4.2761,1,4,1H3.5
                           C2.6716,1,2,1.6716,2,2.5v2c0.0013,1.1466,0.5658,2.2195,1.51,2.87l0,0C4.4131,8.1662,4.9514,9.297,5,10.5C5,12.433,6.567,14,8.5,14
                           s3.5-1.567,3.5-3.5V9.93c1.0695-0.2761,1.7126-1.367,1.4365-2.4365C13.1603,6.424,12.0695,5.7809,11,6.057
@@ -209,9 +209,10 @@
                 <div class="flex-auto p-4">
                   <div class="flex flex-row -mx-3">
                     <div class="px-3 text-left basis-1/3">
-                      <div class="inline-block w-12 h-12 text-center rounded-circle bg-gradient-to-tl from-emerald-500 to-teal-400">
-                        <i class="ni leading-none ni-paper-diploma text-lg relative top-3.5 text-white"></i>
-                      </div>
+                      <div class="flex justify-center items-center inline-block w-12 h-12 text-center rounded-circle bg-gradient-to-tl from-blue-400 to-blue-500">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 16 16"><g fill="white"><path d="M8.5 5.034v1.1l.953-.55l.5.867L9 7l.953.55l-.5.866l-.953-.55v1.1h-1v-1.1l-.953.55l-.5-.866L7 7l-.953-.55l.5-.866l.953.55v-1.1h1ZM13.25 9a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25h-.5ZM13 11.25a.25.25 0 0 1 .25-.25h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25v-.5Zm.25 1.75a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25h-.5Zm-11-4a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5A.25.25 0 0 0 3 9.75v-.5A.25.25 0 0 0 2.75 9h-.5Zm0 2a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25h-.5ZM2 13.25a.25.25 0 0 1 .25-.25h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25v-.5Z"/><path d="M5 1a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1a1 1 0 0 1 1 1v4h3a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1h3V3a1 1 0 0 1 1-1V1Zm2 14h2v-3H7v3Zm3 0h1V3H5v12h1v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3Zm0-14H6v1h4V1Zm2 7v7h3V8h-3Zm-8 7V8H1v7h3Z"/></g></svg>
+     
+                                        </div>
                     </div>
                     <div class="flex-none w-2/3 max-w-full px-3">
                       <div>
@@ -225,22 +226,21 @@
                         </p>
                       </div>
                     </div>
-                   
+                    
                   </div>
                 </div>
               </div>
             </div>
-  
+      
             <!-- card4 -->
             <div class="w-full max-w-full px-3 sm:w-1/2 sm:flex-none xl:w-1/4">
               <div class="relative flex flex-col min-w-0 break-words bg-white shadow-xl  rounded-2xl bg-clip-border">
                 <div class="flex-auto p-4">
                   <div class="flex flex-row -mx-3">
                     <div class="px-3 text-left basis-1/3">
-                      <div class="inline-block w-12 h-12 text-center rounded-circle bg-gradient-to-tl from-orange-500 to-yellow-500">
-                        <i class="ni leading-none ni-cart text-lg relative top-3.5 text-white"></i>
+                      <div class="flex justify-center items-center inline-block w-12 h-12 text-center rounded-circle bg-gradient-to-tl from-blue-400 to-blue-500">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="256" viewBox="0 0 256 256"><path fill="white" d="M230.93 220a8 8 0 0 1-6.93 4H32a8 8 0 0 1-6.92-12c15.23-26.33 38.7-45.21 66.09-54.16a72 72 0 1 1 73.66 0c27.39 8.95 50.86 27.83 66.09 54.16a8 8 0 0 1 .01 8Z"/></svg>                      </div>
                       </div>
-                    </div>
                     <div class="flex-none w-2/3 max-w-full px-3">
                       <div>
                         <p class="mb-0 font-sans text-sm font-semibold leading-normal uppercase ">عدد المستخدمين</p>
@@ -261,7 +261,7 @@
           </div>
     
 
-  
+
                 <!-- Control buttons -->
                 <button btn-next class="absolute z-10 w-10 h-10 p-2 text-lg text-white border-none opacity-50 cursor-pointer hover:opacity-100 far fa-chevron-right active:scale-110 top-6 right-4"></button>
                 <button btn-prev class="absolute z-10 w-10 h-10 p-2 text-lg text-white border-none opacity-50 cursor-pointer hover:opacity-100 far fa-chevron-left active:scale-110 top-6 right-16"></button>

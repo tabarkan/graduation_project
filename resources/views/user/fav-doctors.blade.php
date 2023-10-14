@@ -1,14 +1,15 @@
-{{-- @foreach ($hospitals as $hospital)
+{{-- @foreach ($doctors as $doctor)
 
-@if($hospital->accepted == 1)
+@if($doctor->accepted == 1)
 __________________________<br>
-Name : {{$hospital->name}}<br>
-Number : {{$hospital->contact_number}}<br>
-Website : {{$hospital->website}}<br>
+Name : {{$doctor->first_name}} {{$doctor->last_name}}<br>
+Hospital : {{$doctor->hospital}}<br>
+specialization : {{$doctor->specialization}}<br>
 __________________________<br>
 @endif
 
 @endforeach --}}
+
 
 @include('user.layouts')
 @yield('header')
@@ -17,75 +18,39 @@ __________________________<br>
       <div class="container text-center wow fadeInUp">
         <nav aria-label="Breadcrumb">
           <ol class="breadcrumb breadcrumb-dark bg-transparent justify-content-center py-0 mb-2">
-            <li class="breadcrumb-item active" aria-current="page">المستشفيات</li>
+            <li class="breadcrumb-item active" aria-current="page">الأطباء</li>
             <li class="breadcrumb-item"><a href="index.html">الصفحة الرئيسية</a></li>
           </ol>
         </nav>
-        <h1 class="font-weight-normal">المستشفيات</h1>
+        <h1 class="font-weight-normal"> المفضلة </h1>
       </div> <!-- .container -->
-      
     </div> <!-- .banner-section -->
   </div> <!-- .page-banner -->
 
-
   <div class="page-section bg-light">
-    <div class="container">
-      <div class="p-4 bg-white d-flex" >
-        <form action="{{route('hospital.governorate')}}" method="POST">
-          @csrf
-        <select class="form-select" onchange="this.form.submit()" name="governorate">
-            <option>اختر المحافظة</option>
-            <option value="بغداد">بغداد</option>
-            <option value="نينوى">نينوى</option>
-            <option value="البصرة">البصرة</option>
-            <option value="بابل">بابل</option>
-            <option value="النجف">النجف</option>
-            <option value="كربلاء">كربلاء</option>
-            <option value="ديالى">ديالى</option>
-            <option value="صلاح الدين">صلاح الدين</option>
-            <option value="الانبار">الانبار</option>
-            <option value="القادسية">القادسية</option>
-            <option value="ذي قار">ذي قار</option>
-            <option value="كركوك">كركوك</option>
-            <option value="المثنى">المثنى</option>
-            <option value="ميسان">ميسان</option>
-            <option value="واسط">واسط</option>
-            <option value="اربيل">اربيل</option>
-            <option value="حلبجة">حلبجة</option>
-            <option value="دهوك">دهوك</option>
-            <option value="السليمانية">السليمانية</option>
-            
-        </select>
-      </form>
-      
-      <form action="{{route('hospital.search')}}" method="POST">
-        @csrf
-          <input name="search" class="ml-4" type="text" name="" id="">
-          <button type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5A6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5S14 7.01 14 9.5S11.99 14 9.5 14z"/></svg></button>
-      </form>
-      </div>
+    <div class="container">      
       <div class="row justify-content-center">
         <div class="col-lg-10">
 
           <div class="row">
-            @foreach ($hospitals as $hospital)
-            
-            <div onclick="window.location='{{route('user.show.hospital', $hospital->id)}}'" class="col-md-6 col-lg-4 py-3 wow zoomIn">
+            @foreach ($doctors as $doctor)
+          
+                <div onclick="window.location='{{route('user.show.doctor', $doctor->doctor->id)}}'" class="col-md-6 col-lg-4 py-3 wow zoomIn">
                     <div class="card-doctor">
                     <div class="header">
-                        <img src="{{asset('hospitalsImages/'.$hospital->image_path)}}" alt="">
+                        <img src="{{asset('doctorsImages/'.$doctor->doctor->image_path)}}" alt="">
                         <div class="meta">
                         <a><span class="mai-call"></span></a>
                         <a href="#"><span class="mai-logo-whatsapp"></span></a>
                         </div>
                     </div>
                     <div class="body">
-                        <p class="text-lg fw-bold mb-0">{{$hospital->name}} </p>
-                        <span class="text-sm text-grey">{{$hospital->governorate}}</span>
+                        <p class="text-lg fw-bold mb-0">Dr. {{$doctor->doctor->first_name}} {{$doctor->doctor->last_name}}</p>
+                        <span class="text-sm text-grey">{{$doctor->doctor->specialization}}</span>
                     </div>
                     </div>
                 </div>
-              </a>
+
             @endforeach
             
           </div>
@@ -128,19 +93,19 @@ __________________________<br>
         </div>
 
         <button type="submit" class="btn btn-primary mt-3 wow zoomIn">Submit Request</button>
-      </form> --}}
+      </form>
     </div> <!-- .container -->
-  </div> <!-- .page-section -->
+  </div> <!-- .page-section --> --}}
   
 
   <div class="page-section banner-home bg-image" style="background-image: url(../assets/img/banner-pattern.svg);">
     <div class="container py-5 py-lg-0">
       <div class="row align-items-center">
-        {{-- <div class="col-lg-4 wow zoomIn">
-          <div class="img-banner d-none d-lg-block">
+        {{-- <div class="col-lg-4 wow zoomIn"> --}}
+          {{-- <div class="img-banner d-none d-lg-block">
             <img src="../assets/img/mobile_app.png" alt="">
-          </div>
-        </div> --}}
+          </div> --}}
+        {{-- </div> --}}
         {{-- <div class="col-lg-8 wow fadeInRight">
           <h1 class="font-weight-normal mb-3">اختر ماتحتاج من القائمة ادنى</h1>
           <a href="#"><img src="../assets/img/google_play.svg" alt=""></a>
