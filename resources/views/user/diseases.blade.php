@@ -40,7 +40,7 @@ __________________________<br>
 
           <div class="row">
             @foreach ($diseases as $disease)
-                <div class="col-md-6 col-lg-4 py-3 wow zoomIn">
+                <div onclick="window.location='{{route('user.show.disease', $disease->id)}}'" class="col-md-6 col-lg-4 py-3 wow zoomIn">
                     <div class="card-doctor">
                     <div class="header">
                         <img src="{{asset('diseaseImages/'.$disease->image_path)}}" alt="">

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Auth;
 use App\Models\Disease;
 
+
 class DiseasesController extends Controller
 {
     public function index(){
@@ -49,6 +50,18 @@ class DiseasesController extends Controller
         public function editPage($id){
         $diseases = Disease::where('id',$id)->get()->first();
         return view('admin.edit-diseases')->with('diseases', $diseases);
+    }
+ 
+    public function show($id){
+    
+        $disease = Disease::where('id', $id)->get()->first();
+    
+        
+        // return view('user.disease-show')->with(['disease' => $disease , 'comments' => $comments]);
+        return view('user.disease-show')->with([
+            'disease' => $disease,
+            
+        ]);
     }
 
     public function edit(Request $request, $id){

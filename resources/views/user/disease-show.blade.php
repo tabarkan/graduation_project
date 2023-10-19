@@ -250,72 +250,21 @@
                 <div class="card single_post">
                     <div class="body text-right">
                         <div class="img-post">
-                            <img class="d-block img-fluid" src="{{asset('diseasesImages/'.$disease->image_path)}}" alt="First slide">
+                          
                         </div>
                                  
-                    <div>
-                        
-                    </div>
-                        @if ($isLiked == false)
-                        <form action="{{route('disease.like', $disease->id)}}" method="POST">
-                            @csrf
-                            <button class="border-0 outline-0 bg-white" type="submit">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill='#808080'><path d="m12 21.35l-1.45-1.32C5.4 15.36 2 12.27 2 8.5C2 5.41 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.08C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.41 22 8.5c0 3.77-3.4 6.86-8.55 11.53L12 21.35Z"/></svg>
-                            </button>                        
-                        </form>
-                        @else
-                        <form action="{{route('disease.like.delete', $disease->id)}}" method="POST">
-                            @method('DELETE')
-                            @csrf
-                            <button class="border-0 outline-0 bg-white" type="submit">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill='#00D9A5'><path d="m12 21.35l-1.45-1.32C5.4 15.36 2 12.27 2 8.5C2 5.41 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.08C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.41 22 8.5c0 3.77-3.4 6.86-8.55 11.53L12 21.35Z"/></svg>
-                            </button>                       
-                        </form>
-                         @endif
-                         <p>{{$likes->count()}}</p>
+                   
+                         
                         <h3> {{$disease->name}} : اسم المرض</h3>
                         <p>{{$disease->type}} : النوع</p>
                         <p>{{$disease->treatment}} : العلاج</p>
-                        <p>{{$disease->Protection from disease}} : الحماية من المرض </p>
+                        <p>{{$disease->protection }} from disease: الحماية من المرض </p>
                        
                     </div>                        
                 </div>
-                <div class="card">
-                        <div class="header">
-                            <h5>التعليقات</h5>
-                        </div>
-                        <div class="body">
-                            <ul class="comment-reply list-unstyled">
-                                @foreach ($comments as $comment)
-                                    <li class="row clearfix">
-                                        <div class="icon-box col-md-2 col-4"><img class="img-fluid img-thumbnail" src="{{asset('images/'.$comment->user->image_path)}}" alt="Awesome Image"></div>
-                                        <div class="text-box col-md-10 col-8 p-l-0 p-r0">
-                                            <h5 class="m-b-0">{{$comment->user->first_name}} {{$comment->user->last_name}}</h5>
-                                            <p>{{$comment->comment}}</p>
-                                            <ul class="list-inline">
-                                                <li><a href="javascript:void(0);">{{$comment->created_at}}</a></li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                @endforeach
-                               
-                       
-                            </ul>                                        
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="body">
-                            <div class="comment-form">
-                                <form class="row clearfix" method="POST" action="{{route('disease.comment' , $disease->id)}}">
-                                    <div class="col-sm-12">
-                                            @csrf
-                                            <textarea name="comment" rows="4" class="form-control no-resize" placeholder="Please type what you want..."></textarea>
-                                            <button type="submit" class="btn btn-block btn-primary">اضافة تعليق</button>
-                                    </div>                                
-                                </form>
-                            </div>
-                        </div>
-                    </div>
+               
+                  
+                    
             </div>
         </div>
 

@@ -18,6 +18,7 @@ class Hospital extends Model
         'street',
         'image_path',
         'accepted',
+        'likes',
     ];
     public function comments(): HasMany
     {
