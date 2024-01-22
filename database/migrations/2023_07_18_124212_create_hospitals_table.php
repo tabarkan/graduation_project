@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('contact_email')->unique();        
             $table->string('contact_number');
-            $table->string('website');
+            $table->string('website')->nullable();
             $table->string('governorate');
             $table->string('region');
             $table->string('street')->nullable();
