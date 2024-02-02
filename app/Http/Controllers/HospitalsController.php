@@ -96,19 +96,20 @@ class HospitalsController extends Controller
     }
 }
     public function show($id){
-        if(Auth::user()->role == 1){
-            $likes = HospitalLike::where('hospital_id', $id)->get('user_id');
-            $isLiked = false;
+        $hospital = Hospital::where('id', $id)->get()->first();
+        $likes = HospitalLike::where('hospital_id', $id)->get('user_id');
+        $comments = HospitalComment::where('hospital_id', $id)->get();
+        $isLiked = false;
+        
+        if($likes){
             foreach($likes as $like){
                 if($like->user_id == Auth::user()->id){
                     $isLiked = true;
                     break;
                 }
-            }
-        $hospital = Hospital::where('id', $id)->get()->first();
-        $comments = HospitalComment::where('hospital_id', $id)->get();
         
-        // return view('user.hospital-show')->with(['hospital' => $hospital , 'comments' => $comments]);
+        }
+        
         return view('user.hospital-show')->with([
             'hospital' => $hospital,
             'comments' => $comments,

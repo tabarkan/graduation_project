@@ -13,12 +13,7 @@ use Carbon\Carbon;
 
 class PagesController extends Controller
 {
-    public function doctorsPage(){
-       
-        $doctors = Doctor::get();
-        return view('user.doctors')->with(['doctors' => $doctors]);
-
-    }
+ 
     public function doctorsFav(){
        
         $doctors = DoctorFav::get();
@@ -29,13 +24,19 @@ class PagesController extends Controller
     public function hospitalsPage(){
         
 
-        $hospitals = Hospital::get();
+        $hospitals = Hospital::where('accepted', 1)->get();
         return view('user.hospitals')->with(['hospitals' => $hospitals]);
         
     }
+    public function doctorsPage(){
+       
+        $doctors = Doctor::where('accepted', 1)->get();
+        return view('user.doctors')->with(['doctors' => $doctors]);
 
+    }
+    
     public function diseasesPage(){
-        $diseases = Disease::get();
+        $diseases = Disease::where('accepted', 1)->get();
         return view('user.diseases')->with(['diseases' => $diseases]);
         
     }
