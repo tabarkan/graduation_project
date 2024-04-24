@@ -1,6 +1,10 @@
 @include('user.layouts')
 @yield('header')
-
+@if (session()->has('message'))
+<div class="alert alert-success container text-center mt-4" role="alert">
+    {{session()->get('message')}}
+</div>
+@endif
   <div class="page-hero bg-image overlay-dark" style="background-image: url({{asset('one-health/assets/img/bg_image_T.jpg')}});">
     <div class="hero-section">
       <div class="container text-center wow zoomIn">
@@ -406,7 +410,7 @@
   <div class="page-section">
     <div class="container">
       <h1 class="text-center wow fadeInUp">ابلغنا عن مشكلة</h1>
-
+  
       <form class="main-form"  method="POST" action="{{route('user.add.notification')}}">
         @csrf
         <div class="row mt-5 ">

@@ -7,6 +7,7 @@ use Auth;
 use App\Models\Hospital;
 use App\Models\HospitalComment;
 use App\Models\HospitalLike;
+use Illuminate\Support\Facades\Auth as FacadesAuth;
 
 class HospitalsController extends Controller
 {
@@ -100,15 +101,15 @@ class HospitalsController extends Controller
         $likes = HospitalLike::where('hospital_id', $id)->get('user_id');
         $comments = HospitalComment::where('hospital_id', $id)->get();
         $isLiked = false;
-        
-        if($likes){
-            foreach($likes as $like){
-                if($like->user_id == Auth::user()->id){
-                    $isLiked = true;
-                    break;
+            if($likes && Auth::user()){
+                foreach($likes as $like){
+                    if($like->user_id == Auth::user()->id){
+                        $isLiked = true;
+                        break;
+                    }
                 }
-        
-        }
+            }
+            
         
         return view('user.hospital-show')->with([
             'hospital' => $hospital,
@@ -117,7 +118,7 @@ class HospitalsController extends Controller
             'likes' => $likes,
         ]);
     }
-}
+
     public function delete($id){
         if(Auth::user()->role == 1){
             hospital::where('id', $id)->delete();
@@ -158,7 +159,7 @@ public function likeDelete($id){
 }
     
     public function commentAdd(Request $request, $id){
-        if(Auth::user()->role == 1){
+        if(Auth::user()){
         $comment = HospitalComment::create([
             'user_id' => Auth::user()->id,  
             'hospital_id' => $id,

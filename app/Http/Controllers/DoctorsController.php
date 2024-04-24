@@ -105,8 +105,10 @@ class DoctorsController extends Controller
     }
 
     public function show($id){
-        if(Auth::user()->role == 1){
-            $likes = DoctorLike::where('doctor_id', $id)->get('user_id');
+        $favs = DoctorFav::where('doctor_id', $id)->get('user_id');
+        $likes = DoctorLike::where('doctor_id', $id)->get('user_id');
+
+        if($likes){
             $isLiked = false;
             foreach($likes as $like){
                 if($like->user_id == Auth::user()->id){
@@ -114,8 +116,7 @@ class DoctorsController extends Controller
                     break;
                 }
             }
-        if(Auth::user()->role == 1){
-            $favs = DoctorFav::where('doctor_id', $id)->get('user_id');
+        if($favs){
             $isFav = false;
             foreach($favs as $fav){
                 if($fav->user_id == Auth::user()->id){
@@ -203,7 +204,7 @@ class DoctorsController extends Controller
         return redirect('/doctor/show/'.$id);
     }
     public function commentAdd(Request $request, $id){
-        if(Auth::user()->role == 1){
+        if(Auth::user()){
         $comment = DoctorComment::create([
             'user_id' => Auth::user()->id,  
             'doctor_id' => $id,
