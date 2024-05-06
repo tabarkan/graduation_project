@@ -289,7 +289,10 @@
                        
 
 
-                        <h3>{{$doctor->last_name}} {{$doctor->first_name}}.د</h3>
+                        <h3> 
+                            د
+                            .
+                            {{$doctor->first_name}}  {{$doctor->last_name}} </h3>
                         <p>التخصص : {{$doctor->specialization}} </p>
                         <p>{{$doctor->email}} : ايميل التواصل</p>
                         <p>{{$doctor->phone}} : رقم الهاتف</p>

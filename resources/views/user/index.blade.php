@@ -66,7 +66,7 @@
           <div class="col-lg-6 py-3 wow text-right fadeInUp">
             <h1>اهلاً بكم في موقع صحتي </h1>
             <p class="text-grey mb-4">موقع يحتوي على كل مايخص الصحه من الاطباء والمستشفيات والامراض والعلاجات وغيرها</p>
-            <a href="about.html" class="btn btn-primary">للمزيد</a>
+            <a href=""about.html"" class="btn btn-primary">للمزيد</a>
           </div>
           
         </div>

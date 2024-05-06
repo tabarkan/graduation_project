@@ -255,10 +255,10 @@
                                  
                    
                          
-                        <h3> {{$disease->name}} : اسم المرض</h3>
-                        <p>{{$disease->type}} : النوع</p>
-                        <p>{{$disease->treatment}} : العلاج</p>
-                        <p>{{$disease->protection }} from disease: الحماية من المرض </p>
+                        <h3>  اسم المرض : {{$disease->disease_name}} </h3>
+                        <p> النوع :  {{$disease->disease_category}}  </p>
+                        <p>  العلاج : {{$disease->treatment}} </p>
+                        <p>  الحماية من المرض : {{$disease->protection }} </p>
                        
                     </div>                        
                 </div>

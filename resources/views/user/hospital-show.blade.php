@@ -281,7 +281,7 @@
                     </button>  
                     @endguest
                         <p class="pr-3">{{$likes->count()}}</p>
-                        <h3> {{$hospital->name}} : الاسم</h3>
+                        <h3>  الاسم : {{$hospital->name}} </h3>
                         <p>{{$hospital->contact_number}} : رقم الهاتف</p>
                         <p>{{$hospital->contact_email}} : ايميل التواصل</p>
                         <p>{{$hospital->website}} :  الموقع الالكتروني</p>
